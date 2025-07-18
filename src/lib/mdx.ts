@@ -4,34 +4,75 @@ import matter from "gray-matter";
 
 const postsDirectory = path.join(process.cwd(), "src/posts");
 
-export function getAllPosts() {
-  const fileNames = fs.readdirSync(postsDirectory);
+export function getAllPosts(): Array<{
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+}> {
+  // Check if posts directory exists
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
 
-  return fileNames.map((fileName) => {
+  const fileNames = fs.readdirSync(postsDirectory);
+  
+  // Filter to only include .mdx files
+  const mdxFiles = fileNames.filter(fileName => fileName.endsWith('.mdx'));
+
+  return mdxFiles.map((fileName) => {
     const slug = fileName.replace(/\.mdx$/, "");
     const fullPath = path.join(postsDirectory, fileName);
+    
+    try {
+      const fileContents = fs.readFileSync(fullPath, "utf8");
+      const { data } = matter(fileContents);
+
+      return {
+        slug,
+        title: data.title || slug,
+        date: data.date || new Date().toISOString().split('T')[0],
+        description: data.description || "",
+      };
+    } catch (error) {
+      console.error(`Error reading post ${fileName}:`, error);
+      return null;
+    }
+  }).filter((post): post is NonNullable<typeof post> => post !== null);
+}
+
+export function getPostBySlug(slug: string): {
+  slug: string;
+  content: string;
+  title: string;
+  date: string;
+  description: string;
+} {
+  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+  
+  // Check if file exists
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Post not found: ${slug}`);
+  }
+  
+  try {
     const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data } = matter(fileContents);
+    const { content, data } = matter(fileContents);
 
     return {
       slug,
-      title: data.title,
-      date: data.date,
-      description: data.description,
+      content,
+      title: data.title || slug,
+      date: data.date || new Date().toISOString().split('T')[0],
+      description: data.description || "",
     };
-  });
+  } catch (error) {
+    console.error(`Error reading post ${slug}:`, error);
+    throw new Error(`Failed to read post: ${slug}`);
+  }
 }
 
-export function getPostBySlug(slug: string) {
+export function postExists(slug: string): boolean {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { content, data } = matter(fileContents);
-
-  return {
-    slug,
-    content,
-    title: data.title,
-    date: data.date,
-    description: data.description,
-  };
+  return fs.existsSync(fullPath);
 }
