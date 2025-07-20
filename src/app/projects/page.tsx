@@ -23,7 +23,7 @@ const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "OpenAI API", "Tailwind CSS", "Vercel"],
     status: "In Development",
     links: {
-      github: "https://github.com/yourusername/kakitori",
+      github: "https://github.com/miles-hollifield/kakitori",
       demo: "https://kakitori-demo.vercel.app"
     },
     highlights: [
@@ -41,7 +41,7 @@ const projects: Project[] = [
     technologies: ["Unity", "C#", "Aseprite", "FMOD", "Steam SDK"],
     status: "In Development",
     links: {
-      github: "https://github.com/yourusername/guild-game"
+      github: "https://github.com/miles-hollifield/guild-game"
     },
     highlights: [
       "Multi-genre gameplay combining management, RPG, and dating sim",
@@ -59,7 +59,7 @@ const projects: Project[] = [
     status: "Live",
     links: {
       live: "https://miles-portfolio.vercel.app",
-      github: "https://github.com/yourusername/portfolio"
+      github: "https://github.com/miles-hollifield/miles-portfolio-blog"
     },
     highlights: [
       "Built with Next.js 15 App Router",
@@ -76,7 +76,7 @@ const projects: Project[] = [
     technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     status: "Completed",
     links: {
-      github: "https://github.com/yourusername/japanese-tools"
+      github: "https://github.com/miles-hollifield/japanese-tools"
     },
     highlights: [
       "Multiple focused learning tools",
@@ -239,7 +239,7 @@ export default function ProjectsPage() {
               </svg>
               Read My Blog
             </Link>
-            <a href="mailto:your.email@example.com" className="cta-button secondary">
+            <a href="mailto:mileshollifieldgfp@gmail.com" className="cta-button secondary">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
