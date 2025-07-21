@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SlideshowTimeline from "@/app/components/SlideshowTimeline";
 
 export default function AboutPage() {
   return (
@@ -18,41 +19,109 @@ export default function AboutPage() {
           <div className="content-section">
             <h2>Who I Am</h2>
             <p>
-              {`I'm Miles — a software engineer, writer, and adventurer. I'm passionate about building thoughtful software, learning Japanese, and exploring the intersection of creativity and code.`}
+              {`I'm Miles — a software engineer, writer, and lifelong learner. My journey into tech began when I was five, playing Pokémon Yellow on a Game Boy Color. That early spark of curiosity eventually evolved into a deep passion for building technology that connects, empowers, and inspires.`}
             </p>
             <p>
-              {`Currently, I study Computer Science with a minor in Japan Studies at NC State University. I've had the privilege of interning at Siemens, working as a mentor and ambassador, and pursuing various side projects that combine my technical skills with my diverse interests.`}
+              {`Currently, I'm a Software Engineering Intern at Siemens and a Computer Science student at NC State University, with a minor in Japan Studies. I'm also a proud Goodnight Scholar, where I serve as both a mentor and program ambassador. My work spans full-stack development, AI experimentation, and creative software projects — from indie games to language learning tools.`}
             </p>
             <p>
-              {`What excites me most about software development is the ability to create tools that genuinely help people. Whether it's building AI-powered language learning apps or crafting user-friendly web experiences, I believe technology should make life better and more accessible for everyone.`}
+              {`Along the way, I've worn many hats — from supervising a bakery team while studying full-time, to helping manage a college website, to freelancing as a Web Analyst/Developer. I've interned at a startup as a Solution Architect and worked on enterprise-grade systems at Siemens. Every role, whether technical or not, helped shape my drive to build meaningful digital experiences.`}
+            </p>
+            <p>
+              {`I'm passionate about tech that has real-world impact — especially in the areas of education, gaming, and language learning. I'm actively exploring roles in Software Engineering and ML/AI Engineering, and I also love helping small businesses grow their digital presence as a freelancer with long-term entrepreneurial goals of my own.`}
+            </p>
+            <p>
+              {`If you're working on something exciting in tech, AI, education, or gaming — or just want to chat — I'd love to connect.`}
             </p>
           </div>
+
+          {/* Timeline Section - Now using the Slideshow Component */}
+          <SlideshowTimeline />
 
           {/* Experience & Education */}
           <div className="about-card">
             <h3>
               <div className="icon">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0v-4a2 2 0 011-1h1m0 0V9a2 2 0 011-1h2a2 2 0 011 1v10M9 21h10M9 21H5" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0v-4a2 2 0 011-1h1m0 0V9a2 2 0 011-1h2a2 2 0 011 1v10M9 21h10M9 21H5"
+                  />
                 </svg>
               </div>
               Experience & Education
             </h3>
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold text-gray-900">Software Engineering Intern</h4>
-                <p className="text-sm text-gray-600 mb-2">Siemens • Summer 2024</p>
+                <h4 className="font-semibold text-gray-900">
+                  Software Engineering Intern
+                </h4>
+                <p className="text-sm text-gray-600 mb-2">
+                  Siemens • May 2024 – Aug 2025
+                </p>
                 <p className="text-gray-700 text-sm">
-                  Contributed to industrial IoT platforms, worked with C#/.NET, React, and Azure cloud services. 
-                  Gained experience with enterprise-level software development and agile methodologies.
+                  Developed enterprise-grade applications using React, FastAPI,
+                  SQL Server, and Azure Entra ID. Worked on tools like SEAK (an
+                  AI-powered knowledge platform), JT Catalog (3D model system
+                  with SAP/Salesforce), and SPIN DB (revisioned parts management
+                  system).
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Computer Science Student</h4>
-                <p className="text-sm text-gray-600 mb-2">NC State University • 2022 - Present</p>
+                <h4 className="font-semibold text-gray-900">
+                  Solution Architect Intern
+                </h4>
+                <p className="text-sm text-gray-600 mb-2">
+                  Zift Solutions / Unifyr • May 2023 – Dec 2023
+                </p>
                 <p className="text-gray-700 text-sm">
-                  Pursuing a BS in Computer Science with a minor in Japan Studies. 
-                  Focusing on software engineering, AI/ML, and cross-cultural technology applications.
+                  Built Angular-based client portals and integrated Salesforce
+                  data pipelines using Workato/Blendr. Authored Apex test cases,
+                  addressed sync issues, and enhanced overall system
+                  reliability.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">
+                  Web Assistant & Freelance Developer
+                </h4>
+                <p className="text-sm text-gray-600 mb-2">
+                  AB Tech & Freelance • 2021 – 2022
+                </p>
+                <p className="text-gray-700 text-sm">
+                  Maintained web content with Drupal, supported
+                  SEO/accessibility, and provided custom CMS development for
+                  clients using PHP, WordPress, MySQL, and JavaScript.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">
+                  NC State University
+                </h4>
+                <p className="text-sm text-gray-600 mb-2">
+                  Jan 2023 – May 2026
+                </p>
+                <p className="text-gray-700 text-sm">
+                  B.S. in Computer Science, Minor in Japan Studies. Goodnight
+                  Scholar, with a focus on AI, software engineering, and
+                  cross-cultural tech applications.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">
+                  AB Technical Community College
+                </h4>
+                <p className="text-sm text-gray-600 mb-2">2019 – 2022</p>
+                <p className="text-gray-700 text-sm">
+                  Earned AAS in Software/Web Dev and AS for university transfer.
+                  Balanced full-time coursework with bakery and tech roles.
                 </p>
               </div>
             </div>
@@ -62,26 +131,72 @@ export default function AboutPage() {
           <div className="about-card">
             <h3>
               <div className="icon">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  />
                 </svg>
               </div>
               Technical Skills
             </h3>
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Languages & Frameworks</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  Languages & Frameworks
+                </h4>
                 <div className="flex flex-wrap gap-2">
-                  {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'C#', 'Java'].map((skill) => (
-                    <span key={skill} className="tech-tag">{skill}</span>
+                  {[
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "TypeScript",
+                    "Python",
+                    "SQL",
+                    "Java",
+                    "C++",
+                    "React",
+                    "FastAPI",
+                    "SvelteKit",
+                    "Node.js",
+                  ].map((skill) => (
+                    <span key={skill} className="tech-tag">
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Tools & Technologies</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  Tools & Technologies
+                </h4>
                 <div className="flex flex-wrap gap-2">
-                  {['Git', 'Docker', 'Azure', 'Vercel', 'Tailwind CSS', 'Unity', 'Figma', 'VS Code'].map((skill) => (
-                    <span key={skill} className="tech-tag">{skill}</span>
+                  {[
+                    "Git",
+                    "Docker",
+                    "Kubernetes",
+                    "Azure",
+                    "Azure Entra ID",
+                    "Vercel",
+                    "Tailwind CSS",
+                    "Figma",
+                    "Postman",
+                    "Swagger/OpenAPI",
+                    "VS Code",
+                    "JWT",
+                    "SAP",
+                    "Salesforce",
+                  ].map((skill) => (
+                    <span key={skill} className="tech-tag">
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -92,33 +207,51 @@ export default function AboutPage() {
           <div className="about-card">
             <h3>
               <div className="icon">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  />
                 </svg>
               </div>
               Interests & Passions
             </h3>
             <div className="space-y-3">
               <div>
-                <h4 className="font-semibold text-gray-900">Japanese Language & Culture</h4>
+                <h4 className="font-semibold text-gray-900">
+                  Japanese Language & Culture
+                </h4>
                 <p className="text-gray-700 text-sm">
                   {`Five years of studying Japanese, from anime enthusiasm to academic pursuit. Currently working toward N2 proficiency and planning to study abroad in Japan.`}
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Game Development</h4>
+                <h4 className="font-semibold text-gray-900">
+                  Game Development
+                </h4>
                 <p className="text-gray-700 text-sm">
                   {`Creating indie games that blend storytelling with gameplay mechanics. Currently developing a guild management game with dating sim elements.`}
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">AI & Language Learning</h4>
+                <h4 className="font-semibold text-gray-900">
+                  AI & Language Learning
+                </h4>
                 <p className="text-gray-700 text-sm">
                   {`Exploring how AI can make language learning more personalized and effective. Building tools that adapt to individual learning styles and needs.`}
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Writing & Documentation</h4>
+                <h4 className="font-semibold text-gray-900">
+                  Writing & Documentation
+                </h4>
                 <p className="text-gray-700 text-sm">
                   {`Passionate about clear technical writing and knowledge sharing. I believe good documentation is as important as good code.`}
                 </p>
@@ -144,8 +277,18 @@ export default function AboutPage() {
           <div className="about-card">
             <h3>
               <div className="icon">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
                 </svg>
               </div>
               Fun Facts
@@ -183,20 +326,53 @@ export default function AboutPage() {
           </p>
           <div className="cta-buttons">
             <Link href="/blog" className="cta-button primary">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                />
               </svg>
               Read My Blog
             </Link>
             <Link href="/projects" className="cta-button secondary">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                />
               </svg>
               View My Projects
             </Link>
-            <a href="mailto:mileshollifieldgfp@gmail.com" className="cta-button secondary">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <a
+              href="mailto:mileshollifieldgfp@gmail.com"
+              className="cta-button secondary"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"
+                />
               </svg>
               Get in Touch
             </a>
