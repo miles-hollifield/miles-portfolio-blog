@@ -24,19 +24,19 @@ export default function AboutPage() {
           <div className="content-section">
             <h2>Who I Am</h2>
             <p>
-              {`I'm Miles — a software engineer, writer, and lifelong learner. My journey into tech began when I was five, playing Pokémon Yellow on a Game Boy Color. That early spark of curiosity eventually evolved into a deep passion for building technology that connects, empowers, and inspires.`}
+              {`I'm Miles, a software engineer, writer, and lifelong learner. My journey into tech began when I was five, playing Pokémon Yellow on a Game Boy Color. That early spark of curiosity eventually grew into a deep passion for building technology that connects, empowers, and inspires.`}
             </p>
             <p>
-              {`Currently, I'm a Software Engineering Intern at Siemens and a Computer Science student at NC State University, with a minor in Japan Studies. I'm also a proud Goodnight Scholar, where I serve as both a mentor and program ambassador. My work spans full-stack development, AI experimentation, and creative software projects — from indie games to language learning tools.`}
+              {`Today, I'm a Software Engineering Intern at Siemens and a Computer Science student at NC State University, where I'm also minoring in Japan Studies. As a Goodnight Scholar, I serve as both a mentor and program ambassador. My work spans full-stack development, AI experimentation, and creative software projects, including indie games and language learning tools.`}
             </p>
             <p>
-              {`Along the way, I've worn many hats — from supervising a bakery team while studying full-time, to helping manage a college website, to freelancing as a Web Analyst/Developer. I've interned at a startup as a Solution Architect and worked on enterprise-grade systems at Siemens. Every role, whether technical or not, helped shape my drive to build meaningful digital experiences.`}
+              {`Over the years, I’ve taken on many roles—from leading a bakery team while in school, to maintaining a college website, to freelancing as a Web Analyst and Developer. I’ve interned at a startup as a Solution Architect and contributed to enterprise-grade systems at Siemens. Every experience has helped shape my perspective as a developer who values both utility and user experience.`}
             </p>
             <p>
-              {`I'm passionate about tech that has real-world impact — especially in the areas of education, gaming, and language learning. I'm actively exploring roles in Software Engineering and ML/AI Engineering, and I also love helping small businesses grow their digital presence as a freelancer with long-term entrepreneurial goals of my own.`}
+              {`I'm especially interested in tech that creates real-world impact, particularly in education, gaming, and language learning. I'm actively pursuing opportunities in Software Engineering and ML/AI Engineering, and I enjoy supporting small businesses as a freelancer while working toward my goal of launching a software company.`}
             </p>
             <p>
-              {`If you're working on something exciting in tech, AI, education, or gaming — or just want to chat — I'd love to connect.`}
+              {`If you’re building something meaningful in tech, AI, education, or games—or just want to connect—I’d love to hear from you.`}
             </p>
           </div>
 

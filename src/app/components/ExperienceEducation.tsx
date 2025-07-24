@@ -38,7 +38,7 @@ const defaultExperiences: ExperienceItem[] = [
 const defaultEducation: EducationItem[] = [
   {
     institution: "NC State University",
-    period: "2022 – Present",
+    period: "January 2023 – May 2026",
     description: "BS Computer Science, Minor in Japan Studies. Goodnight Scholar Program participant, serving as both mentor and program ambassador."
   },
   {
