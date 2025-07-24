@@ -43,8 +43,8 @@ const timelineStories = [
     period: "2019-2021",
     title: "The Foundation Years",
     subtitle: "Working Full-Time While Building My Future",
-    story: "This is where it all began. While leading a bakery team full-time in Asheville, I was secretly building my programming skills at AB Tech. Those early morning shifts before class and late-night coding sessions taught me more about time management and determination than any textbook ever could. Every day was about balancing the immediate (keeping the bakery running) with the future (becoming a developer).",
-    highlights: ["Full-Time Bakery Management", "AAS Software Development", "Time Management Mastery", "Foundation Programming Skills"],
+    story: "This is where it all began. While full-time as a Shift Lead at a locally-owned bakery in Asheville, North Carolina, I was building my programming skills at Asheville-Buncombe Technical Community College. Those early morning shifts before class and late-night coding sessions taught me more about time management and determination than any textbook ever could. Every day was about balancing the immediate (working my day job) with the future (becoming a developer).",
+    highlights: ["Full-Time Bakery Job", "AAS - Software & Web Development", "Time Management Mastery", "Foundation Programming Skills"],
     color: "bg-amber-600",
     accentColor: "amber"
   }
