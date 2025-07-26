@@ -1,5 +1,6 @@
 import SlideshowTimeline from "@/app/components/SlideshowTimeline";
-import ExperienceEducation from "@/app/components/ExperienceEducation";
+import Experience from "../components/Experience";
+import Education from "../components/Education";
 import TechnicalSkills from "@/app/components/TechnicalSkills";
 import InterestsPassions from "@/app/components/InterestsPassions";
 import FunFacts from "@/app/components/FunFacts";
@@ -43,8 +44,13 @@ export default function AboutPage() {
           {/* Timeline Section - Now using the Slideshow Component */}
           <SlideshowTimeline />
 
-          {/* Experience & Education */}
-          <ExperienceEducation />
+          {/* Experience */}
+          <Experience />
+
+          {/* Education */}
+          <Education />
+
+          {/* Additional Sections */}
 
           {/* Technical Skills */}
           <TechnicalSkills />

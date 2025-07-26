@@ -12,7 +12,7 @@ const timelineStories = [
     highlights: ["AI/Semantic Search Integration", "3D Model Systems", "Azure Cloud Infrastructure", "Enterprise-Scale Applications"],
     color: "bg-blue-600",
     accentColor: "blue",
-    image: "/timeline-images/siemens-2024.svg"
+    image: "/timeline-images/miles-siemens.jpg"
   },
   {
     period: "2023",
@@ -22,7 +22,7 @@ const timelineStories = [
     highlights: ["Angular Client Portals", "Salesforce Integration", "Data Pipeline Architecture", "System Reliability"],
     color: "bg-purple-600",
     accentColor: "purple",
-    image: "/timeline-images/unifyr-2023.svg"
+    image: "/timeline-images/miles-wolfpack-shirt.jpg"
   },
   {
     period: "2022 - The Juggling Act",
@@ -89,14 +89,46 @@ export default function SlideshowTimeline() {
       </h3>
 
       {/* Main slideshow area */}
-      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-8 min-h-[400px] overflow-hidden">
+      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-8 h-[600px] overflow-hidden">
         {/* Background decoration */}
         <div className={`absolute top-0 right-0 w-32 h-32 ${currentStory.color} opacity-10 rounded-full blur-2xl transform translate-x-8 -translate-y-8`}></div>
         
+        {/* Left Navigation Button */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-lg hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group border border-gray-200"
+        >
+          <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Right Navigation Button */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-lg hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group border border-gray-200"
+        >
+          <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        
         {/* Two-column layout */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+        <div key={currentSlide} className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 h-full px-12 opacity-0 animate-[fadeIn_0.5s_ease-in-out_forwards]">
+          <style jsx>{`
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+                transform: translateY(10px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+          `}</style>
           {/* Content column */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center pr-4">
             {/* Period badge */}
             <div className={`inline-block px-3 py-1 ${currentStory.color} text-white text-sm font-medium rounded-full mb-4 w-fit`}>
               {currentStory.period}
@@ -114,7 +146,7 @@ export default function SlideshowTimeline() {
             {/* Highlights */}
             <div className="space-y-3">
               <h5 className="font-semibold text-gray-900">Key Highlights:</h5>
-              <div className="grid grid-cols-1 gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 {currentStory.highlights.map((highlight, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <div className={`w-2 h-2 ${currentStory.color} rounded-full flex-shrink-0`}></div>
@@ -126,14 +158,18 @@ export default function SlideshowTimeline() {
           </div>
 
           {/* Image column */}
-          <div className="flex items-center justify-center">
-            <div className="relative">
+          <div className="flex items-center justify-center pl-4">
+            <div className="relative w-full max-w-sm h-120">
+              {/* Using Next.js Image with unoptimized prop */}
               <Image 
                 src={currentStory.image} 
                 alt={`${currentStory.title} - ${currentStory.period}`}
                 width={300}
                 height={200}
-                className="w-full max-w-sm h-auto rounded-lg shadow-lg border-2 border-white"
+                className="w-full h-full object-cover rounded-lg shadow-lg border-2 border-white"
+                onError={(e) => console.error('Image failed to load:', currentStory.image, e)}
+                onLoad={() => console.log('Image loaded successfully:', currentStory.image)}
+                unoptimized
               />
               {/* Image frame effect */}
               <div className={`absolute -inset-1 ${currentStory.color} opacity-20 rounded-lg blur-sm -z-10`}></div>
@@ -143,18 +179,7 @@ export default function SlideshowTimeline() {
       </div>
 
       {/* Navigation controls */}
-      <div className="flex items-center justify-between mt-6">
-        {/* Previous button */}
-        <button
-          onClick={prevSlide}
-          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors group"
-        >
-          <svg className="w-4 h-4 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          <span className="text-sm font-medium text-gray-600 group-hover:text-gray-800">Previous</span>
-        </button>
-
+      <div className="flex items-center justify-center mt-6">
         {/* Slide indicators */}
         <div className="flex gap-2">
           {timelineStories.map((_, index) => (
@@ -169,17 +194,6 @@ export default function SlideshowTimeline() {
             />
           ))}
         </div>
-
-        {/* Next button */}
-        <button
-          onClick={nextSlide}
-          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors group"
-        >
-          <span className="text-sm font-medium text-gray-600 group-hover:text-gray-800">Next</span>
-          <svg className="w-4 h-4 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
       </div>
 
       {/* Auto-play option (optional) */}
