@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const timelineStories = [
@@ -58,7 +58,30 @@ const timelineStories = [
 
 export default function SlideshowTimeline() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [allImagesPreloaded, setAllImagesPreloaded] = useState(false);
   const totalSlides = timelineStories.length;
+
+  // Preload all images on component mount
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = timelineStories.map((story) => {
+        return new Promise<void>((resolve) => {
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => {
+            console.error(`Failed to load image: ${story.image}`);
+            resolve(); // Still resolve to not block other images
+          };
+          img.src = story.image;
+        });
+      });
+
+      await Promise.all(imagePromises);
+      setAllImagesPreloaded(true);
+    };
+
+    preloadImages();
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -160,19 +183,29 @@ export default function SlideshowTimeline() {
           {/* Image column */}
           <div className="flex items-center justify-center pl-4">
             <div className="relative w-full max-w-sm h-120">
-              {/* Using Next.js Image with unoptimized prop */}
-              <Image 
-                src={currentStory.image} 
-                alt={`${currentStory.title} - ${currentStory.period}`}
-                width={300}
-                height={200}
-                className="w-full h-full object-cover rounded-lg shadow-lg border-2 border-white"
-                onError={(e) => console.error('Image failed to load:', currentStory.image, e)}
-                onLoad={() => console.log('Image loaded successfully:', currentStory.image)}
-                unoptimized
-              />
-              {/* Image frame effect */}
-              <div className={`absolute -inset-1 ${currentStory.color} opacity-20 rounded-lg blur-sm -z-10`}></div>
+              {/* Loading placeholder */}
+              {!allImagesPreloaded && (
+                <div className="w-full h-full bg-gray-200 rounded-lg shadow-lg border-2 border-white flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+                </div>
+              )}
+              
+              {/* Image - only show when all images are preloaded */}
+              {allImagesPreloaded && (
+                <>
+                  <Image 
+                    src={currentStory.image} 
+                    alt={`${currentStory.title} - ${currentStory.period}`}
+                    width={300}
+                    height={200}
+                    className="w-full h-full object-cover rounded-lg shadow-lg border-2 border-white"
+                    unoptimized
+                    priority={currentSlide === 0} // Priority for first image
+                  />
+                  {/* Image frame effect */}
+                  <div className={`absolute -inset-1 ${currentStory.color} opacity-20 rounded-lg blur-sm -z-10`}></div>
+                </>
+              )}
             </div>
           </div>
         </div>
