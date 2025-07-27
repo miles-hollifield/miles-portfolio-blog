@@ -57,7 +57,7 @@ export default function HomePage() {
       {/* Quick Stats/Features Section */}
       <section className="py-16 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Software Engineering */}
             <div className="text-center group">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -66,7 +66,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Software Engineering</h3>
-              <p className="text-gray-600">Building modern web applications with React, Next.js, and TypeScript</p>
+              <p className="text-gray-600">Building modern web applications with React, JavaScript, TypeScript, and Python</p>
             </div>
 
             {/* Language Learning */}
@@ -78,6 +78,17 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Japanese Studies</h3>
               <p className="text-gray-600">Exploring language, culture, and building AI-powered learning tools</p>
+            </div>
+
+            {/* Game Development */}
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V7a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 011 1v1z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Game Development</h3>
+              <p className="text-gray-600">Creating interactive experiences and exploring game mechanics with Unreal Engine and C++</p>
             </div>
 
             {/* Writing & Sharing */}
