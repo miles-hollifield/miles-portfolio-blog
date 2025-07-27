@@ -104,42 +104,46 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Featured Project */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">Kakitori</h3>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">AI-Powered</span>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  An AI-powered Japanese grammar practice app that generates personalized sentence drills for effective learning.
-                </p>
-                <div className="flex items-center text-blue-600 group-hover:text-blue-700 transition-colors">
-                  <span className="text-sm font-medium">View Project</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+            <Link href="/projects" className="block transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">Kakitori</h3>
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">AI-Powered</span>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    An AI-powered Japanese grammar practice app that generates personalized sentence drills for effective learning.
+                  </p>
+                  <div className="flex items-center text-blue-600 group-hover:text-blue-700 transition-colors">
+                    <span className="text-sm font-medium">View Project</span>
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Featured Blog Post */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">Latest Blog Post</h3>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">New</span>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  My journey building AI-powered tools for Japanese language learning, including technical challenges and insights.
-                </p>
-                <div className="flex items-center text-green-600 group-hover:text-green-700 transition-colors">
-                  <span className="text-sm font-medium">Read Article</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+            <Link href="/blog/building-kakitori" className="block transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-gray-900">Latest Blog Post</h3>
+                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">New</span>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    My journey building AI-powered tools for Japanese language learning, including technical challenges and insights.
+                  </p>
+                  <div className="flex items-center text-green-600 group-hover:text-green-700 transition-colors">
+                    <span className="text-sm font-medium">Read Article</span>
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
