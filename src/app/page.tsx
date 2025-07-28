@@ -20,7 +20,7 @@ export default function HomePage() {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              {`I'm a software engineer, writer, and lifelong learner. I love building apps, exploring Japanese, and sharing what I learn.`}
+              {`I'm a software engineer, indie game developer, writer, and lifelong learner. I love building apps, exploring Japanese, and sharing what I learn.`}
             </p>
 
             {/* Enhanced buttons */}

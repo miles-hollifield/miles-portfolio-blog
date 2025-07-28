@@ -18,73 +18,79 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Kakitori",
-    description: "AI-powered Japanese grammar practice app with personalized sentence drills",
-    longDescription: "A web application that uses OpenAI's GPT-4 to generate unique, contextually appropriate Japanese sentences for grammar practice. Unlike traditional textbooks with static examples, Kakitori provides endless variety to help learners truly master grammar patterns.",
-    technologies: ["Next.js", "TypeScript", "OpenAI API", "Tailwind CSS", "Vercel"],
+    description: "Comprehensive Japanese learning platform with AI-powered tutoring and structured practice modules",
+    longDescription: "A full-stack Japanese language learning platform featuring an intelligent AI tutor, kanji practice systems, vocabulary building tools, and progress analytics. Built with a modern React frontend and FastAPI backend, Kakitori provides personalized learning experiences through AI integration and comprehensive study tools. The platform includes Google OAuth authentication, PostgreSQL data persistence, and Redis caching for optimal performance.",
+    technologies: [
+      "React 19.1", "FastAPI", "PostgreSQL", "Redis", 
+      "Material-UI", "SQLAlchemy", "Alembic", "Docker",
+      "OpenAI API", "Anthropic API", "Google OAuth", "Vite"
+    ],
     status: "In Development",
     links: {
-      github: "https://github.com/miles-hollifield/kakitori",
+      github: "https://github.com/miles-hollifield/KakitoriAPP",
       demo: "https://kakitori-demo.vercel.app"
     },
     highlights: [
-      "AI-generated grammar drills with contextual variety",
-      "Adaptive difficulty based on user level",
-      "Progress tracking and spaced repetition",
-      "Mobile-responsive design for practice on-the-go"
+      "AI-powered Japanese tutor with chat interface using OpenAI/Anthropic APIs",
+      "Comprehensive kanji learning system with JLPT integration",
+      "Modern full-stack architecture with React frontend and FastAPI backend",
+      "Google OAuth authentication and user progress tracking",
+      "Docker containerized development environment with PostgreSQL and Redis",
+      "Material-UI based responsive design with sophisticated analytics dashboard",
+      "Structured learning modules including vocabulary, grammar, and conversation practice",
+      "Database-driven content management with Alembic migrations"
     ],
     category: "Web App"
   },
   {
-    title: "Guild Game",
-    description: "Indie game combining adventurer management, dating sim, and dungeon crawling",
-    longDescription: "A unique indie game that blends multiple genres - manage a guild of adventurers, build relationships through dating sim mechanics, and explore dangerous dungeons. Built with modern game development tools and featuring hand-crafted pixel art.",
-    technologies: ["Unity", "C#", "Aseprite", "FMOD", "Steam SDK"],
-    status: "In Development",
+    title: "Virtual DJ Hand Controller",
+    description: "Computer vision-based DJ interface controlled entirely through hand gestures and webcam tracking",
+    longDescription: "An innovative application that transforms natural hand movements into real-time audio control parameters. Using MediaPipe for hand landmark detection and Pyo for audio processing, the system enables touchless DJ control through intuitive gestures. The interface maps hand distances to volume, pinch gestures to speed and pitch control, and hand twists to track navigation, creating a natural and immersive DJ experience.",
+    technologies: [
+      "Python 3.8+", "MediaPipe", "OpenCV", "Pyo Audio", 
+      "NumPy", "SciPy", "Computer Vision", "Real-time Processing"
+    ],
+    status: "Completed",
     links: {
-      github: "https://github.com/miles-hollifield/guild-game"
+      github: "https://github.com/miles-hollifield/VirtualDJ-HandController",
+      demo: "https://github.com/miles-hollifield/virtual-dj-hand-controller/blob/main/docs/demo_screenshot.png"
     },
     highlights: [
-      "Multi-genre gameplay combining management, RPG, and dating sim",
-      "Hand-crafted pixel art and animations",
-      "Dynamic relationship system affecting gameplay",
-      "Procedurally generated dungeon content"
+      "Real-time hand landmark detection and gesture recognition using MediaPipe",
+      "Advanced audio processing with pitch shifting, speed control, and volume manipulation",
+      "Intuitive gesture mapping: distance for volume, pinch for tempo/pitch, twist for tracks",
+      "Custom algorithms for hand twist detection using vector mathematics",
+      "Visual feedback system with on-screen parameter visualization",
+      "Robust gesture recognition with cooldown systems to prevent false triggers",
+      "Cross-platform compatibility with webcam integration",
+      "Mathematical audio transformations using frequency domain processing"
     ],
-    category: "Game"
+    category: "Tool"
   },
   {
     title: "Portfolio + Blog",
-    description: "Personal portfolio and blog built with modern web technologies",
-    longDescription: "This very website! A modern, responsive portfolio and blog built with Next.js 15 and the new App Router. Features MDX for blog posts, Tailwind CSS for styling, and TypeScript for type safety. Designed to be fast, accessible, and easy to maintain.",
-    technologies: ["Next.js 15", "TypeScript", "MDX", "Tailwind CSS", "React"],
+    description: "Modern portfolio website featuring interactive timeline, advanced blog system, and sophisticated UI/UX design",
+    longDescription: "A carefully crafted portfolio and blog platform showcasing modern web development practices. Built with Next.js 15's App Router, featuring an interactive slideshow timeline component, advanced MDX blog system with gray-matter frontmatter parsing, and a custom CSS theme with gradient animations and backdrop effects. The site demonstrates sophisticated component architecture, responsive design principles, and attention to user experience details.",
+    technologies: [
+      "Next.js 15", "TypeScript", "React 19", "MDX", "Tailwind CSS 4", 
+      "Gray-matter", "CSS Animations", "App Router", "next-mdx-remote"
+    ],
     status: "Live",
     links: {
       live: "https://miles-portfolio.vercel.app",
       github: "https://github.com/miles-hollifield/miles-portfolio-blog"
     },
     highlights: [
-      "Built with Next.js 15 App Router",
-      "MDX integration for rich blog content",
-      "Responsive design with Tailwind CSS",
-      "TypeScript for type safety and better DX"
+      "Interactive slideshow timeline component with smooth transitions and storytelling",
+      "Advanced MDX blog system with frontmatter parsing and dynamic routing", 
+      "Custom CSS theme system with gradient animations and backdrop effects",
+      "Sophisticated component architecture with TypeScript interfaces",
+      "Next.js 15 App Router with static generation and optimized performance",
+      "Responsive design with attention to accessibility and user experience",
+      "Advanced blog features: breadcrumbs, metadata, post navigation, and SEO optimization",
+      "Custom gradient animations and smooth hover effects throughout the interface"
     ],
     category: "Website"
-  },
-  {
-    title: "Japanese Learning Tools",
-    description: "Collection of utilities for Japanese language study",
-    longDescription: "A suite of small tools I've built to help with Japanese language learning, including kanji practice apps, vocabulary flashcards, and grammar reference tools. Each tool addresses specific challenges I've encountered in my own language learning journey.",
-    technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-    status: "Completed",
-    links: {
-      github: "https://github.com/miles-hollifield/japanese-tools"
-    },
-    highlights: [
-      "Multiple focused learning tools",
-      "Kanji stroke order practice",
-      "Vocabulary spaced repetition",
-      "Grammar pattern reference"
-    ],
-    category: "Tool"
   }
 ];
 
