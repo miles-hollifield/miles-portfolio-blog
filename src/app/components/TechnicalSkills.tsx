@@ -13,19 +13,28 @@ interface TechnicalSkillsProps {
 
 const defaultSkillCategories: SkillCategory[] = [
   {
-    title: "Languages & Frameworks",
-    skills: [
-      "HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL", 
-      "Java", "C++", "React", "FastAPI", "SvelteKit", "Node.js"
-    ]
+    title: "Languages",
+    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL", "Java", "C++"]
   },
   {
-    title: "Tools & Technologies", 
-    skills: [
-      "Git", "Docker", "Kubernetes", "Azure", "Azure Entra ID", "Vercel",
-      "Tailwind CSS", "Figma", "Postman", "Swagger/OpenAPI", "VS Code", 
-      "JWT", "SAP", "Salesforce"
-    ]
+    title: "Frameworks",
+    skills: ["React", "FastAPI", "SvelteKit", "Material UI", "Bootstrap", "Tailwind"]
+  },
+  {
+    title: "Databases",
+    skills: ["Microsoft SQL Server", "Vector Databases", "SQLAlchemy", "SQLModel"]
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["Azure (DevOps, Entra ID, Container Apps, Blob Storage)", "Docker", "Kubernetes", "CI/CD Pipelines"]
+  },
+  {
+    title: "Tools",
+    skills: ["Git", "Figma", "Postman", "Swagger/OpenAPI", "JWT Authentication"]
+  },
+  {
+    title: "Integrations",
+    skills: ["SAP", "Salesforce", "Azure OpenAI", "SharePoint", "Confluence"]
   }
 ];
 
