@@ -61,12 +61,12 @@ body {
 
 /* Selection styling */
 ::selection {
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: #3b82f6;
   color: white;
 }
 
 ::-moz-selection {
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: #3b82f6;
   color: white;
 }
 
@@ -305,12 +305,12 @@ body {
 
 /* Selection styling */
 ::selection {
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: #3b82f6;
   color: white;
 }
 
 ::-moz-selection {
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: #3b82f6;
   color: white;
 }
 
