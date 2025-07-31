@@ -1,53 +1,184 @@
 ---
-title: "Building Kakitori: An AI-Powered Japanese Grammar Practice App"
-date: "2025-07-15"
-description: "How I built a web app that generates personalized Japanese grammar drills using AI, and what I learned about language learning tools."
+title: "Building Kakitori: A Full-Stack Japanese Learning Platform with AI Integration"
+date: "2025-07-31"
+description: "Deep dive into building a comprehensive Japanese language learning platform featuring AI tutoring, kanji practice, and modern full-stack architecture."
 ---
 
-# Building Kakitori: An AI-Powered Japanese Grammar Practice App
+# Building Kakitori: A Full-Stack Japanese Learning Platform with AI Integration
 
-As someone studying both Computer Science and Japanese, I've always been fascinated by the intersection of technology and language learning. Traditional grammar drills can be repetitive and boring, so I decided to build something better: **Kakitori** (書き取り), an AI-powered web app that generates personalized Japanese grammar practice sentences.
+As a Computer Science student with a passion for Japanese language and culture, I wanted to create something more comprehensive than the typical grammar drill apps. **Kakitori** (書き取り) represents my vision of what modern language learning should look like: intelligent, adaptive, and built with cutting-edge technology.
 
-## The Problem with Traditional Grammar Practice
+## The Vision: Beyond Traditional Language Apps
 
-Most Japanese textbooks give you the same 10-15 example sentences for each grammar point. After drilling these a few times, you've memorized the specific examples rather than truly understanding the grammar pattern. This is where AI can make a real difference.
+Most language learning apps follow predictable patterns—flashcards, multiple choice questions, and linear lesson structures. While these have their place, they don't capture the complexity and nuance of actually learning Japanese. I wanted to build something that could:
 
-## How Kakitori Works
+- Provide **personalized AI tutoring** for real-time guidance
+- Offer **comprehensive kanji learning** with JLPT integration
+- Track **meaningful progress** beyond simple streak counters
+- Create an **immersive experience** that feels more like having a personal tutor
 
-Kakitori uses modern AI to generate fresh, contextually appropriate sentences for any grammar point you're studying. Here's the technical approach:
+## Technical Architecture: Modern Full-Stack Design
 
-- **Next.js** frontend with a clean, mobile-first interface
-- **OpenAI GPT-4** for generating grammatically correct, natural sentences
-- **Tailwind CSS** for responsive styling
-- **Vercel** for deployment and serverless functions
+### Frontend: React 19 with Material-UI
+The frontend leverages the latest React 19.1.0 with Vite 6.3.5 for lightning-fast development and builds. I chose Material-UI 7.1.1 for its comprehensive component library and excellent Japanese typography support—crucial for a language learning app.
 
-The app takes a Japanese grammar pattern (like て-form + います) and generates multiple unique sentences that use that pattern in different contexts - from everyday conversations to business situations.
+Key frontend technologies:
+- **Vite** for blazing-fast development and optimized builds
+- **Material-UI + Emotion** for consistent, accessible design
+- **React Router DOM 7.6.1** for seamless navigation
+- **Axios** for robust API communication
+- **Google OAuth integration** for frictionless authentication
 
-## Key Features
+### Backend: FastAPI with Modern Python
+The backend is built on FastAPI, chosen for its automatic API documentation, excellent performance, and developer experience. The architecture emphasizes scalability and maintainability:
 
-1. **Contextual Variety**: Sentences span different situations (restaurant, school, work, etc.)
-2. **Difficulty Scaling**: Adjust vocabulary complexity based on your level
-3. **Immediate Feedback**: Check your translations instantly
-4. **Progress Tracking**: See which patterns you've mastered
+```python
+# Example: AI Tutor endpoint structure
+@router.post("/chat", response_model=TutorResponse)
+async def chat_with_tutor(
+    request: TutorRequest, 
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+) -> TutorResponse:
+    """
+    Chat with the AI Japanese tutor.
+    Continues existing sessions or creates new ones.
+    """
+```
 
-## What I Learned
+Key backend technologies:
+- **FastAPI** with automatic OpenAPI documentation
+- **SQLAlchemy 2.0** for powerful ORM capabilities
+- **Alembic** for seamless database migrations
+- **Pydantic** for bulletproof data validation
+- **JWT + Google OAuth** for secure authentication
 
-Building Kakitori taught me several important lessons:
+### Infrastructure: Docker + PostgreSQL + Redis
+The entire development environment runs in Docker containers, ensuring consistency across different machines and deployment environments:
 
-- **AI prompt engineering** is crucial for consistent, quality output
-- **Japanese typography** presents unique challenges for web design
-- **Language learners** want tools that adapt to their specific needs
-- **User feedback** is essential for refining learning experiences
+- **PostgreSQL 15** for robust data persistence
+- **Redis 7** for session storage and caching
+- **Docker Compose** for orchestrating the multi-service architecture
+- **Health checks** and **persistent volumes** for reliability
 
-## Next Steps
+## Core Features: AI-Powered Learning Experience
 
-I'm currently working on adding features like:
-- Spaced repetition algorithms
-- Audio pronunciation practice
-- Integration with popular Japanese learning resources
+### 1. Intelligent AI Tutor
+The heart of Kakitori is its AI tutor, powered by both OpenAI and Anthropic APIs. Unlike simple chatbots, this system:
 
-Building tools for language learning combines my passions for technology and Japanese culture. It's rewarding to create something that helps others on their language journey while pushing my own technical skills forward.
+- **Maintains conversation context** across sessions
+- **Adapts to user proficiency** levels automatically
+- **Provides cultural context** alongside language instruction
+- **Offers real-time grammar corrections** and explanations
+
+### 2. Comprehensive Kanji Learning System
+Japanese kanji learning requires more than memorization. Our system includes:
+
+- **JLPT-aligned curriculum** from N5 to N1 levels
+- **Stroke order practice** with visual feedback
+- **Radical-based learning** for systematic understanding
+- **Spaced repetition algorithms** for optimal retention
+- **Progress analytics** showing mastery trends
+
+### 3. Structured Learning Modules
+The platform organizes content into logical progression paths:
+
+- **Vocabulary building** with contextual examples
+- **Grammar patterns** with AI-generated practice sentences  
+- **Conversation practice** with the AI tutor
+- **Reading comprehension** with graded texts
+- **Cultural insights** integrated throughout
+
+### 4. Analytics Dashboard
+Built with Material-UI components, the dashboard provides:
+
+- **Learning streak tracking** with meaningful metrics
+- **Proficiency progression** across different skills
+- **Time investment analysis** for goal setting
+- **Weak area identification** for focused practice
+
+## Technical Challenges and Solutions
+
+### Challenge 1: Japanese Text Rendering
+Japanese text presents unique challenges for web applications:
+
+**Solution:** Material-UI's typography system with custom font stacks optimized for Japanese characters. Careful attention to line height, character spacing, and responsive design ensures readability across devices.
+
+### Challenge 2: Real-time AI Integration
+Providing responsive AI tutoring while maintaining conversation context:
+
+**Solution:** Efficient session management with Redis caching and streaming responses. The system maintains conversation history while optimizing for response speed.
+
+### Challenge 3: Complex Database Relationships
+Japanese language data involves intricate relationships—kanji readings, grammar patterns, vocabulary connections:
+
+**Solution:** SQLAlchemy 2.0's advanced relationship mapping with careful database design. Alembic migrations ensure schema evolution without data loss.
+
+### Challenge 4: Development Environment Complexity
+Coordinating multiple services (frontend, backend, database, cache):
+
+**Solution:** Comprehensive Docker Compose setup with initialization scripts, health checks, and hot reload for both frontend and backend development.
+
+## Development Workflow: Optimized for Productivity
+
+The development setup prioritizes developer experience:
+
+```bash
+# Backend setup - complete environment in one command
+./init.sh  # Starts all services, runs migrations, seeds data
+
+# Frontend setup - standard Node.js workflow  
+npm install && npm run dev
+
+# Daily development
+./start.sh  # Quick startup for existing environment
+```
+
+## Lessons Learned
+
+### 1. AI Integration Complexity
+Integrating multiple AI providers (OpenAI, Anthropic) taught me the importance of:
+- **Fallback strategies** when services are unavailable
+- **Prompt engineering** for consistent, educational responses
+- **Context management** for maintaining conversation flow
+- **Rate limiting** and cost optimization
+
+### 2. Language Learning UX Design
+Building for language learners requires special consideration:
+- **Cultural sensitivity** in content and design choices
+- **Progressive disclosure** to avoid overwhelming beginners
+- **Multiple input methods** for different learning preferences
+- **Accessibility** for users with varying technical skills
+
+### 3. Full-Stack Architecture Decisions
+Managing a complex application stack highlighted:
+- **Service separation** benefits for scalability and maintenance
+- **Database design** importance for performance at scale
+- **Container orchestration** advantages for development consistency
+- **API design** impact on frontend development velocity
+
+## Future Roadmap
+
+The current version is just the beginning. Planned enhancements include:
+
+### Near-term Features
+- **Mobile app** using React Native for on-the-go learning
+- **Audio pronunciation** practice with speech recognition
+- **Collaborative features** for study groups and peer learning
+- **Offline mode** for learning without internet connection
+
+### Advanced Capabilities
+- **Computer vision** for handwriting practice feedback
+- **VR integration** for immersive cultural experiences
+- **Advanced analytics** with machine learning insights
+- **Teacher dashboard** for classroom use
+
+## Conclusion
+
+The journey of building Kakitori continues to teach me as much as the Japanese language itself—patience, attention to detail, and the value of consistent practice. Both endeavors remind me that the most rewarding accomplishments require time, dedication, and a willingness to embrace complexity.
+
+頑張って！(Ganbatte! - Good luck!)
 
 ---
 
-*Want to try Kakitori? Check it out at [your-app-link-here] or see the code on [GitHub](your-github-link).*
+*Interested in the technical implementation details? Check out the comprehensive setup guide in the repository, or feel free to reach out with questions about the architecture decisions and development process.*
