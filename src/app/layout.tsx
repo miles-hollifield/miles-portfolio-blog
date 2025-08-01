@@ -3,6 +3,7 @@ import "./globals.css";
 import "../styles/theme.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* Logo */}
               <Link href="/" className="flex items-center space-x-2 group">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm">M</span>
+                  <Image 
+                    src="/MileScript_logo.svg" 
+                    alt="MileScript Logo" 
+                    width={20} 
+                    height={20} 
+                    className="brightness-0 invert" 
+                  />
                 </div>
                 <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">MileScript</span>
               </Link>
@@ -68,7 +75,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="col-span-1 md:col-span-2">
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">M</span>
+                    <Image 
+                      src="/MileScript_logo.svg" 
+                      alt="MileScript Logo" 
+                      width={20} 
+                      height={20} 
+                      className="brightness-0 invert" 
+                    />
                   </div>
                   <span className="text-xl font-bold">MileScript</span>
                 </div>
