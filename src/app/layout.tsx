@@ -101,7 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li><FooterLink href="/about">About</FooterLink></li>
                   <li><FooterLink href="/blog">Blog</FooterLink></li>
                   <li><FooterLink href="/projects">Projects</FooterLink></li>
-                  <li><FooterLink href="mailto:mileshollifieldgfp@gmail.com">Contact</FooterLink></li>
+                  {/* <li><FooterLink href="mailto:mileshollifieldgfp@gmail.com">Contact</FooterLink></li> */}
                 </ul>
               </div>
 
