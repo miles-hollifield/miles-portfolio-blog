@@ -39,15 +39,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/blog">Blog</NavLink>
-                <a
-                  href="mailto:mileshollifieldgfp@gmail.com"
-                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Contact
-                </a>
+                <NavLink href="/contact">
+                  <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Contact
+                  </span>
+                </NavLink>
               </div>
 
               {/* Mobile menu button */}
@@ -101,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li><FooterLink href="/about">About</FooterLink></li>
                   <li><FooterLink href="/blog">Blog</FooterLink></li>
                   <li><FooterLink href="/projects">Projects</FooterLink></li>
-                  {/* <li><FooterLink href="mailto:mileshollifieldgfp@gmail.com">Contact</FooterLink></li> */}
+                  <li><FooterLink href="/contact">Contact</FooterLink></li>
                 </ul>
               </div>
 
