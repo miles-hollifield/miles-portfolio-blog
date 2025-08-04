@@ -27,31 +27,30 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      // For now, we'll simulate form submission
-      // In a real implementation, you'd send this to your backend API
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Create mailto link with form data for now
-      const subject = encodeURIComponent(`Contact Form: ${formData.reason}`);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        (formData.organization ? `Organization: ${formData.organization}\n` : '') +
-        `Reason: ${formData.reason}\n\n` +
-        `Message:\n${formData.message}`
-      );
-      
-      window.location.href = `mailto:mileshollifieldgfp@gmail.com?subject=${subject}&body=${body}`;
-      
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        organization: '',
-        reason: '',
-        message: ''
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    } catch {
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          organization: '',
+          reason: '',
+          message: ''
+        });
+      } else {
+        const errorData = await response.json();
+        console.error('Form submission error:', errorData);
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -144,7 +143,9 @@ export default function ContactPage() {
               
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <p className="text-green-800">Your message has been prepared! Your email client should open with the message ready to send.</p>
+                  <p className="text-green-800">
+                    <strong>Message sent successfully!</strong> Thank you for reaching out. I&apos;ll get back to you within 24-48 hours.
+                  </p>
                 </div>
               )}
 
