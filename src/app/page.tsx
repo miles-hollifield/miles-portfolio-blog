@@ -166,6 +166,205 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Social Navigation Section */}
+      <section className="bg-gray-900 border-t border-gray-800">
+        <div className="relative flex justify-center items-center px-4 sm:px-6 lg:px-8 py-6 sm:py-4 lg:py-6">
+          {/* Left Side - Design/Code/Engage */}
+          <div className="absolute left-4 sm:left-6 lg:left-8 text-gray-400 text-xs sm:text-sm">
+            {`// Design, Code,`}<br />Engage
+          </div>
+
+          {/* Center - Social Icons in slim pill */}
+          <div className="bg-gray-800 rounded-full border border-gray-700 px-4 py-2 sm:px-4 sm:py-2">
+            <div className="flex items-center space-x-3 sm:space-x-3">
+              <SocialIcon href="https://github.com/miles-hollifield" icon="github" />
+              <SocialIcon href="https://linkedin.com/in/mileshollifield" icon="linkedin" />
+            </div>
+          </div>
+
+          {/* Right Side - Email Icon */}
+          <div className="absolute right-4 sm:right-6 lg:right-8">
+            <a 
+              href="mailto:mileshollifieldgfp@gmail.com"
+              className="text-gray-400 hover:text-white transition-colors duration-300 bg-gray-800 hover:bg-gray-700 rounded-full border border-gray-700 hover:border-gray-600 flex items-center"
+            >
+              {/* Mobile: Icon only */}
+              <div className="block sm:hidden p-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              
+              {/* Desktop: Icon + Email text */}
+              <div className="hidden sm:flex items-center px-3 py-2 space-x-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="text-sm">mileshollifieldgfp@gmail.com</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        {/* Main Content Area */}
+        <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Left Column - Main Content */}
+            <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+              <div className="space-y-4 sm:space-y-6">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 leading-relaxed">
+                  Building intelligent systems that scale.<br className="hidden sm:block" />
+                  <span className="block sm:inline"> From machine learning models to enterprise</span><br className="hidden sm:block" />
+                  <span className="block sm:inline"> software architectures, I engineer solutions</span><br className="hidden sm:block" />
+                  <span className="block sm:inline"> that drive technological advancement.</span>
+                </p>
+              </div>
+
+              <div className="space-y-3 sm:space-y-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-400">
+                  AI-Powered Engineering<br />
+                  Scalable Software Solutions
+                </h2>
+              </div>
+
+              <div className="space-y-4 sm:space-y-6">
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl">
+                  Specialized in developing ML pipelines,<br className="hidden sm:block" />
+                  <span className="block sm:inline"> distributed systems, and intelligent applications</span><br className="hidden sm:block" />
+                  <span className="block sm:inline"> with a focus on performance, reliability,</span><br className="hidden sm:block" />
+                  <span className="block sm:inline"> and cutting-edge AI integration.</span>
+                </p>
+              </div>
+
+              <div className="pt-4 sm:pt-8">
+                <Link 
+                  href="/about" 
+                  className="inline-flex items-center text-white hover:text-green-400 transition-colors duration-300 text-base sm:text-lg font-medium"
+                >
+                  About Me 
+                  <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column - Side Content */}
+            <div className="space-y-6 sm:space-y-8">
+              <div className="text-gray-400 text-sm sm:text-base leading-relaxed">
+                My expertise in AI/ML algorithms, system<br className="hidden sm:block" />
+                <span className="block sm:inline"> architecture, and software engineering</span><br className="hidden sm:block" />
+                <span className="block sm:inline"> drives innovation in complex technical domains.</span>
+              </div>
+
+              {/* Lightning bolt icon */}
+              <div className="flex justify-center lg:justify-end">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Do Section */}
+      <section className="py-16 bg-gray-800/50">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">What I Do</h2>
+            <p className="text-lg text-gray-300">Specializing in intelligent software solutions and AI innovation</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Software Engineering */}
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Software Engineering</h3>
+              <p className="text-gray-300">Building modern web applications with React, Next.js, and TypeScript</p>
+            </div>
+
+            {/* AI & Machine Learning */}
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">AI & Machine Learning</h3>
+              <p className="text-gray-300">Developing intelligent systems with deep learning, NLP, and AI-powered solutions</p>
+            </div>
+
+            {/* Writing & Sharing */}
+            <div className="text-center group">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Writing & Sharing</h3>
+              <p className="text-gray-300">Documenting my journey and sharing insights through technical blog posts</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Work Preview */}
+      <section className="py-16 bg-gray-900">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Recent Work</h2>
+            <p className="text-lg text-gray-300">A glimpse into my latest projects and writings</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Featured Project */}
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group border border-gray-700">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-white">Kakitori</h3>
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium">AI-Powered</span>
+                </div>
+                <p className="text-gray-300 mb-4">
+                  An AI-powered Japanese grammar practice app that generates personalized sentence drills for effective learning.
+                </p>
+                <Link href="/projects" className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
+                  <span className="text-sm font-medium">View Project</span>
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Featured Blog Post */}
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group border border-gray-700">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-white">Latest Blog Post</h3>
+                  <span className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium">New</span>
+                </div>
+                <p className="text-gray-300 mb-4">
+                  My journey building AI-powered tools for Japanese language learning, including technical challenges and insights.
+                </p>
+                <Link href="/blog/building-kakitori" className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
+                  <span className="text-sm font-medium">Read Article</span>
+                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom Section - Social Navigation */}
       <section className="bg-gray-900 border-t border-gray-800">
         <div className="relative flex justify-center items-center px-4 sm:px-6 lg:px-8 py-6 sm:py-4 lg:py-6">
