@@ -22,14 +22,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex justify-between items-center h-16">
               {/* Logo - Left Side */}
               <Link href="/" className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Image 
-                    src="/MileScript_logo.svg" 
-                    alt="MileScript Logo" 
-                    width={20} 
-                    height={20} 
-                    className="" 
-                  />
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-sm">M</span>
                 </div>
                 <span className="text-xl font-bold text-white group-hover:text-gray-300 transition-colors">MileScript</span>
               </Link>
@@ -91,13 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="col-span-1 md:col-span-2">
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                    <Image 
-                      src="/MileScript_logo.svg" 
-                      alt="MileScript Logo" 
-                      width={20} 
-                      height={20} 
-                      className="brightness-0 invert" 
-                    />
+                    <span className="text-white font-bold text-sm">M</span>
                   </div>
                   <span className="text-xl font-bold">MileScript</span>
                 </div>

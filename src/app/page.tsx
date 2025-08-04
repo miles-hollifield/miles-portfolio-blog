@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
-      <section className="relative px-4 pt-8 sm:pt-12 sm:px-6 lg:px-8 lg:pt-20 min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-120px)] lg:min-h-[calc(100vh-160px)] max-h-none sm:max-h-[900px] flex items-center justify-center overflow-hidden">
+      <section className="relative px-4 pt-8 sm:pt-12 sm:px-6 lg:px-8 lg:pt-20 min-h-[calc(100vh-160px)] sm:min-h-[calc(100vh-160px)] lg:min-h-[calc(100vh-160px)] max-h-none sm:max-h-[900px] flex items-center justify-center overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Grid Pattern */}
@@ -170,25 +170,38 @@ export default function HomePage() {
       <section className="bg-gray-900 border-t border-gray-800">
         <div className="relative flex justify-center items-center px-4 sm:px-6 lg:px-8 py-6 sm:py-4 lg:py-6">
           {/* Left Side - Design/Code/Engage */}
-          <div className="absolute left-4 sm:left-6 lg:left-8 text-gray-400 text-xs sm:text-sm hidden lg:block">
+          <div className="absolute left-4 sm:left-6 lg:left-8 text-gray-400 text-xs sm:text-sm">
             {`// Design, Code,`}<br />Engage
           </div>
 
-          {/* Center - Social Icons in one big pill */}
-          <div className="bg-gray-800 rounded-full border border-gray-700 p-3 sm:p-2">
-            <div className="flex items-center space-x-2 sm:space-x-1">
+          {/* Center - Social Icons in slim pill */}
+          <div className="bg-gray-800 rounded-full border border-gray-700 px-4 py-2 sm:px-4 sm:py-2">
+            <div className="flex items-center space-x-3 sm:space-x-3">
               <SocialIcon href="https://github.com/miles-hollifield" icon="github" />
               <SocialIcon href="https://linkedin.com/in/mileshollifield" icon="linkedin" />
             </div>
           </div>
 
-          {/* Right Side - Email */}
-          <div className="absolute right-4 sm:right-6 lg:right-8 hidden lg:block">
+          {/* Right Side - Email Icon */}
+          <div className="absolute right-4 sm:right-6 lg:right-8">
             <a 
               href="mailto:mileshollifieldgfp@gmail.com"
-              className="text-gray-400 hover:text-white transition-colors duration-300 text-xs sm:text-sm bg-gray-800 hover:bg-gray-700 px-2 sm:px-3 py-1 sm:py-2 rounded-full border border-gray-700 hover:border-gray-600"
+              className="text-gray-400 hover:text-white transition-colors duration-300 bg-gray-800 hover:bg-gray-700 rounded-full border border-gray-700 hover:border-gray-600 flex items-center"
             >
-              mileshollifieldgfp@gmail.com
+              {/* Mobile: Icon only */}
+              <div className="block sm:hidden p-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              
+              {/* Desktop: Icon + Email text */}
+              <div className="hidden sm:flex items-center px-3 py-2 space-x-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="text-sm">mileshollifieldgfp@gmail.com</span>
+              </div>
             </a>
           </div>
         </div>
@@ -322,9 +335,9 @@ function SocialIcon({ href, icon }: { href: string; icon: string }) {
       href={href}
       target={href.startsWith('http') ? "_blank" : undefined}
       rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
-      className="text-gray-400 hover:text-white transition-colors duration-300 p-3 sm:p-2 rounded-full hover:bg-gray-700"
+      className="text-gray-400 hover:text-white transition-colors duration-300 p-1.5 sm:p-1 rounded-full hover:bg-gray-700"
     >
-      <div className="w-6 h-6 sm:w-6 sm:h-6">
+      <div className="w-5 h-5 sm:w-5 sm:h-5">
         {getIcon()}
       </div>
     </a>
