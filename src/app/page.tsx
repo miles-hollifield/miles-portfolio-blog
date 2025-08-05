@@ -47,20 +47,15 @@ export default function HomePage() {
 
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6">
-                <span className="text-white">Engineering </span>
+                <span className="text-white">Miles </span>
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                  Intelligent
-                </span>
-                <br />
-                <span className="text-white">Software </span>
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                  Solutions
+                  Hollifield
                 </span>
               </h1>
 
               {/* Description */}
               <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-                I&apos;m <span className="text-white font-semibold">Miles Hollifield</span>, a software engineer and AI specialist who builds 
+                Software engineer and AI specialist who builds 
                 <span className="text-cyan-400"> intelligent systems</span>, 
                 <span className="text-purple-400"> scalable architectures</span>, and 
                 <span className="text-yellow-400"> cutting-edge AI solutions</span> that solve complex problems.
