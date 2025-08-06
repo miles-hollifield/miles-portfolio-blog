@@ -3,9 +3,10 @@
 /* Page Layout Components */
 .page-container {
   min-height: calc(100vh - 4rem);
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: #111827;
   position: relative;
   overflow-x: hidden;
+  color: #ffffff;
 }
 
 .page-container::before {
@@ -29,10 +30,11 @@
 .page-hero {
   text-align: center;
   padding: 4rem 0 2rem;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+  background: rgba(31, 41, 55, 0.5);
   border-radius: 2rem;
   margin-bottom: 3rem;
   position: relative;
+  border: 1px solid #374151;
 }
 
 .page-hero::before {
@@ -51,7 +53,7 @@
 .page-hero h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #1f2937, #3b82f6, #8b5cf6);
+  background: linear-gradient(135deg, #ffffff, #3b82f6, #8b5cf6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -62,7 +64,7 @@
 
 .page-hero p {
   font-size: 1.25rem;
-  color: #6b7280;
+  color: #9ca3af;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -70,22 +72,22 @@
 
 /* Content Sections */
 .content-section {
-  background: white;
+  background: #1f2937;
   border-radius: 1.5rem;
   padding: 2.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  border: 1px solid #374151;
 }
 
 .content-section:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
 .content-section h2 {
-  color: #1f2937;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -104,7 +106,7 @@
 }
 
 .content-section p {
-  color: #4b5563;
+  color: #d1d5db;
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -117,11 +119,11 @@
 }
 
 .blog-card {
-  background: white;
+  background: #1f2937;
   border-radius: 1.5rem;
   padding: 2rem;
   transition: all 0.3s ease;
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  border: 1px solid #374151;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -145,20 +147,20 @@
 }
 
 .blog-card h3 {
-  color: #1f2937;
+  color: #ffffff;
   font-size: 1.375rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .blog-card .blog-meta {
-  color: #6b7280;
+  color: #9ca3af;
   font-size: 0.875rem;
   margin-bottom: 1rem;
 }
 
 .blog-card .blog-description {
-  color: #4b5563;
+  color: #d1d5db;
   line-height: 1.6;
 }
 
@@ -170,11 +172,11 @@
 }
 
 .project-card {
-  background: white;
+  background: #1f2937;
   border-radius: 1.5rem;
   padding: 2.5rem;
   transition: all 0.3s ease;
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  border: 1px solid #374151;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -207,7 +209,7 @@
 }
 
 .project-title {
-  color: #1f2937;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
@@ -242,7 +244,7 @@
 }
 
 .project-description {
-  color: #4b5563;
+  color: #d1d5db;
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -268,7 +270,7 @@
 }
 
 .project-features h4 {
-  color: #1f2937;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -280,7 +282,7 @@
 }
 
 .project-features li {
-  color: #4b5563;
+  color: #d1d5db;
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
   display: flex;
@@ -355,11 +357,11 @@
 }
 
 .about-card {
-  background: white;
+  background: #1f2937;
   border-radius: 1.5rem;
   padding: 2.5rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.1);
+  border: 1px solid #374151;
   transition: all 0.3s ease;
 }
 
@@ -369,7 +371,7 @@
 }
 
 .about-card h3 {
-  color: #1f2937;
+  color: #ffffff;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -430,12 +432,12 @@
 }
 
 .cta-button.primary {
-  background: white;
-  color: #3b82f6;
+  background: #374151;
+  color: #ffffff;
 }
 
 .cta-button.primary:hover {
-  background: #f8fafc;
+  background: #4b5563;
   transform: translateY(-1px);
 }
 
@@ -446,15 +448,15 @@
 }
 
 .cta-button.secondary:hover {
-  background: white;
-  color: #3b82f6;
+  background: #374151;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
 /* Prose Styling for Blog Content */
 .prose {
   max-width: none;
-  color: #1f2937;
+  color: #ffffff;
 }
 
 .prose h1 {
@@ -467,7 +469,7 @@
 }
 
 .prose h2 {
-  color: #1f2937;
+  color: #ffffff;
   margin-top: 2rem;
   margin-bottom: 1rem;
   position: relative;
@@ -486,7 +488,7 @@
 }
 
 .prose h3 {
-  color: #1f2937;
+  color: #ffffff;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
   font-weight: 600;
@@ -494,7 +496,7 @@
 }
 
 .prose h4 {
-  color: #1f2937;
+  color: #ffffff;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -504,12 +506,12 @@
 .prose p {
   margin-bottom: 1.25rem;
   line-height: 1.7;
-  color: #1f2937;
+  color: #ffffff;
   font-size: 1rem;
 }
 
 .prose strong {
-  color: #1f2937;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -534,7 +536,7 @@
 
 .prose code {
   background: #f3f4f6;
-  color: #1f2937;
+  color: #ffffff;
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
@@ -562,7 +564,7 @@
   padding-left: 1rem;
   margin: 1.5rem 0;
   font-style: italic;
-  color: #4b5563;
+  color: #d1d5db;
   background: #f8fafc;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -571,16 +573,16 @@
 .prose ul, .prose ol {
   margin: 1rem 0;
   padding-left: 1.5rem;
-  color: #1f2937;
+  color: #ffffff;
 }
 
 .prose li {
   margin: 0.5rem 0;
-  color: #1f2937;
+  color: #ffffff;
 }
 
 .prose li strong {
-  color: #1f2937;
+  color: #ffffff;
 }
 
 .prose table {
@@ -591,7 +593,7 @@
 
 .prose th {
   background: #f3f4f6;
-  color: #1f2937;
+  color: #ffffff;
   font-weight: 600;
   padding: 0.75rem;
   text-align: left;
@@ -599,7 +601,7 @@
 }
 
 .prose td {
-  color: #1f2937;
+  color: #ffffff;
   padding: 0.75rem;
   border: 1px solid #e5e7eb;
 }
