@@ -115,7 +115,7 @@ export default function HomePage() {
                       alt="Miles Hollifield Logo" 
                       width={200} 
                       height={200} 
-                      className="object-contain w-3/4 h-3/4" 
+                      className="object-contain w-full h-full" 
                     />
                   </div>
                 </div>
@@ -204,58 +204,80 @@ export default function HomePage() {
         {/* Main Content Area */}
         <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Left Column - Main Content */}
+            {/* Left Column - Mini About Me */}
             <div className="lg:col-span-2 space-y-6 sm:space-y-8">
               <div className="space-y-4 sm:space-y-6">
-                <p className="text-xl sm:text-2xl lg:text-3xl text-gray-200 leading-relaxed">
-                  Building intelligent systems that scale.<br className="hidden sm:block" />
-                  <span className="block sm:inline"> From machine learning models to enterprise</span><br className="hidden sm:block" />
-                  <span className="block sm:inline"> software architectures, I engineer solutions</span><br className="hidden sm:block" />
-                  <span className="block sm:inline"> that drive technological advancement.</span>
-                </p>
-              </div>
-
-              <div className="space-y-3 sm:space-y-4">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-400">
-                  AI-Powered Engineering<br />
-                  Scalable Software Solutions
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                  About Me
                 </h2>
+                <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
+                  I&apos;m a software engineer with a passion for AI and machine learning. 
+                  <span className="text-cyan-400"> My journey began with a curiosity about how things work</span>, 
+                  which led me to explore everything from web development to cutting-edge AI systems.
+                </p>
               </div>
 
               <div className="space-y-4 sm:space-y-6">
-                <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl">
-                  Specialized in developing ML pipelines,<br className="hidden sm:block" />
-                  <span className="block sm:inline"> distributed systems, and intelligent applications</span><br className="hidden sm:block" />
-                  <span className="block sm:inline"> with a focus on performance, reliability,</span><br className="hidden sm:block" />
-                  <span className="block sm:inline"> and cutting-edge AI integration.</span>
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                  When I&apos;m not coding, you&apos;ll find me studying Japanese, building language learning tools, 
+                  or writing about my experiences in tech. I believe in continuous learning and sharing knowledge 
+                  with the community.
                 </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-green-400">Currently Working On</h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-start">
+                    <span className="text-yellow-400 mr-2">▸</span>
+                    AI-powered Japanese language learning applications
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-400 mr-2">▸</span>
+                    Machine learning model optimization and deployment
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-400 mr-2">▸</span>
+                    Technical writing and knowledge sharing
+                  </li>
+                </ul>
               </div>
 
               <div className="pt-4 sm:pt-8">
                 <Link 
                   href="/about" 
-                  className="inline-flex items-center text-white hover:text-green-400 transition-colors duration-300 text-base sm:text-lg font-medium"
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 hover:scale-105"
                 >
-                  About Me 
-                  <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  Learn More About My Journey
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
               </div>
             </div>
 
-            {/* Right Column - Side Content */}
+            {/* Right Column - Quick Facts */}
             <div className="space-y-6 sm:space-y-8">
-              <div className="text-gray-400 text-sm sm:text-base leading-relaxed">
-                My expertise in AI/ML algorithms, system<br className="hidden sm:block" />
-                <span className="block sm:inline"> architecture, and software engineering</span><br className="hidden sm:block" />
-                <span className="block sm:inline"> drives innovation in complex technical domains.</span>
-              </div>
+              <div className="relative bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <h3 className="text-lg font-semibold text-white mb-4">Quick Facts</h3>
+                <div className="space-y-3">
+                  <div>
+                    <span className="text-gray-400 text-sm">Location</span>
+                    <p className="text-white">North Carolina, USA</p>
+                  </div>
+                  <div>
+                    <span className="text-gray-400 text-sm">Interests</span>
+                    <p className="text-white">AI/ML, Japanese Language, Tech Writing</p>
+                  </div>
+                  <div>
+                    <span className="text-gray-400 text-sm">Current Focus</span>
+                    <p className="text-white">Language Learning AI Applications</p>
+                  </div>
+                </div>
 
-              {/* Lightning bolt icon */}
-              <div className="flex justify-center lg:justify-end">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                {/* Lightning bolt icon - positioned to hover over top right */}
+                <div className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg z-10">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                   </svg>
                 </div>
