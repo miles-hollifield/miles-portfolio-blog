@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
-      <section className="relative px-4 pt-8 sm:pt-12 sm:px-6 lg:px-8 lg:pt-20 min-h-[calc(100vh-160px)] sm:min-h-[calc(100vh-160px)] lg:min-h-[calc(100vh-160px)] max-h-none sm:max-h-[900px] flex items-center justify-center overflow-hidden">
+      <section className="relative px-4 pt-6 sm:pt-8 sm:px-6 lg:px-8 lg:pt-12 min-h-[calc(100vh-160px)] sm:min-h-[calc(100vh-160px)] lg:min-h-[calc(100vh-160px)] max-h-none sm:max-h-[1000px] flex items-center justify-center overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Grid Pattern */}
@@ -17,7 +17,7 @@ export default function HomePage() {
           </div>
           
           {/* Floating Code Elements */}
-          <div className="absolute top-10 left-4 sm:top-20 sm:left-10 text-cyan-400/30 text-xs sm:text-sm font-mono transform rotate-12 hidden sm:block pointer-events-none">
+          {/* <div className="absolute top-10 left-4 sm:top-20 sm:left-10 text-cyan-400/30 text-xs sm:text-sm font-mono transform rotate-12 hidden sm:block pointer-events-none">
             {'import torch'}
           </div>
           <div className="absolute top-16 right-4 sm:top-32 sm:right-20 text-purple-400/30 text-xs font-mono transform -rotate-6 hidden sm:block pointer-events-none">
@@ -31,11 +31,11 @@ export default function HomePage() {
           </div>
           <div className="absolute top-20 left-16 sm:top-40 sm:left-32 text-red-400/30 text-xs font-mono transform rotate-6 hidden lg:block pointer-events-none">
             async/await
-          </div>
+          </div> */}
         </div>
 
-        <div className="mx-auto max-w-7xl w-full">
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <div className="mx-auto max-w-6xl w-full">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
             
             {/* Left Column - Main Content */}
             <div className="lg:col-span-8 text-left relative z-10 order-2 lg:order-1">
@@ -46,7 +46,7 @@ export default function HomePage() {
               </div> */}
 
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-4 sm:mb-6">
                 <span className="text-white">Miles </span>
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                   Hollifield
@@ -54,7 +54,7 @@ export default function HomePage() {
               </h1>
 
               {/* Description */}
-              <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 lg:mb-10 max-w-4xl leading-relaxed">
                 Software engineer and AI specialist who builds 
                 <span className="text-cyan-400"> intelligent systems</span>, 
                 <span className="text-purple-400"> scalable architectures</span>, and 
@@ -62,41 +62,41 @@ export default function HomePage() {
               </p>
 
               {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
-                <span className="px-2 sm:px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs sm:text-sm">
+              <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs sm:text-xs lg:text-sm font-medium">
                   Python & AI/ML
                 </span>
-                <span className="px-2 sm:px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-400 text-xs sm:text-sm">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-400 text-xs sm:text-xs lg:text-sm font-medium">
                   Deep Learning
                 </span>
-                <span className="px-2 sm:px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs sm:text-sm">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs sm:text-xs lg:text-sm font-medium">
                   Full-Stack Development
                 </span>
-                <span className="px-2 sm:px-3 py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-400 text-xs sm:text-sm">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-400 text-xs sm:text-xs lg:text-sm font-medium">
                   Cloud Architecture
                 </span>
-                <span className="px-2 sm:px-3 py-1 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 text-xs sm:text-sm">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 text-xs sm:text-xs lg:text-sm font-medium">
                   LLMs & NLP
                 </span>
-                <span className="px-2 sm:px-3 py-1 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs sm:text-sm">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs sm:text-xs lg:text-sm font-medium">
                   DevOps & MLOps
                 </span>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 relative z-10">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 relative z-10">
                 <Link 
                   href="/projects" 
-                  className="group inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 cursor-pointer relative z-10 text-sm sm:text-base"
+                  className="group inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 cursor-pointer relative z-10 text-xs sm:text-sm lg:text-base"
                 >
                   View My Work
-                  <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-2 w-3 h-3 lg:w-4 lg:h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="inline-flex items-center justify-center px-6 py-3 border border-gray-600 rounded-full text-gray-300 font-semibold hover:border-gray-400 hover:text-white transition-all duration-300 cursor-pointer relative z-10 text-sm sm:text-base"
+                  className="inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 border border-gray-600 rounded-full text-gray-300 font-semibold hover:border-gray-400 hover:text-white transition-all duration-300 cursor-pointer relative z-10 text-xs sm:text-sm lg:text-base"
                 >
                   Let&apos;s Talk
                 </Link>
@@ -104,10 +104,10 @@ export default function HomePage() {
             </div>
 
             {/* Right Column - Visual Elements */}
-            <div className="lg:col-span-4 relative order-1 lg:order-2 mb-8 lg:mb-0">
-              <div className="relative flex justify-center lg:justify-end">
+            <div className="lg:col-span-4 relative order-1 lg:order-2 mb-12 lg:mb-0">
+              <div className="relative flex justify-center lg:justify-flex-end">
                 {/* Main Profile Image with Glow */}
-                <div className="relative w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-72 lg:w-72 lg:h-80 xl:w-80 xl:h-96">
+                <div className="relative w-56 h-64 sm:w-64 sm:h-72 md:w-72 md:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-[420px] 2xl:w-[420px] 2xl:h-[480px]">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
                   
                   {/* Offset White Border */}
@@ -117,8 +117,8 @@ export default function HomePage() {
                     <Image 
                       src="/timeline-images/miles-nasa.jpg" 
                       alt="Miles Hollifield" 
-                      width={400} 
-                      height={480} 
+                      width={350} 
+                      height={420} 
                       className="object-cover w-full h-full" 
                       priority
                     />
