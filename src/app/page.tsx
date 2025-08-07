@@ -206,7 +206,7 @@ export default function HomePage() {
           {/* Right Side - Email Icon */}
           <div className="absolute right-4 sm:right-6 lg:right-8">
             <a 
-              href="mailto:mileshollifieldgfp@gmail.com"
+              href="mailto:fieldofmiles@gmail.com"
               className="text-gray-400 hover:text-white transition-colors duration-300 bg-gray-800 hover:bg-gray-700 rounded-full border border-gray-700 hover:border-gray-600 flex items-center"
             >
               {/* Mobile: Icon only */}
@@ -221,7 +221,7 @@ export default function HomePage() {
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-sm">mileshollifieldgfp@gmail.com</span>
+                <span className="text-sm">fieldofmiles@gmail.com</span>
               </div>
             </a>
           </div>
