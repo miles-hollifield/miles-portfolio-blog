@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <span className="text-xl font-bold">MileScript</span>
                 </div>
                 <p className="text-gray-400 mb-4 max-w-md">
-                  {`Software engineer, writer, and lifelong learner passionate about building thoughtful software and exploring the intersection of technology and culture.`}
+                  {`Software engineer and AI engineer building intelligent applications that bridge cutting-edge technology with practical solutions. Passionate about creating AI-powered tools and sharing knowledge through technical writing.`}
                 </p>
                 <div className="flex space-x-4">
                   <SocialLink href="https://github.com/miles-hollifield" icon="github" />
@@ -49,9 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div>
                 <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul className="space-y-2">
+                  <li><FooterLink href="/">Home</FooterLink></li>
                   <li><FooterLink href="/about">About</FooterLink></li>
-                  <li><FooterLink href="/blog">Blog</FooterLink></li>
                   <li><FooterLink href="/projects">Projects</FooterLink></li>
+                  <li><FooterLink href="/blog">Blog</FooterLink></li>
                   <li><FooterLink href="/contact">Contact</FooterLink></li>
                 </ul>
               </div>
@@ -61,8 +62,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
                 <ul className="space-y-2">
                   <li><FooterLink href="/blog/building-kakitori">Building Kakitori</FooterLink></li>
-                  <li><FooterLink href="/blog/japanese-learning-journey">Japanese Learning Journey</FooterLink></li>
-                  <li><FooterLink href="/blog/lessons-from-siemens-internship">Lessons from Siemens</FooterLink></li>
                 </ul>
               </div>
             </div>

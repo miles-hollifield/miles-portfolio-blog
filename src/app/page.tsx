@@ -92,31 +92,31 @@ export default function HomePage() {
 
               {/* Description */}
               <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 lg:mb-10 max-w-4xl leading-relaxed animate-fade-in-up animation-delay-400">
-                Software engineer and AI specialist who builds 
-                <span className="text-cyan-400"> intelligent systems</span>, 
-                <span className="text-purple-400"> scalable architectures</span>, and 
-                <span className="text-yellow-400"> cutting-edge AI solutions</span> that solve complex problems.
+                Software engineer and AI engineer who creates 
+                <span className="text-cyan-400"> intelligent applications</span>, 
+                <span className="text-purple-400"> robust software systems</span>, and 
+                <span className="text-yellow-400"> AI-powered solutions</span> that deliver real-world impact.
               </p>
 
               {/* Skills Tags */}
               <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up animation-delay-600">
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-blue-500/30 hover:border-blue-400 hover:text-blue-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300">
-                  Python & AI/ML
+                  Python & Web Development
                 </span>
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-purple-500/30 hover:border-purple-400 hover:text-purple-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
-                  Deep Learning
+                  AI Integration
                 </span>
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-green-500/30 hover:border-green-400 hover:text-green-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300">
                   Full-Stack Development
                 </span>
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-yellow-500/30 hover:border-yellow-400 hover:text-yellow-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300">
-                  Cloud Architecture
+                  Cloud & DevOps
                 </span>
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-red-500/30 hover:border-red-400 hover:text-red-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 transition-all duration-300">
                   LLMs & NLP
                 </span>
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-cyan-500/30 hover:border-cyan-400 hover:text-cyan-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
-                  DevOps & MLOps
+                  API Development
                 </span>
               </div>
 
@@ -239,17 +239,17 @@ export default function HomePage() {
                   About Me
                 </h2>
                 <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
-                  I&apos;m a software engineer with a passion for AI and machine learning. 
-                  <span className="text-cyan-400"> My journey began with a curiosity about how things work</span>, 
-                  which led me to explore everything from web development to cutting-edge AI systems.
+                  I&apos;m a software engineer with a passion for building AI-powered applications. 
+                  <span className="text-cyan-400"> My journey combines traditional software development with modern AI capabilities</span>, 
+                  creating solutions that bridge cutting-edge technology with practical user needs.
                 </p>
               </div>
 
               <div className="space-y-4 sm:space-y-6">
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  When I&apos;m not coding, you&apos;ll find me studying Japanese, building language learning tools, 
-                  or writing about my experiences in tech. I believe in continuous learning and sharing knowledge 
-                  with the community.
+                  When I&apos;m not coding, you&apos;ll find me studying Japanese, building AI-enhanced tools, 
+                  or writing about my experiences integrating AI into real-world applications. I believe in practical innovation 
+                  and creating technology that genuinely improves people&apos;s lives.
                 </p>
               </div>
 
@@ -262,11 +262,11 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-yellow-400 mr-2">▸</span>
-                    Machine learning model optimization and deployment
+                    Integrating LLMs into practical software solutions
                   </li>
                   <li className="flex items-start">
                     <span className="text-yellow-400 mr-2">▸</span>
-                    Technical writing and knowledge sharing
+                    Building scalable web applications with AI features
                   </li>
                 </ul>
               </div>
@@ -288,26 +288,26 @@ export default function HomePage() {
             <div className={`space-y-6 sm:space-y-8 transition-all duration-1000 delay-200 ${
               aboutMeVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}>
-              <div className="relative bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                <h3 className="text-lg font-semibold text-white mb-4">Quick Facts</h3>
+              <div className="relative bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-yellow-500/50 hover:bg-gray-800/70 transition-all duration-300 group hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25">
+                <h3 className="text-lg font-semibold text-white mb-4 group-hover:text-yellow-400 transition-colors">Quick Facts</h3>
                 <div className="space-y-3">
-                  <div>
+                  <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
                     <span className="text-gray-400 text-sm">Location</span>
-                    <p className="text-white">North Carolina, USA</p>
+                    <p className="text-white group-hover:text-gray-100">North Carolina, USA</p>
                   </div>
-                  <div>
+                  <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
                     <span className="text-gray-400 text-sm">Interests</span>
-                    <p className="text-white">AI/ML, Japanese Language, Tech Writing</p>
+                    <p className="text-white group-hover:text-gray-100">AI Applications, Japanese Language, Software Architecture</p>
                   </div>
-                  <div>
+                  <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
                     <span className="text-gray-400 text-sm">Current Focus</span>
-                    <p className="text-white">Language Learning AI Applications</p>
+                    <p className="text-white group-hover:text-gray-100">AI-Enhanced Web Applications</p>
                   </div>
                 </div>
 
                 {/* Lightning bolt icon - positioned to hover over top right */}
-                <div className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg z-10">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                <div className="absolute -top-3 -right-3 w-16 h-16 sm:w-20 sm:h-20 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg z-10 group-hover:scale-110 group-hover:shadow-xl group-hover:shadow-yellow-500/50 transition-all duration-300">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gray-900 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                   </svg>
                 </div>
@@ -331,18 +331,18 @@ export default function HomePage() {
                 <h2 className="text-3xl font-bold text-white">What I Do</h2>
                 <div className="space-y-4">
                   <p className="text-lg text-gray-300 leading-relaxed">
-                    I create intelligent software solutions that bridge cutting-edge technology with real-world applications, 
-                    combining technical expertise with creative problem-solving.
+                    I create intelligent software solutions that combine robust engineering with practical AI capabilities, 
+                    building applications that understand and adapt to user needs.
                   </p>
                   
                   <p className="text-base text-gray-400 leading-relaxed">
-                    From scalable web applications to AI-powered systems, I build technology that makes a genuine impact. 
-                    Whether crafting clean code or implementing machine learning models, I focus on solutions that solve meaningful problems.
+                    From responsive web applications to AI-powered tools, I focus on creating technology that solves real problems. 
+                    My approach blends traditional software engineering principles with modern AI integration techniques.
                   </p>
                   
                   <p className="text-base text-gray-400 leading-relaxed">
-                    My work spans the full spectrum of modern development – frontend experiences, backend systems, and AI applications. 
-                    I believe in continuous learning and sharing knowledge with the developer community.
+                    I specialize in full-stack development, API design, and incorporating AI features like natural language processing 
+                    and intelligent automation into everyday applications. I believe in building software that&apos;s both powerful and accessible.
                   </p>
                 </div>
                 
@@ -377,8 +377,8 @@ export default function HomePage() {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Software Engineering</h3>
                     <p className="text-gray-300 mb-4 leading-relaxed">
-                      Building scalable, maintainable web applications using modern frameworks and best practices. 
-                      I focus on creating clean, efficient code that solves real problems and delivers exceptional user experiences.
+                      Building scalable, maintainable applications using modern frameworks and best practices. 
+                      I focus on creating robust software architectures that deliver exceptional user experiences and solve real-world problems.
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">React & Next.js</span>
@@ -401,14 +401,14 @@ export default function HomePage() {
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">AI Engineering</h3>
                     <p className="text-gray-300 mb-4 leading-relaxed">
-                      Developing intelligent systems that leverage machine learning, natural language processing, and AI to create 
-                      applications that understand, learn, and adapt to user needs.
+                      Integrating artificial intelligence into practical applications that enhance user experiences. 
+                      I work with LLMs, NLP, and AI APIs to create intelligent features that add genuine value to software products.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">NLP & LLMs</span>
-                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">TensorFlow</span>
-                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">PyTorch</span>
+                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">LLM Integration</span>
                       <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">OpenAI APIs</span>
+                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">NLP Applications</span>
+                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">AI Product Development</span>
                     </div>
                   </div>
                 </div>
@@ -473,13 +473,13 @@ export default function HomePage() {
             recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
           }`}>
             {/* Featured Project */}
-            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group border border-gray-700">
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border border-gray-700 hover:border-blue-500/50 hover:scale-105">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white">Kakitori</h3>
-                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium">AI-Powered</span>
+                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Kakitori</h3>
+                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium group-hover:bg-blue-500/30 group-hover:border-blue-400 group-hover:text-blue-300 transition-all duration-300">AI-Powered</span>
                 </div>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
                   An AI-powered Japanese grammar practice app that generates personalized sentence drills for effective learning.
                 </p>
                 <Link href="/projects" className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
@@ -492,13 +492,13 @@ export default function HomePage() {
             </div>
 
             {/* Featured Blog Post */}
-            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group border border-gray-700">
+            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300 group border border-gray-700 hover:border-green-500/50 hover:scale-105">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white">Latest Blog Post</h3>
-                  <span className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium">New</span>
+                  <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">Latest Blog Post</h3>
+                  <span className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium group-hover:bg-green-500/30 group-hover:border-green-400 group-hover:text-green-300 transition-all duration-300">New</span>
                 </div>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
                   My journey building AI-powered tools for Japanese language learning, including technical challenges and insights.
                 </p>
                 <Link href="/blog/building-kakitori" className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
