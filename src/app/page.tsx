@@ -21,7 +21,7 @@ export default function HomePage() {
             setVisible(true);
           }
         },
-        { threshold: 0.4, rootMargin: "-25% 0px" }
+        { threshold: 0.3, rootMargin: "-15% 0px" }
       );
     };
 
@@ -136,7 +136,7 @@ export default function HomePage() {
                   
                   <div className="relative w-full h-full rounded-xl overflow-hidden border-1 backdrop-blur-sm bg-gray-800/50 group-hover:shadow-2xl group-hover:shadow-purple-500/20 transition-all duration-500">
                     <Image 
-                      src="/timeline-images/miles-nasa.jpg" 
+                      src="/timeline-images/miles-2021.jpg" 
                       alt="Miles Hollifield" 
                       width={350} 
                       height={420} 
@@ -192,7 +192,7 @@ export default function HomePage() {
         <div className="relative flex justify-center items-center px-4 sm:px-6 lg:px-8 py-6 sm:py-4 lg:py-6">
           {/* Left Side - Design/Code/Engage */}
           <div className="absolute left-4 sm:left-6 lg:left-8 text-gray-400 text-xs sm:text-sm">
-            {`// Design, Code,`}<br />Engage
+            {`// Design, Code,`}<br />Deploy
           </div>
 
           {/* Center - Social Icons in slim pill */}
