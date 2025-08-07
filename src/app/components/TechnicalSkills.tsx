@@ -17,24 +17,24 @@ const defaultSkillCategories: SkillCategory[] = [
     skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL", "Java", "C++"]
   },
   {
-    title: "Frameworks",
-    skills: ["React", "FastAPI", "SvelteKit", "Material UI", "Bootstrap", "Tailwind"]
+    title: "Frameworks & Libraries",
+    skills: ["React", "FastAPI", "SvelteKit", "Material UI", "Bootstrap", "Tailwind", "Next.js"]
+  },
+  {
+    title: "AI & Data",
+    skills: ["Azure OpenAI", "LangChain", "Vector Databases", "Prompt Engineering", "AI System Integration"]
   },
   {
     title: "Databases",
-    skills: ["Microsoft SQL Server", "Vector Databases", "SQLAlchemy", "SQLModel"]
+    skills: ["Microsoft SQL Server", "Vector Databases", "SQLAlchemy", "SQLModel", "Redis"]
   },
   {
     title: "Cloud & DevOps",
     skills: ["Azure (DevOps, Entra ID, Container Apps, Blob Storage)", "Docker", "Kubernetes", "CI/CD Pipelines"]
   },
   {
-    title: "Tools",
-    skills: ["Git", "Figma", "Postman", "Swagger/OpenAPI", "JWT Authentication"]
-  },
-  {
-    title: "Integrations",
-    skills: ["SAP", "Salesforce", "Azure OpenAI", "SharePoint", "Confluence"]
+    title: "Tools & Integrations",
+    skills: ["Git", "Figma", "Postman", "Swagger/OpenAPI", "JWT Authentication", "SAP", "Salesforce", "SharePoint"]
   }
 ];
 

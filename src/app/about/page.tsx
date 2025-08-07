@@ -7,7 +7,7 @@ import Education from "../components/Education";
 import Introduction from "../components/Introduction";
 import TechnicalSkills from "@/app/components/TechnicalSkills";
 import InterestsPassions from "@/app/components/InterestsPassions";
-import FunFacts from "@/app/components/FunFacts";
+// import FunFacts from "@/app/components/FunFacts";
 import PersonalPhilosophy from "@/app/components/PersonalPhilosophy";
 import CTASection from "@/app/components/CTASection";
 
@@ -136,7 +136,7 @@ export default function AboutPage() {
         >
           <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>About Me</h1>
           <p>
-            {`Get to know more about my journey, interests, and what drives me as a developer and lifelong learner.`}
+            {`Get to know more about my journey as a Software Engineer and AI Engineer, my passion for building intelligent solutions, and what drives me to create meaningful technology.`}
           </p>
         </div>
 
@@ -188,12 +188,12 @@ export default function AboutPage() {
             >
               Philosophy
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection('fun-facts')}
               className="px-4 py-2 text-sm bg-pink-500/20 border border-pink-500/30 rounded-full text-pink-300 hover:bg-pink-500/30 hover:border-pink-400 hover:text-pink-200 transition-all duration-300"
             >
               Fun Facts
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -281,7 +281,7 @@ export default function AboutPage() {
           </div>
 
           {/* Fun Facts */}
-          <div 
+          {/* <div 
             id="fun-facts"
             ref={funFactsRef}
             className={`transition-all duration-1000 delay-700 ${
@@ -289,7 +289,7 @@ export default function AboutPage() {
             }`}
           >
             <FunFacts />
-          </div>
+          </div> */}
 
           {/* Call to Action */}
           <div 

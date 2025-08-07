@@ -13,20 +13,24 @@ interface InterestsPassionsProps {
 
 const defaultInterests: Interest[] = [
   {
+    title: "AI System Design",
+    description: "Designing and implementing AI-powered software solutions that solve real problems. Focused on integrating AI capabilities into traditional software architectures for enhanced user experiences."
+  },
+  {
+    title: "Full-Stack Development",
+    description: "Building end-to-end software solutions from responsive frontends to scalable backend systems. Passionate about creating seamless user experiences backed by robust architecture."
+  },
+  {
     title: "Japanese Language & Culture",
     description: "Five years of studying Japanese, from anime enthusiasm to academic pursuit. Currently working toward N2 proficiency and planning to study abroad in Japan."
   },
   {
-    title: "Game Development",
-    description: "Creating indie games that blend storytelling with gameplay mechanics. Currently developing a guild management game with dating sim elements."
+    title: "Game Development & Interactive Media",
+    description: "Creating indie games and interactive experiences that blend storytelling with innovative gameplay mechanics. Currently developing a guild management game with dating sim elements."
   },
   {
-    title: "AI & Language Learning",
-    description: "Exploring how AI can make language learning more personalized and effective. Building tools that adapt to individual learning styles and needs."
-  },
-  {
-    title: "Writing & Documentation",
-    description: "Passionate about clear technical writing and knowledge sharing. I believe good documentation is as important as good code."
+    title: "Educational Technology",
+    description: "Building software tools that make learning more personalized and effective, particularly in language learning. Combining AI with educational principles to create adaptive learning experiences."
   }
 ];
 
