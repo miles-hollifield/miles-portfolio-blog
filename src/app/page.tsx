@@ -382,7 +382,7 @@ export default function HomePage() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">React & Next.js</span>
-                      <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">TypeScript</span>
+                      <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">JavaScript/TypeScript</span>
                       <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">Node.js</span>
                       <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">Python</span>
                     </div>
@@ -414,7 +414,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Game Industry & Technical Writing */}
+              {/* Game Industry & Occasional Writing */}
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Game Industry Enthusiast */}
                 <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 group">
@@ -429,13 +429,13 @@ export default function HomePage() {
                       Passionate about interactive entertainment, game development, and industry trends.
                     </p>
                     <div className="flex flex-wrap gap-1 justify-center">
-                      <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Unity</span>
+                      <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Unreal Engine</span>
                       <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Game Design</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Technical Writing */}
+                {/* Occasional Writer */}
                 <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-orange-500/50 transition-all duration-300 group">
                   <div className="text-center">
                     <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg group-hover:scale-110 transition-transform duration-300 mb-4">
@@ -443,13 +443,13 @@ export default function HomePage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                       </svg>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Technical Writing</h4>
+                    <h4 className="text-lg font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Occasional Writer</h4>
                     <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                      Documenting journeys and sharing insights through technical articles and tutorials.
+                      Writing about tech, dev logs, life experiences, how-to guides, and general thoughts as inspiration strikes.
                     </p>
                     <div className="flex flex-wrap gap-1 justify-center">
-                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Tutorials</span>
-                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Documentation</span>
+                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Dev Logs</span>
+                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">How-to Guides</span>
                     </div>
                   </div>
                 </div>
