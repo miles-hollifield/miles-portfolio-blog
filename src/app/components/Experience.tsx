@@ -74,7 +74,7 @@ export default function Experience({
 }: ExperienceProps) {
   return (
     <div className="about-card">
-      <h3 className="flex items-center gap-3 text-xl font-bold text-gray-900 mb-6">
+      <h3 className="flex items-center gap-3 text-xl font-bold text-white mb-6">
         <div className="icon">
           <svg
             className="w-6 h-6"
@@ -97,46 +97,46 @@ export default function Experience({
         {experiences.map((exp, index) => (
           <div key={`exp-${index}`} className="relative">
             {/* Timeline indicator */}
-            {index < experiences.length - 1 && (
+            {index < experiences.length && (
               <div className="absolute left-0 top-8 w-px h-full bg-gradient-to-b from-blue-200 to-transparent ml-2"></div>
             )}
             
             <div className="relative pl-8">
               {/* Timeline dot */}
-              <div className="absolute left-0 top-2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-md"></div>
+              <div className="absolute left-0 top-2 w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-800 shadow-md"></div>
               
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 border border-blue-100">
+              <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
                 {/* Header */}
                 <div className="mb-4">
-                  <h4 className="text-lg font-bold text-gray-900 mb-1">
+                  <h4 className="text-lg font-bold text-white mb-1">
                     {exp.title}
                   </h4>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600">
-                    <span className="font-medium">{exp.company}</span>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-400">
+                    <span className="font-medium text-gray-200">{exp.company}</span>
                     <span className="hidden sm:inline">•</span>
                     <span>{exp.period}</span>
                     {exp.location && (
                       <>
                         <span className="hidden sm:inline">•</span>
-                        <span className="text-gray-500">{exp.location}</span>
+                        <span className="text-gray-400">{exp.location}</span>
                       </>
                     )}
                   </div>
                 </div>
                 
                 {/* Description */}
-                <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {exp.description}
                 </p>
                 
                 {/* Achievements */}
                 {exp.achievements && (
                   <div>
-                    <h5 className="text-sm font-semibold text-gray-900 mb-3">Key Achievements:</h5>
+                    <h5 className="text-sm font-semibold text-white mb-3">Key Achievements:</h5>
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start gap-3 text-sm text-gray-700">
-                          <svg className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <li key={achIndex} className="flex items-start gap-3 text-sm text-gray-300">
+                          <svg className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           <span className="leading-relaxed">{achievement}</span>

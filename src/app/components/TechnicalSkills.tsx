@@ -64,7 +64,7 @@ export default function TechnicalSkills({
       <div className="space-y-4">
         {skillCategories.map((category, index) => (
           <div key={index}>
-            <h4 className="font-semibold text-gray-900 mb-2">
+            <h4 className="font-semibold text-white mb-2">
               {category.title}
             </h4>
             <div className="flex flex-wrap gap-2">

@@ -60,8 +60,8 @@ export default function FunFacts({
       <ul className="space-y-2">
         {facts.map((fact, index) => (
           <li key={index} className="flex items-start">
-            <span className="text-blue-500 mr-2">{fact.emoji}</span>
-            <span className="text-gray-700 text-sm">{fact.text}</span>
+            <span className="text-blue-400 mr-2">{fact.emoji}</span>
+            <span className="text-gray-300 text-sm">{fact.text}</span>
           </li>
         ))}
       </ul>

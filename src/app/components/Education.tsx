@@ -77,7 +77,7 @@ export default function Education({
 }: EducationProps) {
   return (
     <div className="about-card">
-      <h3 className="flex items-center gap-3 text-xl font-bold text-gray-900 mb-6">
+      <h3 className="flex items-center gap-3 text-xl font-bold text-white mb-6">
         <div className="icon">
           <svg
             className="w-6 h-6"
@@ -100,7 +100,7 @@ export default function Education({
         {education.map((edu, index) => (
           <div key={`edu-${index}`} className="relative">
             {/* Timeline indicator */}
-            {index < education.length - 1 && (
+            {index < education.length && (
               <div className="absolute left-0 top-8 w-px h-full bg-gradient-to-b from-green-200 to-transparent ml-2"></div>
             )}
             
@@ -108,15 +108,15 @@ export default function Education({
               {/* Timeline dot */}
               <div className="absolute left-0 top-2 w-4 h-4 bg-green-600 rounded-full border-4 border-white shadow-md"></div>
               
-              <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 border border-green-100">
+              <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700">
                 {/* Header */}
                 <div className="mb-4">
-                  <h4 className="text-lg font-bold text-gray-900 mb-1">
+                  <h4 className="text-lg font-bold text-white mb-1">
                     {edu.institution}
                   </h4>
                   <div className="flex flex-col gap-1 text-sm">
-                    <span className="font-medium text-gray-800">{edu.degree}</span>
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-600">
+                    <span className="font-medium text-gray-200">{edu.degree}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-400">
                       <span>{edu.period}</span>
                       {edu.location && (
                         <>
@@ -127,7 +127,7 @@ export default function Education({
                       {edu.gpa && (
                         <>
                           <span className="hidden sm:inline">•</span>
-                          <span className="font-medium text-green-700">GPA: {edu.gpa}</span>
+                          <span className="font-medium text-green-400">GPA: {edu.gpa}</span>
                         </>
                       )}
                     </div>
@@ -135,18 +135,18 @@ export default function Education({
                 </div>
                 
                 {/* Description */}
-                <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {edu.description}
                 </p>
                 
                 {/* Achievements */}
                 {edu.achievements && edu.achievements.length > 0 && (
                   <div className="mb-4">
-                    <h5 className="text-sm font-semibold text-gray-900 mb-3">Key Achievements:</h5>
+                    <h5 className="text-sm font-semibold text-white mb-3">Key Achievements:</h5>
                     <ul className="space-y-2">
                       {edu.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start gap-3 text-sm text-gray-700">
-                          <svg className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <li key={achIndex} className="flex items-start gap-3 text-sm text-gray-300">
+                          <svg className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                           </svg>
                           <span className="leading-relaxed">{achievement}</span>
@@ -159,12 +159,12 @@ export default function Education({
                 {/* Activities */}
                 {edu.activities && edu.activities.length > 0 && (
                   <div>
-                    <h5 className="text-sm font-semibold text-gray-900 mb-3">Activities & Organizations:</h5>
+                    <h5 className="text-sm font-semibold text-white mb-3">Activities & Organizations:</h5>
                     <div className="flex flex-wrap gap-2">
                       {edu.activities.map((activity, actIndex) => (
                         <span 
                           key={actIndex}
-                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 border border-blue-500/30 text-blue-300"
                         >
                           {activity}
                         </span>

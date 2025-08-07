@@ -76,13 +76,13 @@ export default function ExperienceEducation({
         {/* Experience Section */}
         {experiences.map((exp, index) => (
           <div key={`exp-${index}`}>
-            <h4 className="font-semibold text-gray-900">
+            <h4 className="font-semibold text-white">
               {exp.title}
             </h4>
-            <p className="text-sm text-gray-600 mb-2">
+            <p className="text-sm text-gray-400 mb-2">
               {exp.company} • {exp.period}
             </p>
-            <p className="text-gray-700 text-sm">
+            <p className="text-gray-300 text-sm">
               {exp.description}
             </p>
           </div>
@@ -91,11 +91,11 @@ export default function ExperienceEducation({
         {/* Education Section */}
         {education.map((edu, index) => (
           <div key={`edu-${index}`}>
-            <h4 className="font-semibold text-gray-900">
+            <h4 className="font-semibold text-white">
               {edu.institution}
             </h4>
-            <p className="text-sm text-gray-600 mb-2">{edu.period}</p>
-            <p className="text-gray-700 text-sm">
+            <p className="text-sm text-gray-400 mb-2">{edu.period}</p>
+            <p className="text-gray-300 text-sm">
               {edu.description}
             </p>
           </div>

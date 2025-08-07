@@ -99,29 +99,29 @@ export default function SlideshowTimeline() {
 
   return (
     <div className="about-card">
-      <h3 className="flex items-center gap-2 text-xl font-bold text-gray-900 mb-6">
+      <h3 className="flex items-center gap-2 text-xl font-bold text-white mb-6">
         <div className="icon">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
         My Journey in Stories
-        <span className="text-sm font-normal text-gray-600 ml-2">
+        <span className="text-sm font-normal text-gray-400 ml-2">
           — {currentSlide + 1} of {totalSlides}
         </span>
       </h3>
 
       {/* Main slideshow area */}
-      <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg p-8 h-[600px] overflow-hidden">
+      <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-8 h-[600px] overflow-hidden border border-gray-700">
         {/* Background decoration */}
         <div className={`absolute top-0 right-0 w-32 h-32 ${currentStory.color} opacity-10 rounded-full blur-2xl transform translate-x-8 -translate-y-8`}></div>
         
         {/* Left Navigation Button */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-lg hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group border border-gray-200"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-gray-800/95 hover:bg-gray-700 shadow-lg hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group border border-gray-600"
         >
-          <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -129,9 +129,9 @@ export default function SlideshowTimeline() {
         {/* Right Navigation Button */}
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-white/95 hover:bg-white shadow-lg hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group border border-gray-200"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-14 h-14 bg-gray-800/95 hover:bg-gray-700 shadow-lg hover:shadow-2xl rounded-full flex items-center justify-center transition-all duration-300 group border border-gray-600"
         >
-          <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -158,22 +158,22 @@ export default function SlideshowTimeline() {
             </div>
 
             {/* Title and subtitle */}
-            <h4 className="text-2xl font-bold text-gray-900 mb-2">{currentStory.title}</h4>
-            <p className="text-lg text-gray-600 mb-6">{currentStory.subtitle}</p>
+            <h4 className="text-2xl font-bold text-white mb-2">{currentStory.title}</h4>
+            <p className="text-lg text-gray-300 mb-6">{currentStory.subtitle}</p>
 
             {/* Story content */}
-            <p className="text-gray-700 leading-relaxed mb-6 text-base">
+            <p className="text-gray-300 leading-relaxed mb-6 text-base">
               {currentStory.story}
             </p>
 
             {/* Highlights */}
             <div className="space-y-3">
-              <h5 className="font-semibold text-gray-900">Key Highlights:</h5>
+              <h5 className="font-semibold text-white">Key Highlights:</h5>
               <div className="grid grid-cols-2 gap-2">
                 {currentStory.highlights.map((highlight, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <div className={`w-2 h-2 ${currentStory.color} rounded-full flex-shrink-0`}></div>
-                    <span className="text-sm text-gray-700">{highlight}</span>
+                    <span className="text-sm text-gray-300">{highlight}</span>
                   </div>
                 ))}
               </div>
@@ -231,7 +231,7 @@ export default function SlideshowTimeline() {
 
       {/* Auto-play option (optional) */}
       <div className="mt-4 text-center">
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-gray-400">
           Click the dots or use the arrows to navigate • {totalSlides} stories total
         </p>
       </div>

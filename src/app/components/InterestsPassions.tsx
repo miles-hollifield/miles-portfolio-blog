@@ -56,10 +56,10 @@ export default function InterestsPassions({
       <div className="space-y-3">
         {interests.map((interest, index) => (
           <div key={index}>
-            <h4 className="font-semibold text-gray-900">
+            <h4 className="font-semibold text-white">
               {interest.title}
             </h4>
-            <p className="text-gray-700 text-sm">
+            <p className="text-gray-300 text-sm">
               {interest.description}
             </p>
           </div>
