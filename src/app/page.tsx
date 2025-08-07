@@ -1,7 +1,44 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function HomePage() {
+  const [aboutMeVisible, setAboutMeVisible] = useState(false);
+  const [whatIDoVisible, setWhatIDoVisible] = useState(false);
+  const [recentWorkVisible, setRecentWorkVisible] = useState(false);
+  
+  const aboutMeRef = useRef<HTMLDivElement>(null);
+  const whatIDoRef = useRef<HTMLDivElement>(null);
+  const recentWorkRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const createObserver = (setVisible: (visible: boolean) => void) => {
+      return new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+          }
+        },
+        { threshold: 0.1, rootMargin: "-10% 0px" }
+      );
+    };
+
+    const aboutMeObserver = createObserver(setAboutMeVisible);
+    const whatIDoObserver = createObserver(setWhatIDoVisible);
+    const recentWorkObserver = createObserver(setRecentWorkVisible);
+
+    if (aboutMeRef.current) aboutMeObserver.observe(aboutMeRef.current);
+    if (whatIDoRef.current) whatIDoObserver.observe(whatIDoRef.current);
+    if (recentWorkRef.current) recentWorkObserver.observe(recentWorkRef.current);
+
+    return () => {
+      aboutMeObserver.disconnect();
+      whatIDoObserver.disconnect();
+      recentWorkObserver.disconnect();
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
@@ -63,22 +100,22 @@ export default function HomePage() {
 
               {/* Skills Tags */}
               <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up animation-delay-600">
-                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs sm:text-xs lg:text-sm font-medium">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-blue-500/30 hover:border-blue-400 hover:text-blue-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300">
                   Python & AI/ML
                 </span>
-                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-400 text-xs sm:text-xs lg:text-sm font-medium">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-purple-500/30 hover:border-purple-400 hover:text-purple-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
                   Deep Learning
                 </span>
-                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs sm:text-xs lg:text-sm font-medium">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-green-500/30 hover:border-green-400 hover:text-green-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300">
                   Full-Stack Development
                 </span>
-                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-400 text-xs sm:text-xs lg:text-sm font-medium">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-yellow-500/30 hover:border-yellow-400 hover:text-yellow-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300">
                   Cloud Architecture
                 </span>
-                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 text-xs sm:text-xs lg:text-sm font-medium">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-red-500/20 border border-red-500/30 rounded-full text-red-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-red-500/30 hover:border-red-400 hover:text-red-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25 transition-all duration-300">
                   LLMs & NLP
                 </span>
-                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs sm:text-xs lg:text-sm font-medium">
+                <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-cyan-500/30 hover:border-cyan-400 hover:text-cyan-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
                   DevOps & MLOps
                 </span>
               </div>
@@ -96,9 +133,14 @@ export default function HomePage() {
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 border border-gray-600 rounded-full text-gray-300 font-semibold hover:border-gray-400 hover:text-white transition-all duration-300 cursor-pointer relative z-10 text-xs sm:text-sm lg:text-base"
+                  className="group inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600 rounded-full text-gray-300 font-semibold hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-600 hover:border-gray-400 hover:text-white hover:shadow-lg hover:shadow-gray-500/25 hover:scale-105 transition-all duration-300 cursor-pointer relative z-10 text-xs sm:text-sm lg:text-base overflow-hidden"
                 >
-                  Let&apos;s Talk
+                  <span className="relative z-10">Let&apos;s Talk</span>
+                  <svg className="ml-2 w-3 h-3 lg:w-4 lg:h-4 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                  {/* Subtle animated background effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-cyan-600/10 to-purple-600/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
                 </Link>
               </div>
             </div>
@@ -107,13 +149,13 @@ export default function HomePage() {
             <div className="lg:col-span-4 relative order-1 lg:order-2 mb-12 lg:mb-0 animate-fade-in-up animation-delay-300">
               <div className="relative flex justify-center lg:justify-flex-end">
                 {/* Main Profile Image with Glow */}
-                <div className="relative w-56 h-64 sm:w-64 sm:h-72 md:w-72 md:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-[420px] 2xl:w-[420px] 2xl:h-[480px]">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
+                <div className="relative w-56 h-64 sm:w-64 sm:h-72 md:w-72 md:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-[420px] 2xl:w-[420px] 2xl:h-[480px] group transition-transform duration-500 hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-30 animate-pulse group-hover:opacity-50 group-hover:blur-2xl transition-all duration-500"></div>
                   
                   {/* Offset White Border */}
-                  <div className="absolute top-5 left-5 w-full h-full rounded-xl border-4 border-white opacity-80"></div>
+                  <div className="absolute top-5 left-5 w-full h-full rounded-xl border-4 border-white opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  <div className="relative w-full h-full rounded-xl overflow-hidden border-1 backdrop-blur-sm bg-gray-800/50">
+                  <div className="relative w-full h-full rounded-xl overflow-hidden border-1 backdrop-blur-sm bg-gray-800/50 group-hover:shadow-2xl group-hover:shadow-purple-500/20 transition-all duration-500">
                     <Image 
                       src="/timeline-images/miles-nasa.jpg" 
                       alt="Miles Hollifield" 
@@ -207,10 +249,12 @@ export default function HomePage() {
         </div>
         
         {/* Main Content Area */}
-        <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16" ref={aboutMeRef}>
           <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column - Mini About Me */}
-            <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+            <div className={`lg:col-span-2 space-y-6 sm:space-y-8 transition-all duration-1000 ${
+              aboutMeVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}>
               <div className="space-y-4 sm:space-y-6">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
                   About Me
@@ -262,7 +306,9 @@ export default function HomePage() {
             </div>
 
             {/* Right Column - Quick Facts */}
-            <div className="space-y-6 sm:space-y-8">
+            <div className={`space-y-6 sm:space-y-8 transition-all duration-1000 delay-200 ${
+              aboutMeVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}>
               <div className="relative bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                 <h3 className="text-lg font-semibold text-white mb-4">Quick Facts</h3>
                 <div className="space-y-3">
@@ -293,70 +339,159 @@ export default function HomePage() {
       </section>
 
       {/* What I Do Section */}
-      <section className="py-16 bg-gray-900 border-t border-gray-800">
+      <section className="py-16 bg-gray-900 border-t border-gray-800" ref={whatIDoRef}>
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${
+            whatIDoVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+          }`}>
             <h2 className="text-3xl font-bold text-white mb-4">What I Do</h2>
-            <p className="text-lg text-gray-300">Specializing in intelligent software solutions and AI innovation</p>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              I specialize in creating intelligent software solutions that bridge the gap between cutting-edge technology and real-world applications. 
+              Here&apos;s how I bring ideas to life through code and innovation.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-1000 delay-200 ${
+            whatIDoVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+          }`}>
             {/* Software Engineering */}
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
+            <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Software Engineering</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    Building scalable, maintainable web applications using modern frameworks and best practices. 
+                    I focus on creating clean, efficient code that solves real problems and delivers exceptional user experiences.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-blue-400">Core Technologies:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">React & Next.js</span>
+                      <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">TypeScript</span>
+                      <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">Node.js</span>
+                      <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">Python</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Software Engineering</h3>
-              <p className="text-gray-300">Building modern web applications with React, Next.js, and TypeScript</p>
             </div>
 
-            {/* AI & Machine Learning */}
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
+            {/* AI Engineering */}
+            <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-green-400 transition-colors">AI Engineering</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    Developing intelligent systems that leverage machine learning, natural language processing, and AI to create 
+                    applications that understand, learn, and adapt to user needs.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-green-400">Specializations:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">NLP & LLMs</span>
+                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">TensorFlow</span>
+                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">PyTorch</span>
+                      <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">OpenAI APIs</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">AI & Machine Learning</h3>
-              <p className="text-gray-300">Developing intelligent systems with deep learning, NLP, and AI-powered solutions</p>
             </div>
 
-            {/* Game Development */}
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                </svg>
+            {/* Game Industry Enthusiast */}
+            <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8a2 2 0 002-2V6a2 2 0 00-2-2H8a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Game Industry Enthusiast</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    Passionate about the intersection of technology and interactive entertainment. I explore game development, 
+                    study industry trends, and experiment with creating engaging digital experiences.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-purple-400">Interests:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Unity & Unreal</span>
+                      <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Game Design</span>
+                      <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Interactive Media</span>
+                      <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Industry Analysis</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Game Development</h3>
-              <p className="text-gray-300">Creating interactive experiences and games using modern engines and frameworks</p>
             </div>
 
-            {/* Writing & Sharing */}
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
+            {/* Technical Writing & Sharing */}
+            <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-orange-500/50 transition-all duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors">Technical Writing & Sharing</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed">
+                    Documenting my journey, sharing insights, and contributing to the developer community through technical articles, 
+                    project documentation, and knowledge sharing initiatives.
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-orange-400">Focus Areas:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Technical Tutorials</span>
+                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Project Stories</span>
+                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Best Practices</span>
+                      <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Learning Journey</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Writing & Sharing</h3>
-              <p className="text-gray-300">Documenting my journey and sharing insights through technical blog posts</p>
+            </div>
+          </div>
+
+          {/* Additional Info Section */}
+          <div className={`mt-12 text-center transition-all duration-1000 delay-400 ${
+            whatIDoVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+          }`}>
+            <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-xl p-6 border border-gray-600">
+              <h3 className="text-lg font-semibold text-white mb-3">Current Focus</h3>
+              <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                I&apos;m currently dedicating my time to building AI-powered applications for language learning, 
+                with a particular focus on Japanese language acquisition. This involves combining my passion for 
+                AI/ML with practical educational tools that help people achieve their learning goals more effectively.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Recent Work Preview */}
-      <section className="py-16 bg-gray-900 border-t border-gray-800">
+      <section className="py-16 bg-gray-900 border-t border-gray-800" ref={recentWorkRef}>
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className={`text-center mb-12 transition-all duration-1000 ${
+            recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+          }`}>
             <h2 className="text-3xl font-bold text-white mb-4">Recent Work</h2>
             <p className="text-lg text-gray-300">A glimpse into my latest projects and writings</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-1000 delay-200 ${
+            recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+          }`}>
             {/* Featured Project */}
             <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group border border-gray-700">
               <div className="p-6">
