@@ -107,21 +107,26 @@ export default function HomePage() {
             <div className="lg:col-span-4 relative order-1 lg:order-2 mb-8 lg:mb-0">
               <div className="relative flex justify-center lg:justify-end">
                 {/* Main Profile Image with Glow */}
-                <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full blur-xl opacity-30 animate-pulse"></div>
-                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gray-700/50 backdrop-blur-sm bg-gray-800/50 flex items-center justify-center">
+                <div className="relative w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-72 lg:w-72 lg:h-80 xl:w-80 xl:h-96">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
+                  
+                  {/* Offset White Border */}
+                  <div className="absolute top-5 left-5 w-full h-full rounded-xl border-4 border-white opacity-80"></div>
+                  
+                  <div className="relative w-full h-full rounded-xl overflow-hidden border-1 backdrop-blur-sm bg-gray-800/50">
                     <Image 
-                      src="/MileScript_logo.svg" 
-                      alt="Miles Hollifield Logo" 
-                      width={200} 
-                      height={200} 
-                      className="object-contain w-full h-full" 
+                      src="/timeline-images/miles-nasa.jpg" 
+                      alt="Miles Hollifield" 
+                      width={400} 
+                      height={480} 
+                      className="object-cover w-full h-full" 
+                      priority
                     />
                   </div>
                 </div>
 
                 {/* Floating Info Cards */}
-                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg p-2 sm:p-3 hidden md:block">
+                {/* <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg p-2 sm:p-3 hidden md:block">
                   <div className="text-xs text-gray-400 mb-1">Specialization</div>
                   <div className="text-xs sm:text-sm text-white font-semibold">AI & Software Engineering</div>
                 </div>
@@ -134,7 +139,7 @@ export default function HomePage() {
                 <div className="absolute top-1/2 -left-4 sm:-left-8 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg p-2 sm:p-3 hidden lg:block">
                   <div className="text-xs text-gray-400 mb-1">Focus</div>
                   <div className="text-xs sm:text-sm text-white font-semibold">ML & Systems</div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import "./globals.css";
 import "../styles/theme.css";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import Image from "next/image";
+import { Navigation } from "./components/Navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,66 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={inter.className}>
         {/* Enhanced Header */}
-        <header className="bg-gray-900 shadow-lg sticky top-0 z-50 border-b border-gray-800">
-          <nav className="w-full px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              {/* Logo - Left Side */}
-              <Link href="/" className="flex items-center space-x-3 group">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm">M</span>
-                </div>
-                <span className="text-xl font-bold text-white group-hover:text-gray-300 transition-colors">MileScript</span>
-              </Link>
-
-              {/* Navigation - Center with exact styling from inspiration */}
-              <div className="hidden md:flex items-center space-x-1">
-                <NavPill href="/" active>
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                  Home
-                </NavPill>
-                <NavPill href="/about">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                  About Me
-                </NavPill>
-                <NavPill href="/projects">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                  My Projects
-                </NavPill>
-                <NavPill href="/blog">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                  Blog
-                </NavPill>
-              </div>
-
-              {/* Contact - Right Side */}
-              <div className="hidden md:flex items-center">
-                <Link href="/contact" className="inline-flex items-center px-4 py-2 bg-transparent border border-gray-600 text-white rounded-full font-medium hover:bg-gray-800 hover:border-gray-400 transition-all duration-300">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Contact Me
-                </Link>
-              </div>
-
-              {/* Mobile menu button */}
-              <div className="md:hidden">
-                <button className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 transition-colors">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </nav>
-        </header>
+        <Navigation />
 
         {/* Main Content */}
         <main className="min-h-screen">
@@ -133,22 +74,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
       </body>
     </html>
-  );
-}
-
-// Navigation Pill Component (exact styling from inspiration)
-function NavPill({ href, children, active = false }: { href: string; children: React.ReactNode; active?: boolean }) {
-  return (
-    <Link
-      href={href}
-      className={`inline-flex items-center px-4 py-2 rounded-full font-medium transition-all duration-300 text-sm ${
-        active 
-          ? 'bg-white text-gray-900' 
-          : 'text-gray-300 hover:text-white border border-gray-600 hover:border-gray-400 hover:bg-gray-800/50'
-      }`}
-    >
-      {children}
-    </Link>
   );
 }
 
