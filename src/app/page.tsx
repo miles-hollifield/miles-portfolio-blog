@@ -38,7 +38,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
             
             {/* Left Column - Main Content */}
-            <div className="lg:col-span-8 text-left relative z-10 order-2 lg:order-1">
+            <div className="lg:col-span-8 text-left relative z-10 order-2 lg:order-1 animate-fade-in-up">
               {/* Status Badge */}
               {/* <div className="inline-flex items-center space-x-2 bg-green-400/10 border border-green-400/20 rounded-full px-4 py-2 mb-6">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -46,7 +46,7 @@ export default function HomePage() {
               </div> */}
 
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-4 sm:mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 animate-fade-in-up animation-delay-200">
                 <span className="text-white">Miles </span>
                 <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                   Hollifield
@@ -54,7 +54,7 @@ export default function HomePage() {
               </h1>
 
               {/* Description */}
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 lg:mb-10 max-w-4xl leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 lg:mb-10 max-w-4xl leading-relaxed animate-fade-in-up animation-delay-400">
                 Software engineer and AI specialist who builds 
                 <span className="text-cyan-400"> intelligent systems</span>, 
                 <span className="text-purple-400"> scalable architectures</span>, and 
@@ -62,7 +62,7 @@ export default function HomePage() {
               </p>
 
               {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10">
+              <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up animation-delay-600">
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs sm:text-xs lg:text-sm font-medium">
                   Python & AI/ML
                 </span>
@@ -84,7 +84,7 @@ export default function HomePage() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 relative z-10">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 relative z-10 animate-fade-in-up animation-delay-800">
                 <Link 
                   href="/projects" 
                   className="group inline-flex items-center justify-center px-4 py-2 lg:px-6 lg:py-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 cursor-pointer relative z-10 text-xs sm:text-sm lg:text-base"
@@ -104,7 +104,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Column - Visual Elements */}
-            <div className="lg:col-span-4 relative order-1 lg:order-2 mb-12 lg:mb-0">
+            <div className="lg:col-span-4 relative order-1 lg:order-2 mb-12 lg:mb-0 animate-fade-in-up animation-delay-300">
               <div className="relative flex justify-center lg:justify-flex-end">
                 {/* Main Profile Image with Glow */}
                 <div className="relative w-56 h-64 sm:w-64 sm:h-72 md:w-72 md:h-80 lg:w-80 lg:h-96 xl:w-96 xl:h-[420px] 2xl:w-[420px] 2xl:h-[480px]">
