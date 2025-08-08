@@ -73,7 +73,7 @@ const projects: Project[] = [
     description: "Modern portfolio website featuring interactive timeline, advanced blog system, and sophisticated UI/UX design",
     longDescription: "This very site! A carefully crafted portfolio and blog platform showcasing modern web development practices. Built with Next.js 15's App Router, featuring an interactive slideshow timeline component, advanced MDX blog system with gray-matter frontmatter parsing, and a custom CSS theme with gradient animations and backdrop effects. The site demonstrates sophisticated component architecture, responsive design principles, and attention to user experience details.",
     technologies: [
-      "NextJS", "TypeScript", "MDX", "Tailwind CSS", 
+      "NextJS", "React", "TypeScript", "MDX", "Tailwind CSS", 
       "Gray-matter", "CSS Animations", "App Router", "next-mdx-remote"
     ],
     status: "Live",
