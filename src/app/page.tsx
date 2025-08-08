@@ -462,51 +462,56 @@ export default function HomePage() {
       {/* Recent Work Preview */}
       <section className="py-16 bg-gray-900 border-t border-gray-800" ref={recentWorkRef}>
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-12 transition-all duration-1000 ${
-            recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
-          }`}>
-            <h2 className="text-3xl font-bold text-white mb-4">Recent Work</h2>
-            <p className="text-lg text-gray-300">A glimpse into my latest projects and writings</p>
-          </div>
-
-          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition-all duration-1000 delay-200 ${
-            recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
-          }`}>
-            {/* Featured Project */}
-            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border border-gray-700 hover:border-blue-500/50 hover:scale-105">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Kakitori</h3>
-                  <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium group-hover:bg-blue-500/30 group-hover:border-blue-400 group-hover:text-blue-300 transition-all duration-300">AI-Powered</span>
-                </div>
-                <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
-                  An AI-powered Japanese grammar practice app that generates personalized sentence drills for effective learning.
-                </p>
-                <Link href="/projects" className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
-                  <span className="text-sm font-medium">View Project</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Left column: Section header and context */}
+            <div className={`space-y-4 transition-all duration-1000 ${
+              recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}>
+              <h2 className="text-3xl font-bold text-white">Recent Work</h2>
+              <p className="text-lg text-gray-300">A quick look at my latest projects—AI-powered apps and full‑stack builds designed for real-world impact.</p>
+              <p className="text-base text-gray-400">You can also explore my recent writings, where I share implementation notes, design trade‑offs, and lessons learned along the way.</p>
             </div>
 
-            {/* Featured Blog Post */}
-            <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300 group border border-gray-700 hover:border-green-500/50 hover:scale-105">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">Latest Blog Post</h3>
-                  <span className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium group-hover:bg-green-500/30 group-hover:border-green-400 group-hover:text-green-300 transition-all duration-300">New</span>
+            {/* Right column: Featured items stacked */}
+            <div className={`space-y-8 transition-all duration-1000 delay-200 ${
+              recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
+            }`}>
+              {/* Featured Project */}
+              <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border border-gray-700 hover:border-blue-500/50 hover:scale-105">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Kakitori</h3>
+                    <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium group-hover:bg-blue-500/30 group-hover:border-blue-400 group-hover:text-blue-300 transition-all duration-300">AI-Powered</span>
+                  </div>
+                  <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
+                    An AI-powered Japanese grammar practice app that generates personalized sentence drills for effective learning.
+                  </p>
+                  <Link href="/projects" className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
+                    <span className="text-sm font-medium">View Project</span>
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
-                <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
-                  My journey building AI-powered tools for Japanese language learning, including technical challenges and insights.
-                </p>
-                <Link href="/blog/building-kakitori" className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
-                  <span className="text-sm font-medium">Read Article</span>
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+              </div>
+
+              {/* Featured Blog Post */}
+              <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300 group border border-gray-700 hover:border-green-500/50 hover:scale-105">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">Latest Blog Post</h3>
+                    <span className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium group-hover:bg-green-500/30 group-hover:border-green-400 group-hover:text-green-300 transition-all duration-300">New</span>
+                  </div>
+                  <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
+                    My journey building AI-powered tools for Japanese language learning, including technical challenges and insights.
+                  </p>
+                  <Link href="/blog/building-kakitori" className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
+                    <span className="text-sm font-medium">Read Article</span>
+                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
