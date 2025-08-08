@@ -20,7 +20,7 @@ const defaultExperiences: ExperienceItem[] = [
     title: "Software Engineer Intern",
     company: "Siemens",
     period: "May 2024 - Present · 1 yr 3 mos",
-    location: "Wendell, North Carolina, United States",
+    location: "Wendell, North Carolina",
     description: "Led development of multiple enterprise-grade applications that streamlined critical business processes and enhanced productivity for over 100 engineers across departments.",
     achievements: [
       "Aided in the development of the AIS BOM Management Tool, enabling engineers to efficiently manage product structures and data, using Visual Basic",
@@ -31,10 +31,10 @@ const defaultExperiences: ExperienceItem[] = [
     ]
   },
   {
-    title: "Solution Architect",
+    title: "Software Engineer Intern",
     company: "Unifyr",
     period: "May 2023 - Dec 2023 · 8 mos",
-    location: "Cary, North Carolina, United States · Remote",
+    location: "Cary, North Carolina",
     description: "Spearheaded the development of custom partner portal pages and integration projects, focusing on client-centric solutions and enterprise system architecture.",
     achievements: [
       "Spearheaded the development of custom partner portal pages using Angular and JavaScript, aligning with Zift's mission to deliver client‑centric solutions and enhance user engagement",
@@ -47,7 +47,7 @@ const defaultExperiences: ExperienceItem[] = [
     title: "Web Analyst",
     company: "The Sprinter",
     period: "Jan 2022 - Jun 2022 · 6 mos",
-    location: "Asheville, North Carolina, United States · Remote",
+    location: "Asheville, North Carolina",
     description: "Designed and developed user interfaces and performed database development for client projects, focusing on customer engagement optimization and business requirement fulfillment.",
     achievements: [
       "Designed and developed user interfaces and performed database development using PHP, JavaScript, and MySQL",
@@ -59,7 +59,7 @@ const defaultExperiences: ExperienceItem[] = [
     title: "Web Assistant - Work Study Student",
     company: "Asheville-Buncombe Technical Community College",
     period: "Jan 2021 - Jun 2022 · 1 yr 6 mos",
-    location: "Asheville, North Carolina, United States · On-site",
+    location: "Asheville, North Carolina",
     description: "Collaborated with the Webmaster to maintain and optimize the college's website, ensuring accessibility, SEO best practices, and engaging content for the target audience.",
     achievements: [
       "Collaborated with the Webmaster to ensure that the college's website content was up-to-date, relevant, and engaging for the target audience",

@@ -22,11 +22,11 @@ const defaultInterests: Interest[] = [
   },
   {
     title: "Japanese Language & Culture",
-    description: "Five years of studying Japanese, from anime enthusiasm to academic pursuit. Currently working toward N2 proficiency and planning to study abroad in Japan."
+    description: "Studying Japanese, from video games and anime enthusiasm to academic pursuit. Currently working toward N4 proficiency."
   },
   {
-    title: "Game Development & Interactive Media",
-    description: "Creating indie games and interactive experiences that blend storytelling with innovative gameplay mechanics. Currently developing a guild management game with dating sim elements."
+    title: "Game Industry Enthusiast",
+    description: "Passionate about video games and the gaming industry. Enjoys exploring game design, development, and the cultural impact of games."
   },
   {
     title: "Educational Technology",

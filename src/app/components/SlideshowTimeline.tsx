@@ -22,10 +22,10 @@ const timelineStories = [
   },
   {
     period: "2023",
-    title: "Solution Architecture Deep Dive",
+    title: "Software Engineering Deep Dive",
     subtitle: "Mastering Full-Stack Integration",
     story:
-      "At Unifyr, I dove deep into the world of solution architecture, building Angular-based client portals and complex Salesforce integrations. This experience taught me how different systems talk to each other and how to design solutions that scale. Working with Workato/Blendr for data pipelines was like solving puzzles at an enterprise level.",
+      "At Unifyr, I dove deep into the world of software engineering, building Angular-based client portals and complex Salesforce integrations. This experience taught me how different systems talk to each other and how to design solutions that scale. Working with Workato/Blendr for data pipelines was like solving puzzles at an enterprise level.",
     highlights: [
       "Angular Client Portals",
       "Salesforce Integration",
@@ -82,7 +82,7 @@ const timelineStories = [
     ],
     color: "bg-amber-600",
     accentColor: "amber",
-    image: "/timeline-images/wellbred.jpg",
+    image: "/timeline-images/miles-foundation.jpeg",
   },
 ];
 
@@ -234,6 +234,7 @@ export default function SlideshowTimeline() {
                     alt={`${currentStory.title} - ${currentStory.period}`}
                     fill
                     className="object-cover rounded-lg shadow-lg border-2 border-white"
+                    style={{ objectPosition: 'center top' }}
                     unoptimized
                     priority={currentSlide === 0} // Priority for first image
                   />

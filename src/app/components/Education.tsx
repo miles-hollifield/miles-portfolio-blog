@@ -24,7 +24,7 @@ const defaultEducation: EducationItem[] = [
     period: "Jan 2023 - May 2026",
     location: "Raleigh, North Carolina",
     gpa: "3.53 / 4.00",
-    description: "Pursuing a comprehensive Computer Science degree with a focus on software engineering, AI/ML, and system design. Active participant in the prestigious Goodnight Scholarship Program.",
+    description: "Pursuing a comprehensive Computer Science degree with a focus on software engineering, AI/ML, and system design.",
     achievements: [
       "Goodnight Scholarship Program Recipient, Mentor, and Program Ambassador (Aug 2023 - Present)",
       "Minor in Japan Studies demonstrating cross-cultural academic excellence",

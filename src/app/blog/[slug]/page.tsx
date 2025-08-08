@@ -115,7 +115,7 @@ export default async function BlogPostPage({
               </div>
               <div>
                 <h3 className="font-bold text-white">Miles</h3>
-                <p className="text-gray-300">Software Engineer & AI Developer</p>
+                <p className="text-gray-300">Software Engineer/AI Engineer</p>
               </div>
             </div>
             <div className="flex space-x-4">
