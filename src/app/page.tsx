@@ -196,7 +196,7 @@ export default function HomePage() {
           </div>
 
           {/* Center - Social Icons in slim pill */}
-          <div className="bg-gray-800 rounded-full border border-gray-700 px-4 py-2 sm:px-4 sm:py-2">
+          <div className="bg-gray-800 rounded-full border border-gray-700 px-5 py-2 sm:px-4 sm:py-2">
             <div className="flex items-center space-x-3 sm:space-x-3">
               <SocialIcon href="https://github.com/miles-hollifield" icon="github" />
               <SocialIcon href="https://linkedin.com/in/mileshollifield" icon="linkedin" />
@@ -274,7 +274,7 @@ export default function HomePage() {
               <div className="pt-4 sm:pt-8">
                 <Link 
                   href="/about" 
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 hover:scale-105"
+                  className="flex w-full sm:inline-flex sm:w-auto items-center justify-center text-center px-4 sm:px-6 py-3 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 hover:scale-105 text-sm sm:text-base"
                 >
                   Learn More About My Journey
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -350,7 +350,7 @@ export default function HomePage() {
                 <div className="pt-6">
                   <Link 
                     href="/projects" 
-                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105"
+                    className="flex w-full sm:inline-flex sm:w-auto items-center justify-center text-center px-4 sm:px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 text-sm sm:text-base"
                   >
                     View My Projects
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
