@@ -78,7 +78,7 @@ const projects: Project[] = [
     ],
     status: "Live",
     links: {
-      live: "https://miles-portfolio.vercel.app",
+      live: "https://miles-portfolio-blog.vercel.app",
     },
     highlights: [
       "Interactive slideshow timeline component with smooth transitions and storytelling",
