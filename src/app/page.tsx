@@ -12,6 +12,7 @@ export default function HomePage() {
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const whatIDoRef = useRef<HTMLDivElement>(null);
   const recentWorkRef = useRef<HTMLDivElement>(null);
+  const spotlightRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const createObserver = (setVisible: (visible: boolean) => void) => {
@@ -39,10 +40,32 @@ export default function HomePage() {
       recentWorkObserver.disconnect();
     };
   }, []);
+
+  const onHeroMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const el = spotlightRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    el.style.setProperty('--mx', `${x}px`);
+    el.style.setProperty('--my', `${y}px`);
+  };
+
+  const onHeroMouseLeave = () => {
+    const el = spotlightRef.current;
+    if (!el) return;
+    el.style.removeProperty('--mx');
+    el.style.removeProperty('--my');
+  };
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
-      <section className="relative px-4 pt-6 sm:pt-8 sm:px-6 lg:px-8 lg:pt-12 min-h-[calc(100vh-160px)] sm:min-h-[calc(100vh-160px)] lg:min-h-[calc(100vh-160px)] max-h-none sm:max-h-[1000px] flex items-center justify-center overflow-hidden">
+      <section
+        ref={spotlightRef}
+        onMouseMove={onHeroMouseMove}
+        onMouseLeave={onHeroMouseLeave}
+        className="relative spotlight-hover px-4 pt-6 sm:pt-8 sm:px-6 lg:px-8 lg:pt-12 min-h-[calc(100vh-160px)] sm:min-h-[calc(100vh-160px)] lg:min-h-[calc(100vh-160px)] max-h-none sm:max-h-[1000px] flex items-center justify-center overflow-hidden"
+      >
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Grid Pattern */}
@@ -92,7 +115,7 @@ export default function HomePage() {
 
               {/* Description */}
               <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 lg:mb-10 max-w-4xl leading-relaxed animate-fade-in-up animation-delay-400">
-                Software engineer and AI engineer who creates 
+                Software Engineer/AI Engineer who creates 
                 <span className="text-cyan-400"> intelligent applications</span>, 
                 <span className="text-purple-400"> robust software systems</span>, and 
                 <span className="text-yellow-400"> AI-powered solutions</span> that deliver real-world impact.
@@ -145,45 +168,9 @@ export default function HomePage() {
                     />
                   </div>
                 </div>
-
-                {/* Floating Info Cards */}
-                {/* <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg p-2 sm:p-3 hidden md:block">
-                  <div className="text-xs text-gray-400 mb-1">Specialization</div>
-                  <div className="text-xs sm:text-sm text-white font-semibold">AI & Software Engineering</div>
-                </div>
-
-                <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg p-2 sm:p-3 hidden md:block">
-                  <div className="text-xs text-gray-400 mb-1">Experience</div>
-                  <div className="text-xs sm:text-sm text-white font-semibold">5+ Years</div>
-                </div>
-
-                <div className="absolute top-1/2 -left-4 sm:-left-8 bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-lg p-2 sm:p-3 hidden lg:block">
-                  <div className="text-xs text-gray-400 mb-1">Focus</div>
-                  <div className="text-xs sm:text-sm text-white font-semibold">ML & Systems</div>
-                </div> */}
               </div>
             </div>
           </div>
-
-          {/* Bottom Stats */}
-          {/* <div className="mt-16 pt-8 border-t border-gray-800 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-2xl font-bold text-white mb-1">50+</div>
-              <div className="text-sm text-gray-400">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white mb-1">5+</div>
-              <div className="text-sm text-gray-400">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white mb-1">99%</div>
-              <div className="text-sm text-gray-400">Client Satisfaction</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white mb-1">24/7</div>
-              <div className="text-sm text-gray-400">Support</div>
-            </div>
-          </div> */}
         </div>
       </section>
 
@@ -247,8 +234,8 @@ export default function HomePage() {
 
               <div className="space-y-4 sm:space-y-6">
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                  When I&apos;m not coding, you&apos;ll find me studying Japanese, building AI-enhanced tools, 
-                  or writing about my experiences integrating AI into real-world applications. I believe in practical innovation 
+                  When I&apos;m not coding, you&apos;ll find me studying Japanese, keeping up with the Video Game industry, 
+                  or writing about my experiences in tech, helpful articles in professional development, or life in general. I believe in practical innovation 
                   and creating technology that genuinely improves people&apos;s lives.
                 </p>
               </div>
@@ -296,8 +283,12 @@ export default function HomePage() {
                     <p className="text-white group-hover:text-gray-100">North Carolina, USA</p>
                   </div>
                   <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
+                    <span className="text-gray-400 text-sm">Years of Experience</span>
+                    <p className="text-white group-hover:text-gray-100">2+</p>
+                  </div>
+                  <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
                     <span className="text-gray-400 text-sm">Interests</span>
-                    <p className="text-white group-hover:text-gray-100">AI Applications, Japanese Language, Software Architecture</p>
+                    <p className="text-white group-hover:text-gray-100">AI Applications, Japanese Language, Game Development</p>
                   </div>
                   <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
                     <span className="text-gray-400 text-sm">Current Focus</span>
@@ -468,8 +459,8 @@ export default function HomePage() {
               recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}>
               <h2 className="text-3xl font-bold text-white">Recent Work</h2>
-              <p className="text-lg text-gray-300">A quick look at my latest projects—AI-powered apps and full‑stack builds designed for real-world impact.</p>
-              <p className="text-base text-gray-400">You can also explore my recent writings, where I share implementation notes, design trade‑offs, and lessons learned along the way.</p>
+              <p className="text-lg text-gray-300">A quick look at my latest projects — AI-powered apps and full‑stack builds designed for real-world impact.</p>
+              <p className="text-base text-gray-400">You can also explore my recent writings, where I share implementation notes, my experience in tech, and lessons learned along the way.</p>
             </div>
 
             {/* Right column: Featured items stacked */}
@@ -484,7 +475,7 @@ export default function HomePage() {
                     <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium group-hover:bg-blue-500/30 group-hover:border-blue-400 group-hover:text-blue-300 transition-all duration-300">AI-Powered</span>
                   </div>
                   <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
-                    An AI-powered Japanese grammar practice app that generates personalized sentence drills for effective learning.
+                    An AI-powered Japanese language learning app that adapts to individual user needs for effective learning.
                   </p>
                   <Link href="/projects" className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
                     <span className="text-sm font-medium">View Project</span>
@@ -503,7 +494,7 @@ export default function HomePage() {
                     <span className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium group-hover:bg-green-500/30 group-hover:border-green-400 group-hover:text-green-300 transition-all duration-300">New</span>
                   </div>
                   <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
-                    My journey building AI-powered tools for Japanese language learning, including technical challenges and insights.
+                    Building Kakitori: A Full-Stack Japanese Learning Platform with AI Integration
                   </p>
                   <Link href="/blog/building-kakitori" className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
                     <span className="text-sm font-medium">Read Article</span>

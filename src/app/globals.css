@@ -295,6 +295,28 @@ body {
   animation: loading-shimmer 1.5s infinite;
 }
 
+/* Spotlight hover effect (cursor-follow light) */
+.spotlight-hover {
+  position: relative;
+}
+
+.spotlight-hover::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  background:
+    radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), rgba(59, 130, 246, 0.18), transparent 40%),
+    radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(167, 139, 250, 0.12), transparent 35%);
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+  mix-blend-mode: screen;
+}
+
+.spotlight-hover:hover::before {
+  opacity: 1;
+}
+
 /* Print styles */
 @media print {
   .no-print {
