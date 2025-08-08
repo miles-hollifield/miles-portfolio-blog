@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <span className="text-xl font-bold">MileScript</span>
                 </div>
                 <p className="text-gray-400 mb-4 max-w-md">
-                  {`Software engineer and AI engineer building intelligent applications that bridge cutting-edge technology with practical solutions. Passionate about creating AI-powered tools and occasionally writing about tech, life, and development.`}
+                  {`Software Engineer/AI Engineer building intelligent applications that bridge cutting-edge technology with practical solutions. Passionate about creating AI-powered tools and occasionally writing about tech, life, and development.`}
                 </p>
                 <div className="flex space-x-4">
                   <SocialLink href="https://github.com/miles-hollifield" icon="github" />
@@ -61,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div>
                 <h3 className="text-lg font-semibold mb-4">Recent Posts</h3>
                 <ul className="space-y-2">
+                  <li><FooterLink href="/blog/the-future-of-entertainment-is-interactive">The Future of Entertainment</FooterLink></li>
                   <li><FooterLink href="/blog/building-kakitori">Building Kakitori</FooterLink></li>
                 </ul>
               </div>

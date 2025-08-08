@@ -15,6 +15,8 @@ interface BlogClientPageProps {
 }
 
 export default function BlogClientPage({ posts }: BlogClientPageProps) {
+  // Ensure posts are displayed newest first (defensive sort in case upstream changes)
+  const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   const [heroVisible, setHeroVisible] = useState(false);
   const [statsVisible, setStatsVisible] = useState(false);
   const [featuredVisible, setFeaturedVisible] = useState(false);
@@ -108,7 +110,7 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
                 </svg>
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">{posts.length}</p>
+                <p className="text-2xl font-bold text-white">{sortedPosts.length}</p>
                 <p className="text-gray-300">Articles</p>
               </div>
             </div>
@@ -144,7 +146,7 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
         </div>
 
         {/* Featured Post */}
-        {posts.length > 0 && (
+  {sortedPosts.length > 0 && (
           <div 
             ref={featuredRef}
             className={`mb-8 transition-all duration-1000 delay-400 ${
@@ -153,18 +155,18 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
           >
             <h2 className="text-2xl font-bold text-white mb-6">Featured Post</h2>
             <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
-              <Link href={`/blog/${posts[0].slug}`} className="group">
+              <Link href={`/blog/${sortedPosts[0].slug}`} className="group">
                 <div className="flex items-start justify-between mb-4">
                   <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
                     Latest
                   </span>
-                  <span className="text-sm text-gray-400">{posts[0].date}</span>
+                  <span className="text-sm text-gray-400">{sortedPosts[0].date}</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                  {posts[0].title}
+                  {sortedPosts[0].title}
                 </h3>
                 <p className="text-gray-300 mb-4 text-lg leading-relaxed">
-                  {posts[0].description}
+                  {sortedPosts[0].description}
                 </p>
                 <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
                   <span className="font-medium">Read More</span>
@@ -210,7 +212,7 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
         >
           <h2 className="text-2xl font-bold text-white mb-6">All Posts</h2>
           <div className="grid gap-6">
-            {posts.map((post, index) => (
+            {sortedPosts.map((post, index) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                 <div className="bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10">
                   <div className="flex items-start justify-between mb-3">

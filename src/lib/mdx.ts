@@ -20,7 +20,7 @@ export function getAllPosts(): Array<{
   // Filter to only include .mdx files
   const mdxFiles = fileNames.filter(fileName => fileName.endsWith('.mdx'));
 
-  return mdxFiles.map((fileName) => {
+  const posts = mdxFiles.map((fileName) => {
     const slug = fileName.replace(/\.mdx$/, "");
     const fullPath = path.join(postsDirectory, fileName);
     
@@ -39,6 +39,9 @@ export function getAllPosts(): Array<{
       return null;
     }
   }).filter((post): post is NonNullable<typeof post> => post !== null);
+
+  // Sort posts by date in descending order (newest first)
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export function getPostBySlug(slug: string): {

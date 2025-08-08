@@ -24,14 +24,13 @@ const projects: Project[] = [
     description: "Comprehensive Japanese learning platform with AI-powered tutoring and structured practice modules",
     longDescription: "A full-stack Japanese language learning platform featuring an intelligent AI tutor, kanji practice systems, vocabulary building tools, and progress analytics. Built with a modern React frontend and FastAPI backend, Kakitori provides personalized learning experiences through AI integration and comprehensive study tools. The platform includes Google OAuth authentication, PostgreSQL data persistence, and Redis caching for optimal performance.",
     technologies: [
-      "React 19.1", "FastAPI", "PostgreSQL", "Redis", 
+      "React", "FastAPI", "PostgreSQL", "Redis", 
       "Material-UI", "SQLAlchemy", "Alembic", "Docker",
       "OpenAI API", "Anthropic API", "Google OAuth", "Vite"
     ],
     status: "In Development",
     links: {
       github: "https://github.com/miles-hollifield/KakitoriAPP",
-      demo: "https://kakitori-demo.vercel.app"
     },
     highlights: [
       "AI-powered Japanese tutor with chat interface using OpenAI/Anthropic APIs",
@@ -50,13 +49,12 @@ const projects: Project[] = [
     description: "Computer vision-based DJ interface controlled entirely through hand gestures and webcam tracking",
     longDescription: "An innovative application that transforms natural hand movements into real-time audio control parameters. Using MediaPipe for hand landmark detection and Pyo for audio processing, the system enables touchless DJ control through intuitive gestures. The interface maps hand distances to volume, pinch gestures to speed and pitch control, and hand twists to track navigation, creating a natural and immersive DJ experience.",
     technologies: [
-      "Python 3.8+", "MediaPipe", "OpenCV", "Pyo Audio", 
+      "Python", "MediaPipe", "OpenCV", "Pyo Audio", 
       "NumPy", "SciPy", "Computer Vision", "Real-time Processing"
     ],
     status: "Completed",
     links: {
       github: "https://github.com/miles-hollifield/VirtualDJ-HandController",
-      demo: "https://github.com/miles-hollifield/virtual-dj-hand-controller/blob/main/docs/demo_screenshot.png"
     },
     highlights: [
       "Real-time hand landmark detection and gesture recognition using MediaPipe",
@@ -73,15 +71,14 @@ const projects: Project[] = [
   {
     title: "Portfolio + Blog",
     description: "Modern portfolio website featuring interactive timeline, advanced blog system, and sophisticated UI/UX design",
-    longDescription: "A carefully crafted portfolio and blog platform showcasing modern web development practices. Built with Next.js 15's App Router, featuring an interactive slideshow timeline component, advanced MDX blog system with gray-matter frontmatter parsing, and a custom CSS theme with gradient animations and backdrop effects. The site demonstrates sophisticated component architecture, responsive design principles, and attention to user experience details.",
+    longDescription: "This very site! A carefully crafted portfolio and blog platform showcasing modern web development practices. Built with Next.js 15's App Router, featuring an interactive slideshow timeline component, advanced MDX blog system with gray-matter frontmatter parsing, and a custom CSS theme with gradient animations and backdrop effects. The site demonstrates sophisticated component architecture, responsive design principles, and attention to user experience details.",
     technologies: [
-      "Next.js 15", "TypeScript", "React 19", "MDX", "Tailwind CSS 4", 
+      "NextJS", "TypeScript", "MDX", "Tailwind CSS", 
       "Gray-matter", "CSS Animations", "App Router", "next-mdx-remote"
     ],
     status: "Live",
     links: {
       live: "https://miles-portfolio.vercel.app",
-      github: "https://github.com/miles-hollifield/miles-portfolio-blog"
     },
     highlights: [
       "Interactive slideshow timeline component with smooth transitions and storytelling",
@@ -293,7 +290,7 @@ export default function ProjectsPage() {
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                    Live Site
+                    Home Page
                   </a>
                 )}
                 {project.links.demo && (

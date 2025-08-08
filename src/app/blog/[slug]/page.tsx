@@ -29,10 +29,12 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  const allPosts = getAllPosts();
-  const currentIndex = allPosts.findIndex(p => p.slug === slug);
-  const previousPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
-  const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+  // For navigation, we want chronological order (oldest -> newest)
+  const allPostsDesc = getAllPosts(); // currently sorted newest first
+  const allPostsChrono = [...allPostsDesc].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const currentIndex = allPostsChrono.findIndex(p => p.slug === slug);
+  const previousPost = currentIndex > 0 ? allPostsChrono[currentIndex - 1] : null; // older
+  const nextPost = currentIndex < allPostsChrono.length - 1 ? allPostsChrono[currentIndex + 1] : null; // newer
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">

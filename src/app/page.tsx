@@ -494,9 +494,9 @@ export default function HomePage() {
                     <span className="px-3 py-1 bg-green-500/20 border border-green-500/30 rounded-full text-green-400 text-sm font-medium group-hover:bg-green-500/30 group-hover:border-green-400 group-hover:text-green-300 transition-all duration-300">New</span>
                   </div>
                   <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors">
-                    Building Kakitori: A Full-Stack Japanese Learning Platform with AI Integration
+                    The Future of Entertainment Is Interactive
                   </p>
-                  <Link href="/blog/building-kakitori" className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
+                  <Link href="/blog/the-future-of-entertainment-is-interactive" className="flex items-center text-green-400 group-hover:text-green-300 transition-colors">
                     <span className="text-sm font-medium">Read Article</span>
                     <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
