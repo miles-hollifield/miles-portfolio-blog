@@ -164,7 +164,7 @@ export default function Education({
                       {edu.activities.map((activity, actIndex) => (
                         <span 
                           key={actIndex}
-                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 border border-blue-500/30 text-blue-300"
+                          className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-500/20 border border-blue-500/30 text-blue-300 cursor-default"
                         >
                           {activity}
                         </span>

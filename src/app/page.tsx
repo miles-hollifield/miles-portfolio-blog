@@ -122,7 +122,7 @@ export default function HomePage() {
               </p>
 
               {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up animation-delay-600">
+              <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10 animate-fade-in-up animation-delay-600 select-none cursor-default">
                 <span className="px-2 sm:px-2 lg:px-3 py-1 sm:py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs sm:text-xs lg:text-sm font-medium hover:bg-blue-500/30 hover:border-blue-400 hover:text-blue-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300">
                   Python & Web Development
                 </span>
@@ -371,7 +371,7 @@ export default function HomePage() {
                       Building scalable, maintainable applications using modern frameworks and best practices. 
                       I focus on creating robust software architectures that deliver exceptional user experiences and solve real-world problems.
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 select-none cursor-default">
                       <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">React & Next.js</span>
                       <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">JavaScript/TypeScript</span>
                       <span className="px-2 py-1 bg-blue-500/20 border border-blue-500/30 rounded text-blue-300 text-xs">Node.js</span>
@@ -395,7 +395,7 @@ export default function HomePage() {
                       Integrating artificial intelligence into practical applications that enhance user experiences. 
                       I work with LLMs, NLP, and AI APIs to create intelligent features that add genuine value to software products.
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 select-none cursor-default">
                       <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">LLM Integration</span>
                       <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">OpenAI APIs</span>
                       <span className="px-2 py-1 bg-green-500/20 border border-green-500/30 rounded text-green-300 text-xs">NLP Applications</span>
@@ -419,7 +419,7 @@ export default function HomePage() {
                     <p className="text-gray-300 text-sm leading-relaxed mb-3">
                       Passionate about interactive entertainment, game development, and industry trends.
                     </p>
-                    <div className="flex flex-wrap gap-1 justify-center">
+                    <div className="flex flex-wrap gap-1 justify-center select-none cursor-default">
                       <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Unreal Engine</span>
                       <span className="px-2 py-1 bg-purple-500/20 border border-purple-500/30 rounded text-purple-300 text-xs">Game Design</span>
                     </div>
@@ -438,7 +438,7 @@ export default function HomePage() {
                     <p className="text-gray-300 text-sm leading-relaxed mb-3">
                       Writing about tech, dev logs, life experiences, how-to guides, and general thoughts as inspiration strikes.
                     </p>
-                    <div className="flex flex-wrap gap-1 justify-center">
+                    <div className="flex flex-wrap gap-1 justify-center select-none cursor-default">
                       <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">Dev Logs</span>
                       <span className="px-2 py-1 bg-orange-500/20 border border-orange-500/30 rounded text-orange-300 text-xs">How-to Guides</span>
                     </div>
@@ -468,7 +468,7 @@ export default function HomePage() {
               recentWorkVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}>
               {/* Featured Project */}
-              <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border border-gray-700 hover:border-blue-500/50 hover:scale-105">
+              <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 group border border-gray-700 hover:border-blue-500/50 hover:scale-105 cursor-default">
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Kakitori</h3>
@@ -487,7 +487,7 @@ export default function HomePage() {
               </div>
 
               {/* Featured Blog Post */}
-              <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300 group border border-gray-700 hover:border-green-500/50 hover:scale-105">
+              <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-green-500/25 transition-all duration-300 group border border-gray-700 hover:border-green-500/50 hover:scale-105 cursor-default">
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">Latest Blog Post</h3>

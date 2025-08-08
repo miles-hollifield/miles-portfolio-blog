@@ -2,9 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const FROM_ADDRESS = process.env.RESEND_FROM || 'Portfolio Contact <onboarding@resend.dev>';
+const TO_ADDRESS = process.env.CONTACT_TO || 'fieldofmiles@gmail.com';
 
 export async function POST(request: NextRequest) {
   try {
+    // Ensure service is configured in the deployed environment
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set');
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
+
     const body = await request.json();
     const { name, email, organization, reason, message } = body;
 
@@ -44,16 +55,24 @@ export async function POST(request: NextRequest) {
     `;
 
     // Send email using Resend
-    const data = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: ['fieldofmiles@gmail.com'],
+    const { data, error } = await resend.emails.send({
+      from: FROM_ADDRESS,
+      to: [TO_ADDRESS],
       subject: `Portfolio Contact: ${reason}`,
       html: emailContent,
       replyTo: email, // This allows you to reply directly to the sender
     });
 
+    if (error) {
+      console.error('Resend send error:', error);
+      return NextResponse.json(
+        { error: 'Failed to send email via provider' },
+        { status: 502 }
+      );
+    }
+
     return NextResponse.json(
-      { message: 'Email sent successfully', data: data },
+      { message: 'Email sent successfully', data },
       { status: 200 }
     );
 

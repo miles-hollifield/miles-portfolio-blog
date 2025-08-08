@@ -78,7 +78,7 @@ const projects: Project[] = [
     ],
     status: "Live",
     links: {
-      live: "https://miles-portfolio-blog.vercel.app",
+      live: "https://milescript.net",
     },
     highlights: [
       "Interactive slideshow timeline component with smooth transitions and storytelling",
@@ -233,14 +233,14 @@ export default function ProjectsPage() {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                 <h3 className="text-2xl font-bold text-white mb-2 sm:mb-0">{project.title}</h3>
                 <div className="flex gap-2">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                  <span className={`px-3 py-1 rounded-full text-sm font-medium cursor-default ${
                     project.status === "Live" ? "bg-green-500/20 text-green-300 border border-green-500/30" :
                     project.status === "In Development" ? "bg-orange-500/20 text-orange-300 border border-orange-500/30" :
                     "bg-purple-500/20 text-purple-300 border border-purple-500/30"
                   }`}>
                     {project.status}
                   </span>
-                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-700/50 text-gray-300 border border-gray-600">
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-gray-700/50 text-gray-300 border border-gray-600 cursor-default">
                     {project.category}
                   </span>
                 </div>
@@ -256,7 +256,7 @@ export default function ProjectsPage() {
                 <h4 className="text-sm font-semibold text-white mb-3">Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30 hover:bg-blue-500/30 transition-colors">
+                    <span key={techIndex} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30 hover:bg-blue-500/30 transition-colors cursor-default">
                       {tech}
                     </span>
                   ))}

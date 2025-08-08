@@ -181,7 +181,7 @@ export default function SlideshowTimeline() {
           <div className="order-2 lg:order-1 flex flex-col justify-center lg:pr-4">
             {/* Period badge */}
             <div
-              className={`inline-block px-3 py-1 ${currentStory.color} text-white text-sm font-medium rounded-full mb-4 w-fit`}
+              className={`inline-block px-3 py-1 ${currentStory.color} text-white text-sm font-medium rounded-full mb-4 w-fit cursor-default`}
             >
               {currentStory.period}
             </div>

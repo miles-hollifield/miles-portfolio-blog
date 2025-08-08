@@ -10,6 +10,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Miles Hollifield",
   description: "Developer | Writer | Creator",
+  icons: {
+    icon: [
+      { url: "/brand-m.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", rel: "shortcut icon" },
+    ],
+    apple: "/brand-m.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

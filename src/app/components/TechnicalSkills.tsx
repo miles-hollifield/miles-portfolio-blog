@@ -84,7 +84,7 @@ export default function TechnicalSkills({
             <h4 className="font-semibold text-white mb-2">
               {category.title}
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 cursor-default">
               {category.skills.map((skill) => (
                 <span key={skill} className="tech-tag">
                   {skill}
