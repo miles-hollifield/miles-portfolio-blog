@@ -13,29 +13,46 @@ interface TechnicalSkillsProps {
 
 const defaultSkillCategories: SkillCategory[] = [
   {
-    title: "Languages",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Python", "SQL", "Java", "C++"]
+    title: "Programming Languages",
+    skills: [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Java",
+      "C++",
+      "SQL",
+      "HTML",
+      "CSS",
+    ],
   },
   {
-    title: "Frameworks & Libraries",
-    skills: ["React", "FastAPI", "SvelteKit", "Material UI", "Bootstrap", "Tailwind", "Next.js"]
+    title: "Developer Tools",
+    skills: [
+      "Git",
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "AWS",
+      "Azure",
+      "Postman",
+      "Jira"
+    ],
   },
   {
-    title: "AI & Data",
-    skills: ["Azure OpenAI", "LangChain", "Vector Databases", "Prompt Engineering", "AI System Integration"]
+    title: "Libraries/Frameworks",
+    skills: [
+      // Web/UI
+      "ReactJS",
+      "NextJS",
+      "Tailwind CSS",
+      "Material UI",
+      "Bootstrap",
+      // APIs & Backend
+      "NodeJS",
+      "FastAPI",
+      "PostgreSQL"
+    ],
   },
-  {
-    title: "Databases",
-    skills: ["Microsoft SQL Server", "Vector Databases", "SQLAlchemy", "SQLModel", "Redis"]
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: ["Azure (DevOps, Entra ID, Container Apps, Blob Storage)", "Docker", "Kubernetes", "CI/CD Pipelines"]
-  },
-  {
-    title: "Tools & Integrations",
-    skills: ["Git", "Figma", "Postman", "Swagger/OpenAPI", "JWT Authentication", "SAP", "Salesforce", "SharePoint"]
-  }
 ];
 
 export default function TechnicalSkills({ 
