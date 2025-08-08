@@ -8,6 +8,7 @@ interface Post {
   title: string;
   date: string;
   description: string;
+  tags?: string[];
 }
 
 interface BlogClientPageProps {
@@ -17,6 +18,7 @@ interface BlogClientPageProps {
 export default function BlogClientPage({ posts }: BlogClientPageProps) {
   // Ensure posts are displayed newest first (defensive sort in case upstream changes)
   const sortedPosts = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const [selectedTopic, setSelectedTopic] = useState<string>('All');
   const [heroVisible, setHeroVisible] = useState(false);
   const [statsVisible, setStatsVisible] = useState(false);
   const [featuredVisible, setFeaturedVisible] = useState(false);
@@ -67,6 +69,20 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
     };
   }, []);
 
+  // Prepare topic list from posts
+  const topicsFromPosts = Array.from(
+    new Set(
+      sortedPosts.flatMap(p => p.tags ?? [])
+    )
+  ).sort();
+  const topics = ['All', ...topicsFromPosts.length ? topicsFromPosts : ['Software Engineering', 'AI Development', 'Japanese Learning', 'Career', 'Projects', 'Personal']];
+  const topicsCount = Math.max(0, topics.length - 1);
+
+  // Filter posts by selected topic
+  const visiblePosts = selectedTopic === 'All'
+    ? sortedPosts
+    : sortedPosts.filter(p => (p.tags ?? []).includes(selectedTopic));
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Background Elements */}
@@ -110,7 +126,7 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
                 </svg>
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">{sortedPosts.length}</p>
+                <p className="text-2xl font-bold text-white">{visiblePosts.length}</p>
                 <p className="text-gray-300">Articles</p>
               </div>
             </div>
@@ -124,7 +140,7 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
                 </svg>
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">5</p>
+                <p className="text-2xl font-bold text-white">{topicsCount}</p>
                 <p className="text-gray-300">Topics</p>
               </div>
             </div>
@@ -188,11 +204,12 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
         >
           <h2 className="text-2xl font-bold text-white mb-6">Topics</h2>
           <div className="flex flex-wrap gap-3">
-            {['All', 'Software Engineering', 'AI Development', 'Japanese Learning', 'Career', 'Projects', 'Personal'].map((topic) => (
+            {topics.map((topic) => (
               <button
                 key={topic}
+                onClick={() => setSelectedTopic(topic)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  topic === 'All' 
+                  topic === selectedTopic 
                     ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' 
                     : 'bg-gray-700/50 text-gray-300 border border-gray-600 hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-500/30'
                 }`}
@@ -212,7 +229,7 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
         >
           <h2 className="text-2xl font-bold text-white mb-6">All Posts</h2>
           <div className="grid gap-6">
-            {sortedPosts.map((post, index) => (
+            {visiblePosts.map((post, index) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                 <div className="bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10">
                   <div className="flex items-start justify-between mb-3">
@@ -258,9 +275,9 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
             ctaVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2>Stay Updated</h2>
+          <h2>Keep Exploring</h2>
           <p>
-            {`Get notified when I publish new articles about software engineering, AI development, language learning, and technology.`}
+            {`Browse more of my writing and projects, or reach out if you'd like to collaborate or chat about ideas.`}
           </p>
           <div className="cta-buttons">
             <Link href="/about" className="cta-button secondary">
