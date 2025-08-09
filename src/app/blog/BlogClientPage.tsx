@@ -105,8 +105,8 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
           }`} 
           style={{ marginTop: 0, marginBottom: '3rem' }}
         >
-          <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>Blog</h1>
-          <p>
+          <h1 className="text-3xl sm:text-5xl font-extrabold mb-4">Blog</h1>
+          <p className="text-base sm:text-lg">
             {`Welcome to my blog! I write about software engineering, AI development, language learning, and personal reflections on technology and culture.`}
           </p>
         </div>
@@ -119,42 +119,42 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
           }`}
         >
           <div className="bg-gray-800/50 rounded-xl p-6 shadow-lg border border-gray-700">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mr-4">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
-              <div>
-                <p className="text-2xl font-bold text-white">{visiblePosts.length}</p>
+              <div className="text-left">
+                <p className="text-3xl font-bold text-blue-400">{visiblePosts.length}</p>
                 <p className="text-gray-300">Articles</p>
               </div>
             </div>
           </div>
 
           <div className="bg-gray-800/50 rounded-xl p-6 shadow-lg border border-gray-700">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center mr-4">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                 </svg>
               </div>
-              <div>
-                <p className="text-2xl font-bold text-white">{topicsCount}</p>
+              <div className="text-left">
+                <p className="text-3xl font-bold text-green-400">{topicsCount}</p>
                 <p className="text-gray-300">Topics</p>
               </div>
             </div>
           </div>
 
           <div className="bg-gray-800/50 rounded-xl p-6 shadow-lg border border-gray-700">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-4">
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <div>
-                <p className="text-2xl font-bold text-white">~5</p>
+              <div className="text-left">
+                <p className="text-3xl font-bold text-orange-400">~5</p>
                 <p className="text-gray-300">Min Read</p>
               </div>
             </div>
@@ -169,8 +169,8 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
               featuredVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">Featured Post</h2>
-            <div className="bg-gray-800/50 rounded-xl p-8 border border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
+            <h2 className="text-2xl font-bold text-white mb-4 sm:mb-6">Featured Post</h2>
+            <div className="bg-gray-800/50 rounded-xl p-5 sm:p-8 border border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
               <Link href={`/blog/${sortedPosts[0].slug}`} className="group">
                 <div className="flex items-start justify-between mb-4">
                   <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium border border-blue-500/30">
@@ -178,11 +178,12 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
                   </span>
                   <span className="text-sm text-gray-400">{sortedPosts[0].date}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                   {sortedPosts[0].title}
                 </h3>
-                <p className="text-gray-300 mb-4 text-lg leading-relaxed">
-                  {sortedPosts[0].description}
+                <p className="hidden sm:block text-gray-300 mb-4 text-lg leading-relaxed">{sortedPosts[0].description}</p>
+                <p className="sm:hidden text-gray-300 mb-4 leading-relaxed">
+                  {sortedPosts[0].description.length > 180 ? sortedPosts[0].description.slice(0, 180) + '…' : sortedPosts[0].description}
                 </p>
                 <div className="flex items-center text-blue-400 group-hover:text-blue-300 transition-colors">
                   <span className="font-medium">Read More</span>
@@ -203,7 +204,7 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
           }`}
         >
           <h2 className="text-2xl font-bold text-white mb-6">Topics</h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex gap-3 flex-nowrap overflow-x-auto whitespace-nowrap sm:flex-wrap sm:overflow-visible sm:whitespace-normal -mx-2 px-2 scrollbar-none">
             {topics.map((topic) => (
               <button
                 key={topic}
@@ -227,11 +228,11 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
             postsVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-2xl font-bold text-white mb-6">All Posts</h2>
-          <div className="grid gap-6">
+          <h2 className="text-2xl font-bold text-white mb-4 sm:mb-6">All Posts</h2>
+          <div className="grid gap-5 sm:gap-6">
             {visiblePosts.map((post, index) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                <div className="bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10">
+                <div className="bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-5 sm:p-6 hover:bg-gray-800/70 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center space-x-2">
                       <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
@@ -240,12 +241,13 @@ export default function BlogClientPage({ posts }: BlogClientPageProps) {
                     <span className="text-sm text-gray-400">{post.date}</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-300 mb-4 leading-relaxed">
-                    {post.description}
+                  <p className="hidden sm:block text-gray-300 mb-4 leading-relaxed">{post.description}</p>
+                  <p className="sm:hidden text-gray-300 mb-4 leading-relaxed">
+                    {post.description.length > 160 ? post.description.slice(0, 160) + '…' : post.description}
                   </p>
                   
                   <div className="flex items-center justify-between pt-4 border-t border-gray-700">
