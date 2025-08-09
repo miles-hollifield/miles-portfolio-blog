@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import SelectField from "@/app/components/SelectField";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -158,13 +159,13 @@ export default function ContactPage() {
           }`} 
           style={{ marginTop: 0, marginBottom: '3rem' }}
         >
-          <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>Get in Touch</h1>
-          <p>
+          <h1 className="text-3xl sm:text-5xl font-extrabold mb-4">Get in Touch</h1>
+          <p className="text-base sm:text-lg">
             {`I'd love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello, feel free to reach out.`}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact Info */}
           <div 
             ref={contactInfoRef}
@@ -172,12 +173,12 @@ export default function ContactPage() {
               contactInfoVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="bg-gray-800/50 rounded-2xl shadow-lg border border-gray-700 p-6">
-              <h2 className="text-2xl font-semibold text-white mb-6">Contact Information</h2>
+            <div className="bg-gray-800/50 rounded-2xl shadow-lg border border-gray-700 p-5 sm:p-6">
+              <h2 className="text-2xl font-semibold text-white mb-4 sm:mb-6">Contact Information</h2>
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-blue-500/20 border border-blue-500/30 rounded-lg flex items-center justify-center">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-500/20 border border-blue-500/30 rounded-lg flex items-center justify-center">
                     <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -194,7 +195,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-purple-500/20 border border-purple-500/30 rounded-lg flex items-center justify-center">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-purple-500/20 border border-purple-500/30 rounded-lg flex items-center justify-center">
                     <svg className="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
@@ -213,7 +214,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-blue-500/20 border border-blue-500/30 rounded-lg flex items-center justify-center">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-500/20 border border-blue-500/30 rounded-lg flex items-center justify-center">
                     <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
@@ -232,7 +233,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 p-4 bg-gray-700/50 rounded-lg border border-gray-600">
+              <div className="mt-6 sm:mt-8 p-4 bg-gray-700/50 rounded-lg border border-gray-600">
                 <p className="text-sm text-gray-300">
                   <strong>Response Time:</strong> I typically respond within 24-48 hours. 
                   For urgent matters, please mention it in your message.
@@ -248,56 +249,61 @@ export default function ContactPage() {
               formVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
             }`}
           >
-            <div className="bg-gray-800/50 rounded-2xl shadow-lg border border-gray-700 p-8">
+            <div className="bg-gray-800/50 rounded-2xl shadow-lg border border-gray-700 p-5 sm:p-8">
               <h2 className="text-2xl font-semibold text-white mb-6">Send a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all placeholder:text-gray-400 text-white ${
-                      errors.name 
-                        ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
-                        : 'border-gray-600 focus:border-blue-500'
-                    }`}
-                    placeholder="Your full name"
-                  />
-                  {errors.name && (
-                    <p className="mt-1 text-sm text-red-400">{errors.name}</p>
-                  )}
-                </div>
+                {/* Name + Email */}
+                <div className="md:grid md:grid-cols-2 md:gap-6">
+                  {/* Name */}
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      autoComplete="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all placeholder:text-gray-400 text-white text-base ${
+                        errors.name 
+                          ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
+                          : 'border-gray-600 focus:border-blue-500'
+                      }`}
+                      placeholder="Your full name"
+                    />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-400">{errors.name}</p>
+                    )}
+                  </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all placeholder:text-gray-400 text-white ${
-                      errors.email 
-                        ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
-                        : 'border-gray-600 focus:border-blue-500'
-                    }`}
-                    placeholder="your.email@example.com"
-                  />
-                  {errors.email && (
-                    <p className="mt-1 text-sm text-red-400">{errors.email}</p>
-                  )}
+                  {/* Email */}
+                  <div className="mt-6 md:mt-0">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      autoComplete="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all placeholder:text-gray-400 text-white text-base ${
+                        errors.email 
+                          ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
+                          : 'border-gray-600 focus:border-blue-500'
+                      }`}
+                      placeholder="your.email@example.com"
+                    />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                    )}
+                  </div>
                 </div>
 
                 {/* Organization */}
@@ -309,9 +315,10 @@ export default function ContactPage() {
                     type="text"
                     id="organization"
                     name="organization"
+                    autoComplete="organization"
                     value={formData.organization}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all placeholder:text-gray-400 text-white"
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all placeholder:text-gray-400 text-white text-base"
                     placeholder="Company, University, etc."
                   />
                 </div>
@@ -321,30 +328,27 @@ export default function ContactPage() {
                   <label htmlFor="reason" className="block text-sm font-medium text-gray-300 mb-2">
                     Reason for Contact *
                   </label>
-                  <select
+                  <SelectField
                     id="reason"
                     name="reason"
-                    required
                     value={formData.reason}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all text-white ${
-                      errors.reason 
-                        ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
-                        : 'border-gray-600 focus:border-blue-500'
-                    }`}
-                  >
-                    <option value="">Select a reason</option>
-                    <option value="Job Opportunity">Job Opportunity</option>
-                    <option value="Freelance Project">Freelance Project</option>
-                    <option value="Collaboration">Collaboration</option>
-                    <option value="Question about Blog Post">Question about Blog Post</option>
-                    <option value="Speaking Engagement">Speaking Engagement</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  {errors.reason && (
-                    <p className="mt-1 text-sm text-red-400">{errors.reason}</p>
-                  )}
+                    onChange={(val) => handleChange({
+                      // Synthetic event to reuse existing handler
+                      target: { name: 'reason', value: val }
+                    } as unknown as React.ChangeEvent<HTMLSelectElement>)}
+                    options={[
+                      { value: '', label: 'Select a reason' },
+                      { value: 'Job Opportunity', label: 'Job Opportunity' },
+                      { value: 'Freelance Project', label: 'Freelance Project' },
+                      { value: 'Collaboration', label: 'Collaboration' },
+                      { value: 'Question about Blog Post', label: 'Question about Blog Post' },
+                      { value: 'Speaking Engagement', label: 'Speaking Engagement' },
+                      { value: 'General Inquiry', label: 'General Inquiry' },
+                      { value: 'Other', label: 'Other' }
+                    ]}
+                    placeholder="Select a reason"
+                    error={errors.reason}
+                  />
                 </div>
 
                 {/* Message */}
@@ -359,7 +363,7 @@ export default function ContactPage() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all resize-vertical placeholder:text-gray-400 text-white ${
+                    className={`w-full px-4 py-3 bg-gray-700/50 border rounded-lg focus:ring-2 focus:ring-blue-500 transition-all resize-vertical placeholder:text-gray-400 text-white text-base ${
                       errors.message 
                         ? 'border-red-500 focus:border-red-500 focus:ring-red-500' 
                         : 'border-gray-600 focus:border-blue-500'
