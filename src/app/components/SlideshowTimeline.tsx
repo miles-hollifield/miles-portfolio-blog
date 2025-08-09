@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const timelineStories = [
@@ -88,30 +88,29 @@ const timelineStories = [
 
 export default function SlideshowTimeline() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [allImagesPreloaded, setAllImagesPreloaded] = useState(false);
+  const [loadedMap, setLoadedMap] = useState<Record<string, boolean>>({});
+  const [expandedMap, setExpandedMap] = useState<Record<number, boolean>>({});
   const totalSlides = timelineStories.length;
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
-  // Preload all images on component mount
+  // Preload only current, previous, and next slide images
   useEffect(() => {
-    const preloadImages = async () => {
-      const imagePromises = timelineStories.map((story) => {
-        return new Promise<void>((resolve) => {
-          const img = new window.Image();
-          img.onload = () => resolve();
-          img.onerror = () => {
-            console.error(`Failed to load image: ${story.image}`);
-            resolve(); // Still resolve to not block other images
-          };
-          img.src = story.image;
-        });
-      });
+    const indices = [
+      currentSlide,
+      (currentSlide + 1) % totalSlides,
+      (currentSlide - 1 + totalSlides) % totalSlides,
+    ];
 
-      await Promise.all(imagePromises);
-      setAllImagesPreloaded(true);
-    };
+    indices.forEach((i) => {
+      const src = timelineStories[i].image;
+      if (loadedMap[src]) return;
 
-    preloadImages();
-  }, []);
+      const img = new window.Image();
+      img.onload = () => setLoadedMap((m) => ({ ...m, [src]: true }));
+      img.onerror = () => setLoadedMap((m) => ({ ...m, [src]: true })); // consider loaded to avoid spinner loop
+      img.src = src;
+    });
+  }, [currentSlide, totalSlides, loadedMap]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -127,32 +126,65 @@ export default function SlideshowTimeline() {
 
   const currentStory = timelineStories[currentSlide];
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStart.current.x;
+    const dy = t.clientY - touchStart.current.y;
+    touchStart.current = null;
+    const absX = Math.abs(dx);
+    const absY = Math.abs(dy);
+    // Horizontal swipe threshold
+    if (absX > 50 && absX > absY) {
+      if (dx < 0) nextSlide();
+      else prevSlide();
+    }
+  };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedMap((m) => ({ ...m, [index]: !m[index] }));
+  };
+
   return (
     <div className="about-card">
-      <h3 className="flex items-center gap-2 text-xl font-bold text-white mb-6">
-        <div className="icon">
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 8v4l3 3m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        </div>
-        My Journey in Stories
-        <span className="text-sm font-normal text-gray-400 ml-2">
-          — {currentSlide + 1} of {totalSlides}
+  <div className="flex items-baseline justify-between mb-6">
+    <h3 className="flex items-center gap-2 text-lg sm:text-xl font-bold text-white">
+          <div className="icon">
+            <svg
+      className="w-4 h-4 sm:w-5 sm:h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8v4l3 3m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
+          <span className="leading-tight">My Journey in Stories</span>
+        </h3>
+        <span
+          className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-800/60 border border-gray-700 text-[10px] sm:text-xs text-gray-300 leading-none whitespace-nowrap shrink-0"
+          aria-live="polite"
+        >
+          {currentSlide + 1} / {totalSlides}
         </span>
-      </h3>
+      </div>
 
       {/* Main slideshow area */}
-      <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 sm:p-8 overflow-hidden border border-gray-700 min-h-[420px] lg:min-h-[520px]">
+      <div
+        className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 sm:p-8 overflow-hidden border border-gray-700 min-h-[360px] sm:min-h-[420px] lg:min-h-[520px]"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         {/* Background decoration */}
         <div
           className={`absolute top-0 right-0 w-32 h-32 ${currentStory.color} opacity-10 rounded-full blur-2xl transform translate-x-8 -translate-y-8`}
@@ -195,19 +227,39 @@ export default function SlideshowTimeline() {
             </p>
 
             {/* Story content */}
-            <p className="text-gray-300 leading-relaxed mb-6 text-base">
-              {currentStory.story}
-            </p>
+            {/* Story content with mobile truncation */}
+            <div className="mb-6">
+              <p className="text-gray-300 leading-relaxed text-base sm:text-base">
+                {
+                  expandedMap[currentSlide] || typeof window === 'undefined'
+                    ? currentStory.story
+                    : currentStory.story.length > 260
+                      ? currentStory.story.slice(0, 260) + '…'
+                      : currentStory.story
+                }
+              </p>
+              {/* Show toggle on small screens only when truncation applied */}
+              {currentStory.story.length > 260 && (
+                <button
+                  className="sm:hidden mt-2 text-sm text-blue-300 hover:text-blue-200 underline"
+                  onClick={() => toggleExpanded(currentSlide)}
+                >
+                  {expandedMap[currentSlide] ? 'Show less' : 'Read more'}
+                </button>
+              )}
+            </div>
 
             {/* Highlights */}
             <div className="space-y-3">
               <h5 className="font-semibold text-white">Key Highlights:</h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 gap-2"
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
+              >
                 {currentStory.highlights.map((highlight, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <div
-                      className={`w-2 h-2 ${currentStory.color} rounded-full flex-shrink-0`}
-                    ></div>
+                  <div key={index} className="flex items-center gap-2 bg-gray-800/40 border border-gray-700 px-3 py-2 rounded-lg">
+                    <div className={`w-2 h-2 ${currentStory.color} rounded-full flex-shrink-0`}></div>
                     <span className="text-sm text-gray-300">{highlight}</span>
                   </div>
                 ))}
@@ -220,14 +272,14 @@ export default function SlideshowTimeline() {
             {/* Aspect ratio container for consistent sizing across breakpoints */}
             <div className="relative w-full max-w-full sm:max-w-xl lg:max-w-2xl aspect-[16/9] sm:aspect-[4/3] lg:aspect-[4/3]">
               {/* Loading placeholder */}
-              {!allImagesPreloaded && (
+      {!loadedMap[currentStory.image] && (
                 <div className="absolute inset-0 bg-gray-200 rounded-lg shadow-lg border-2 border-white flex items-center justify-center">
                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
                 </div>
               )}
 
               {/* Image - only show when all images are preloaded */}
-              {allImagesPreloaded && (
+      {loadedMap[currentStory.image] && (
                 <>
                   <Image
                     src={currentStory.image}
@@ -235,8 +287,7 @@ export default function SlideshowTimeline() {
                     fill
                     className="object-cover rounded-lg shadow-lg border-2 border-white"
                     style={{ objectPosition: 'center top' }}
-                    unoptimized
-                    priority={currentSlide === 0} // Priority for first image
+        priority={currentSlide === 0}
                   />
                   {/* Image frame effect */}
                   <div
@@ -263,13 +314,13 @@ export default function SlideshowTimeline() {
         </button>
 
         {/* Slide indicators */}
-        <div className="flex gap-2">
+    <div className="flex gap-2">
           {timelineStories.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
               aria-label={`Go to story ${index + 1}`}
-              className={`w-3 h-3 rounded-full transition-all ${
+      className={`w-4 h-4 rounded-full transition-all ${
                 index === currentSlide 
                   ? `${currentStory.color} scale-110` 
                   : 'bg-gray-300 hover:bg-gray-400'
@@ -290,11 +341,15 @@ export default function SlideshowTimeline() {
         </button>
       </div>
 
-      {/* Auto-play option (optional) */}
+      {/* Navigation help text */}
       <div className="mt-4 text-center">
-        <p className="text-xs text-gray-400">
+        {/* Mobile hint */}
+        <p className="text-xs text-gray-400 sm:hidden">
+          Swipe left or right to navigate • {totalSlides} stories
+        </p>
+        {/* Desktop hint */}
+        <p className="hidden sm:inline text-xs text-gray-400">
           Click the dots or use the arrows to navigate • {totalSlides} stories
-          total
         </p>
       </div>
     </div>

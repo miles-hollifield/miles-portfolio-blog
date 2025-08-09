@@ -398,6 +398,13 @@
   margin-top: 2rem;
 }
 
+@media (max-width: 640px) {
+  .about-grid {
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+}
+
 .about-card {
   background: #1f2937;
   border-radius: 1.5rem;
@@ -441,6 +448,23 @@
   text-align: center;
   margin-top: 3rem;
   color: white;
+}
+
+@media (max-width: 640px) {
+  .cta-section {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
 }
 
 /* When CTA is placed inside the About page grid, rely on grid gap for spacing */

@@ -134,57 +134,57 @@ export default function AboutPage() {
           }`}
           style={{ marginTop: 0, marginBottom: '3rem' }}
         >
-          <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>About Me</h1>
-          <p>
+          <h1 className="text-3xl sm:text-5xl font-extrabold mb-4 leading-tight">About Me</h1>
+          <p className="text-base sm:text-lg">
             {`Get to know more about my journey as a Software Engineer and AI Engineer, my passion for building intelligent solutions, and what drives me to create meaningful technology.`}
           </p>
         </div>
 
         {/* Table of Contents */}
-        <div className={`mb-8 bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-6 transition-all duration-1000 delay-200 ${
+        <div className={`mb-8 bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-4 sm:p-6 transition-all duration-1000 delay-200 ${
           heroVisible ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
         }`}>
           <h3 className="text-lg font-semibold text-white mb-4">Jump to Section</h3>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex gap-3 flex-nowrap overflow-x-auto whitespace-nowrap sm:flex-wrap sm:overflow-visible sm:whitespace-normal -mx-2 px-2 scrollbar-none">
             <button
               onClick={() => scrollToSection('introduction')}
-              className="px-4 py-2 text-sm bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300 hover:bg-blue-500/30 hover:border-blue-400 hover:text-blue-200 transition-all duration-300"
+              className="shrink-0 px-4 py-2 text-sm bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-300 hover:bg-blue-500/30 hover:border-blue-400 hover:text-blue-200 transition-all duration-300"
             >
               Introduction
             </button>
             <button
               onClick={() => scrollToSection('timeline')}
-              className="px-4 py-2 text-sm bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-500/30 hover:border-purple-400 hover:text-purple-200 transition-all duration-300"
+              className="shrink-0 px-4 py-2 text-sm bg-purple-500/20 border border-purple-500/30 rounded-full text-purple-300 hover:bg-purple-500/30 hover:border-purple-400 hover:text-purple-200 transition-all duration-300"
             >
               My Journey
             </button>
             <button
               onClick={() => scrollToSection('experience')}
-              className="px-4 py-2 text-sm bg-green-500/20 border border-green-500/30 rounded-full text-green-300 hover:bg-green-500/30 hover:border-green-400 hover:text-green-200 transition-all duration-300"
+              className="shrink-0 px-4 py-2 text-sm bg-green-500/20 border border-green-500/30 rounded-full text-green-300 hover:bg-green-500/30 hover:border-green-400 hover:text-green-200 transition-all duration-300"
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection('education')}
-              className="px-4 py-2 text-sm bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-300 hover:bg-yellow-500/30 hover:border-yellow-400 hover:text-yellow-200 transition-all duration-300"
+              className="shrink-0 px-4 py-2 text-sm bg-yellow-500/20 border border-yellow-500/30 rounded-full text-yellow-300 hover:bg-yellow-500/30 hover:border-yellow-400 hover:text-yellow-200 transition-all duration-300"
             >
               Education
             </button>
             <button
               onClick={() => scrollToSection('skills')}
-              className="px-4 py-2 text-sm bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-300 hover:bg-cyan-500/30 hover:border-cyan-400 hover:text-cyan-200 transition-all duration-300"
+              className="shrink-0 px-4 py-2 text-sm bg-cyan-500/20 border border-cyan-500/30 rounded-full text-cyan-300 hover:bg-cyan-500/30 hover:border-cyan-400 hover:text-cyan-200 transition-all duration-300"
             >
               Technical Skills
             </button>
             <button
               onClick={() => scrollToSection('interests')}
-              className="px-4 py-2 text-sm bg-red-500/20 border border-red-500/30 rounded-full text-red-300 hover:bg-red-500/30 hover:border-red-400 hover:text-red-200 transition-all duration-300"
+              className="shrink-0 px-4 py-2 text-sm bg-red-500/20 border border-red-500/30 rounded-full text-red-300 hover:bg-red-500/30 hover:border-red-400 hover:text-red-200 transition-all duration-300"
             >
               Interests
             </button>
             <button
               onClick={() => scrollToSection('philosophy')}
-              className="px-4 py-2 text-sm bg-indigo-500/20 border border-indigo-500/30 rounded-full text-indigo-300 hover:bg-indigo-500/30 hover:border-indigo-400 hover:text-indigo-200 transition-all duration-300"
+              className="shrink-0 px-4 py-2 text-sm bg-indigo-500/20 border border-indigo-500/30 rounded-full text-indigo-300 hover:bg-indigo-500/30 hover:border-indigo-400 hover:text-indigo-200 transition-all duration-300"
             >
               Philosophy
             </button>
@@ -204,6 +204,7 @@ export default function AboutPage() {
         >
           {/* Introduction */}
           <div 
+            id="introduction"
             ref={introRef}
             className={`transition-all duration-1000 ${
               sectionsVisible.introduction ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
@@ -305,7 +306,7 @@ export default function AboutPage() {
         {/* Back to Top Button */}
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center z-50 group hover:scale-110"
+          className="fixed bottom-6 right-6 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center z-50 group hover:scale-110"
           aria-label="Back to top"
         >
           <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

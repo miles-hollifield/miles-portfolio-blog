@@ -24,11 +24,11 @@ const defaultEducation: EducationItem[] = [
     period: "Jan 2023 - May 2026",
     location: "Raleigh, North Carolina",
     gpa: "3.53 / 4.00",
-    description: "Pursuing a comprehensive Computer Science degree with a focus on software engineering, AI/ML, and system design.",
+    description: "Studying CS with a focus on software engineering and AI/ML, pairing coursework with internships and leadership.",
     achievements: [
-      "Goodnight Scholarship Program Recipient, Mentor, and Program Ambassador (Aug 2023 - Present)",
-      "Minor in Japan Studies demonstrating cross-cultural academic excellence",
-      "Maintained strong academic performance while balancing internships and leadership roles"
+      "Goodnight Scholar — Mentor & Program Ambassador",
+      "Minor in Japan Studies",
+      "3.53 GPA while interning and leading"
     ],
     activities: [
       "Video Game Development Club - Member (Jan 2023 - May 2024)",
@@ -42,11 +42,11 @@ const defaultEducation: EducationItem[] = [
     period: "Jun 2021 - Dec 2022",
     location: "Asheville, North Carolina",
     gpa: "3.9 / 4.0",
-    description: "Completed transfer-focused computer science curriculum while working as a Web Assistant and private tutor, demonstrating exceptional time management and academic dedication.",
+    description: "Completed transfer CS track while working, demonstrating strong performance and readiness for NC State.",
     achievements: [
-      "Served as Private Calculus 1 and 2 tutor, helping fellow students succeed in challenging mathematics courses",
-      "Maintained near-perfect GPA while working part-time as Web Assistant",
-      "Successfully prepared for transfer to NC State University"
+      "Private tutor for Calculus I & II",
+      "Near‑perfect GPA while working part‑time",
+      "Prepared and transferred to NC State"
     ],
     activities: [
       "The National Society of Leadership and Success - Member",
@@ -60,11 +60,11 @@ const defaultEducation: EducationItem[] = [
     period: "Aug 2019 - May 2021",
     location: "Asheville, North Carolina", 
     gpa: "4.0 / 4.0",
-    description: "Achieved perfect academic performance in intensive software and web development program, building foundational skills in programming, web technologies, and system administration.",
+    description: "Completed an intensive software and web development program with a 4.0 GPA.",
     achievements: [
-      "Perfect 4.0 GPA demonstrating mastery of technical curriculum",
-      "Completed comprehensive software development coursework including programming fundamentals, web development, and database design",
-      "Built strong foundation in multiple programming languages and web technologies"
+      "4.0 GPA across the technical curriculum",
+      "Projects spanning programming, web, and databases",
+      "Foundation across multiple languages and stacks"
     ],
     activities: [
       "The National Society of Leadership and Success - Member"

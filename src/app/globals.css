@@ -334,6 +334,15 @@ body {
   }
 }
 
+/* Utility: hide scrollbar (used for horizontal chip scroll on mobile) */
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
 /* Mobile responsive improvements */
 @media (max-width: 768px) {
   body {

@@ -21,13 +21,11 @@ const defaultExperiences: ExperienceItem[] = [
     company: "Siemens",
     period: "May 2024 - Present · 1 yr 3 mos",
     location: "Wendell, North Carolina",
-    description: "Led development of multiple enterprise-grade applications that streamlined critical business processes and enhanced productivity for over 100 engineers across departments.",
+    description: "Built and scaled internal apps that modernized parts, knowledge, and 3D model workflows across engineering teams.",
     achievements: [
-      "Aided in the development of the AIS BOM Management Tool, enabling engineers to efficiently manage product structures and data, using Visual Basic",
-      "Contributed to SEAK, an enterprise knowledge platform with FastAPI, SvelteKit, and TypeScript implementing semantic search and AI-driven interfaces using RAG (Retrieval Augmented Generation) and Vector Databases to deliver accurate answers from company data sources",
-      "Developed SPIN DB, a modern parts management system using React, Material UI, FastAPI, and SQL Server with SQLAlchemy that modernized legacy database operations while maintaining robust revision history tracking",
-      "Built JT Catalog, an enterprise 3D model management system using React, Material UI, FastAPI, and SQL Server with interactive visualization capabilities, hierarchical metadata management, and SAP/Salesforce integration, reducing model search time by 70%",
-      "Integrated enterprise authentication using Azure Entra ID across multiple applications, ensuring secure access control while maintaining a seamless user experience"
+      "Shipped SPIN DB and JT Catalog to replace legacy workflows",
+      "Cut 3D model search time by ~70% via indexed metadata",
+      "Implemented Azure Entra ID SSO with role‑based access"
     ]
   },
   {
@@ -35,12 +33,11 @@ const defaultExperiences: ExperienceItem[] = [
     company: "Unifyr",
     period: "May 2023 - Dec 2023 · 8 mos",
     location: "Cary, North Carolina",
-    description: "Spearheaded the development of custom partner portal pages and integration projects, focusing on client-centric solutions and enterprise system architecture.",
+    description: "Delivered client‑facing portal features and enterprise integrations, balancing velocity with maintainability.",
     achievements: [
-      "Spearheaded the development of custom partner portal pages using Angular and JavaScript, aligning with Zift's mission to deliver client‑centric solutions and enhance user engagement",
-      "Assisted in the integration project between Salesforce and Zift utilizing Blendr and Workato, significantly improving data synchronization and reducing technical debt within the organization",
-      "Authored and executed comprehensive Salesforce Apex test cases, achieving an 80% coverage rate, demonstrating a strong commitment to quality and reliability in software development",
-      "Optimized system performance by identifying and resolving bottlenecks in data synchronization and network communications, improving over‑all application efficiency"
+      "Built Angular partner‑portal modules used by enterprise clients",
+      "Automated Salesforce↔Zift sync with Blendr/Workato",
+      "Reached ~80% Apex test coverage on updated code"
     ]
   },
   {
@@ -48,11 +45,11 @@ const defaultExperiences: ExperienceItem[] = [
     company: "The Sprinter",
     period: "Jan 2022 - Jun 2022 · 6 mos",
     location: "Asheville, North Carolina",
-    description: "Designed and developed user interfaces and performed database development for client projects, focusing on customer engagement optimization and business requirement fulfillment.",
+    description: "Delivered end‑to‑end web solutions—from UI to data—focused on clear outcomes for small‑business clients.",
     achievements: [
-      "Designed and developed user interfaces and performed database development using PHP, JavaScript, and MySQL",
-      "Managed content management systems for clients using WordPress to optimize customer retention, engagement, and clickthrough rate, and provided recommendations for ongoing improvements",
-      "Deployed and maintained web-based applications that meet clients' business requirements, streamline daily operations, and enhance overall user experience"
+      "Built PHP/JS features backed by MySQL schemas",
+      "Managed WordPress content with SEO and accessibility",
+      "Deployed and maintained sites for reliability and UX"
     ]
   },
   {
@@ -60,11 +57,11 @@ const defaultExperiences: ExperienceItem[] = [
     company: "Asheville-Buncombe Technical Community College",
     period: "Jan 2021 - Jun 2022 · 1 yr 6 mos",
     location: "Asheville, North Carolina",
-    description: "Collaborated with the Webmaster to maintain and optimize the college's website, ensuring accessibility, SEO best practices, and engaging content for the target audience.",
+    description: "Maintained the college web presence in Drupal with a focus on accuracy, accessibility, and search visibility.",
     achievements: [
-      "Collaborated with the Webmaster to ensure that the college's website content was up-to-date, relevant, and engaging for the target audience",
-      "Utilized the Drupal content management system to perform routine website maintenance tasks such as updating content and evaluating web pages for accuracy and functionality",
-      "Ensured website accessibility and implemented Search Engine Optimization (SEO) best practices to improve website visibility"
+      "Updated and QA’d Drupal pages for accuracy and uptime",
+      "Applied accessibility and SEO best practices",
+      "Streamlined content requests with reusable patterns"
     ]
   }
 ];

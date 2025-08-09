@@ -3,19 +3,16 @@ export default function Introduction() {
     <div id="introduction" className="content-section">
       <h2>Who I Am</h2>
       <p>
-        {`I'm Miles, a software engineer, AI engineer, video game enthusiast, and lifelong learner. My journey into tech began when I was five, playing Pokémon Yellow on a Game Boy Color. That early spark of curiosity eventually grew into a deep passion for building technology that connects, empowers, and inspires.`}
+        {`I'm Miles, a software and AI engineer, video game enthusiast, and lifelong learner. My love for tech started at 5 years old when I played Pokémon Yellow on a Game Boy Color — my first video game. That spark grew into a passion for building technology that connects and empowers.`}
       </p>
       <p>
-        {`Today, I'm a Software Engineering Intern at Siemens and a senior at NC State University, majoring in Computer Science and minoring in Japan Studies. As a Goodnight Scholar, I serve as both a mentor and program ambassador. My work spans full-stack development, AI system design, and creative software projects, including indie games and language learning tools.`}
+        {`Today, I'm a senior at NC State University (Computer Science major, Japan Studies minor, Goodnight Scholar mentor and ambassador). I work across full‑stack development, AI system design, and creative software projects like indie games and language learning tools.`}
       </p>
       <p>
-        {`Over the years, I've taken on many roles — from leading a bakery team while in school, to maintaining a college website, to freelancing as a Web Analyst and Developer. I've interned at a startup as a Software Engineer and contributed to enterprise-grade systems at Siemens. Every experience has helped shape my perspective as a developer who values both technical excellence and practical impact.`}
+        {`I've led a bakery team while in school, maintained a college website, freelanced as a Web Analyst and Developer, contributed at a startup, and helped ship enterprise systems at Siemens. Those experiences shaped my focus on practical impact and technical quality.`}
       </p>
       <p>
-        {`I'm especially passionate about building intelligent software solutions that create real-world impact, particularly in education, gaming, and language learning. I'm actively pursuing opportunities in Software Engineering and AI Engineering, leveraging my experience in both traditional software development and AI system integration to solve complex problems.`}
-      </p>
-      <p>
-        {`If you're building something meaningful in software development, AI systems, education, or games — or just want to connect — I'd love to hear from you.`}
+        {`I'm especially interested in intelligent software with real‑world impact—particularly in education, gaming, and language learning. If you're building something meaningful in software or AI, I'd love to connect.`}
       </p>
     </div>
   );
