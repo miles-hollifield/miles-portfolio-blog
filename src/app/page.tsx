@@ -22,7 +22,7 @@ export default function HomePage() {
             setVisible(true);
           }
         },
-        { threshold: 0.3, rootMargin: "-15% 0px" }
+        { threshold: 0.1, rootMargin: "-15% 0px" }
       );
     };
 
