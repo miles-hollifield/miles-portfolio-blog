@@ -22,7 +22,7 @@ const projects: Project[] = [
   {
     title: "Kakitori",
     description: "Comprehensive Japanese learning platform with AI-powered tutoring and structured practice modules",
-    longDescription: "A full-stack Japanese language learning platform featuring an intelligent AI tutor, kanji practice systems, vocabulary building tools, and progress analytics. Built with a modern React frontend and FastAPI backend, Kakitori provides personalized learning experiences through AI integration and comprehensive study tools. The platform includes Google OAuth authentication, PostgreSQL data persistence, and Redis caching for optimal performance.",
+  longDescription: "Full‑stack Japanese learning platform with an AI tutor, JLPT‑aligned kanji practice, vocab tools, and progress analytics. Built with React + FastAPI, secured with Google OAuth, and backed by PostgreSQL with Redis caching.",
     technologies: [
       "React", "FastAPI", "PostgreSQL", "Redis", 
       "Material-UI", "SQLAlchemy", "Alembic", "Docker",
@@ -33,21 +33,18 @@ const projects: Project[] = [
       github: "https://github.com/miles-hollifield/KakitoriAPP",
     },
     highlights: [
-      "AI-powered Japanese tutor with chat interface using OpenAI/Anthropic APIs",
-      "Comprehensive kanji learning system with JLPT integration",
-      "Modern full-stack architecture with React frontend and FastAPI backend",
-      "Google OAuth authentication and user progress tracking",
-      "Docker containerized development environment with PostgreSQL and Redis",
-      "Material-UI based responsive design with sophisticated analytics dashboard",
-      "Structured learning modules including vocabulary, grammar, and conversation practice",
-      "Database-driven content management with Alembic migrations"
+      "AI tutor chat using OpenAI/Anthropic APIs",
+      "JLPT‑aligned kanji system with spaced practice",
+      "React + FastAPI full‑stack architecture",
+      "Google OAuth with per‑user progress tracking",
+      "PostgreSQL + Redis for speed and reliability"
     ],
     category: "Web App"
   },
   {
     title: "Virtual DJ Hand Controller",
     description: "Computer vision-based DJ interface controlled entirely through hand gestures and webcam tracking",
-    longDescription: "An innovative application that transforms natural hand movements into real-time audio control parameters. Using MediaPipe for hand landmark detection and Pyo for audio processing, the system enables touchless DJ control through intuitive gestures. The interface maps hand distances to volume, pinch gestures to speed and pitch control, and hand twists to track navigation, creating a natural and immersive DJ experience.",
+  longDescription: "Touchless DJ controller that maps hand gestures to real‑time audio control. MediaPipe detects landmarks; Pyo handles pitch, tempo, and volume for an immersive, webcam‑driven experience.",
     technologies: [
       "Python", "MediaPipe", "OpenCV", "Pyo Audio", 
       "NumPy", "SciPy", "Computer Vision", "Real-time Processing"
@@ -57,21 +54,18 @@ const projects: Project[] = [
       github: "https://github.com/miles-hollifield/VirtualDJ-HandController",
     },
     highlights: [
-      "Real-time hand landmark detection and gesture recognition using MediaPipe",
-      "Advanced audio processing with pitch shifting, speed control, and volume manipulation",
-      "Intuitive gesture mapping: distance for volume, pinch for tempo/pitch, twist for tracks",
-      "Custom algorithms for hand twist detection using vector mathematics",
-      "Visual feedback system with on-screen parameter visualization",
-      "Robust gesture recognition with cooldown systems to prevent false triggers",
-      "Cross-platform compatibility with webcam integration",
-      "Mathematical audio transformations using frequency domain processing"
+      "Real‑time gesture recognition via MediaPipe",
+      "Pitch, tempo, and volume control (Pyo)",
+      "Distance/pinch/twist mapped to parameters",
+      "On‑screen visual feedback overlays",
+      "Webcam‑based, cross‑platform setup"
     ],
     category: "Tool"
   },
   {
     title: "Portfolio + Blog",
     description: "Modern portfolio website featuring interactive timeline, advanced blog system, and sophisticated UI/UX design",
-    longDescription: "This very site! A carefully crafted portfolio and blog platform showcasing modern web development practices. Built with Next.js 15's App Router, featuring an interactive slideshow timeline component, advanced MDX blog system with gray-matter frontmatter parsing, and a custom CSS theme with gradient animations and backdrop effects. The site demonstrates sophisticated component architecture, responsive design principles, and attention to user experience details.",
+  longDescription: "This site—built with Next.js 15 App Router—features an interactive timeline, MDX blog, and a custom theme with gradient animations. It’s a fast, accessible portfolio with a clean component architecture.",
     technologies: [
       "NextJS", "React", "TypeScript", "MDX", "Tailwind CSS", 
       "Gray-matter", "CSS Animations", "App Router", "next-mdx-remote"
@@ -81,14 +75,11 @@ const projects: Project[] = [
       live: "https://milescript.net",
     },
     highlights: [
-      "Interactive slideshow timeline component with smooth transitions and storytelling",
-      "Advanced MDX blog system with frontmatter parsing and dynamic routing", 
-      "Custom CSS theme system with gradient animations and backdrop effects",
-      "Sophisticated component architecture with TypeScript interfaces",
-      "Next.js 15 App Router with static generation and optimized performance",
-      "Responsive design with attention to accessibility and user experience",
-      "Advanced blog features: breadcrumbs, metadata, post navigation, and SEO optimization",
-      "Custom gradient animations and smooth hover effects throughout the interface"
+      "Interactive slideshow timeline",
+      "MDX blog with frontmatter + dynamic routes",
+      "Next.js 15 App Router with SSG",
+      "Custom theme with gradient animations",
+      "Accessible, responsive UI with TypeScript"
     ],
     category: "Website"
   }
@@ -101,6 +92,8 @@ export default function ProjectsPage() {
     projects.map(() => false)
   );
   const [ctaVisible, setCtaVisible] = useState(false);
+  const [descExpanded, setDescExpanded] = useState<boolean[]>(projects.map(() => false));
+  const [techExpanded, setTechExpanded] = useState<boolean[]>(projects.map(() => false));
   
   const heroRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -179,8 +172,8 @@ export default function ProjectsPage() {
           }`} 
           style={{ marginTop: 0, marginBottom: '3rem' }}
         >
-          <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>Projects</h1>
-          <p>
+          <h1 className="text-3xl sm:text-5xl font-extrabold mb-4">Projects</h1>
+          <p className="text-base sm:text-lg">
             {`A collection of software engineering and AI-powered projects I've built. Each project represents a step forward in my journey as a developer, showcasing everything from full-stack web applications to innovative AI integrations.`}
           </p>
         </div>
@@ -219,19 +212,19 @@ export default function ProjectsPage() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid gap-8 mb-16">
+        <div className="grid gap-6 sm:gap-8 mb-16">
           {projects.map((project, index) => (
             <div 
               key={index} 
               ref={el => { projectRefs.current[index] = el; }}
-              className={`bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-8 hover:bg-gray-800/70 transition-all duration-1000 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10 ${
+              className={`bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-5 sm:p-8 hover:bg-gray-800/70 transition-all duration-1000 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/10 ${
                 projectsVisible[index] ? 'animate-fade-in-up' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${400 + index * 200}ms` }}
             >
               {/* Header */}
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <h3 className="text-2xl font-bold text-white mb-2 sm:mb-0">{project.title}</h3>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-white">{project.title}</h3>
                 <div className="flex gap-2">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium cursor-default ${
                     project.status === "Live" ? "bg-green-500/20 text-green-300 border border-green-500/30" :
@@ -247,20 +240,50 @@ export default function ProjectsPage() {
               </div>
 
               {/* Description */}
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                {project.longDescription}
-              </p>
+              <div className="mb-6">
+                {/* Desktop/full */}
+                <p className="hidden sm:block text-gray-300 leading-relaxed">
+                  {project.longDescription}
+                </p>
+                {/* Mobile with toggle */}
+                <p className="sm:hidden text-gray-300 leading-relaxed">
+                  {descExpanded[index] || project.longDescription.length <= 220
+                    ? project.longDescription
+                    : project.longDescription.slice(0, 220) + '…'}
+                </p>
+                {project.longDescription.length > 220 && (
+                  <button
+                    className="sm:hidden mt-2 text-sm text-blue-300 hover:text-blue-200 underline"
+                    onClick={() => setDescExpanded(prev => prev.map((v, i) => i === index ? !v : v))}
+                  >
+                    {descExpanded[index] ? 'Show less' : 'Read more'}
+                  </button>
+                )}
+              </div>
 
               {/* Technologies */}
               <div className="mb-6">
                 <h4 className="text-sm font-semibold text-white mb-3">Technologies</h4>
-                <div className="flex flex-wrap gap-2">
+                {/* Desktop/all */}
+                <div className="hidden sm:flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30 hover:bg-blue-500/30 transition-colors cursor-default">
-                      {tech}
-                    </span>
+                    <span key={techIndex} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30 hover:bg-blue-500/30 transition-colors cursor-default">{tech}</span>
                   ))}
                 </div>
+                {/* Mobile capped + toggle */}
+                <div className="sm:hidden flex flex-wrap gap-2">
+                  {(techExpanded[index] ? project.technologies : project.technologies.slice(0, 8)).map((tech, techIndex) => (
+                    <span key={techIndex} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">{tech}</span>
+                  ))}
+                </div>
+                {project.technologies.length > 8 && (
+                  <button
+                    className="sm:hidden mt-2 text-sm text-blue-300 hover:text-blue-200 underline"
+                    onClick={() => setTechExpanded(prev => prev.map((v, i) => i === index ? !v : v))}
+                  >
+                    {techExpanded[index] ? 'Show fewer' : `Show all (${project.technologies.length})`}
+                  </button>
+                )}
               </div>
 
               {/* Key Features */}
