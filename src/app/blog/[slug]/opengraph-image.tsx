@@ -1,13 +1,24 @@
 import { ImageResponse } from "next/og";
-import { getPostBySlug, postExists } from "@/lib/mdx";
 
-export const runtime = "edge";
+// Use Node.js runtime to allow static generation on other pages and suppress Edge warnings
+export const runtime = "nodejs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+function titleFromSlug(slug: string) {
+  return slug
+    .replace(/-/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 export default async function OGPostImage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const title = postExists(slug) ? getPostBySlug(slug).title : "MileScript Blog";
+  // Read title from query param to avoid Node-only imports and keep Edge runtime
+  const url = typeof self !== "undefined" && "location" in self ? new URL(self.location.href) : undefined;
+  const queryTitle = url?.searchParams.get("t") || undefined;
+  const title = queryTitle || (slug ? titleFromSlug(slug) : "MileScript Blog");
 
   return new ImageResponse(
     (

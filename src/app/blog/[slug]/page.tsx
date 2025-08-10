@@ -16,7 +16,7 @@ export async function generateMetadata({
   const url = `/blog/${post.slug}`;
   const title = post.title;
   const description = post.description || "Blog post on MileScript";
-  const imageUrl = post.image || `/blog/${post.slug}/opengraph-image`;
+  const imageUrl = post.image || `/blog/${post.slug}/opengraph-image?t=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -27,13 +27,13 @@ export async function generateMetadata({
       description,
       url,
       type: "article",
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
+  images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [imageUrl],
+  images: [imageUrl],
     },
   };
 }

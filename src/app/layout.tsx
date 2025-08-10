@@ -22,15 +22,15 @@ export const metadata: Metadata = {
     siteName: "MileScript",
     type: "website",
     images: [
-      // Next.js will also auto-wire app/opengraph-image.tsx; this explicit path is for scrapers
-      { url: "/opengraph-image", width: 1200, height: 630, alt: "Miles Hollifield" },
+      // Use a static fallback image; replace with /og-default.png (PNG/JPG) for best compatibility
+      { url: "/brand-m.svg", width: 1200, height: 630, alt: "Miles Hollifield" },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Miles Hollifield",
     description: "Developer | Writer | Creator",
-    images: ["/opengraph-image"],
+    images: ["/brand-m.svg"],
   },
   icons: {
     icon: [
