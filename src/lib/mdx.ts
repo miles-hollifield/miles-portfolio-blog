@@ -10,7 +10,6 @@ export function getAllPosts(): Array<{
   date: string;
   description: string;
   tags?: string[];
-  image?: string;
 }> {
   // Check if posts directory exists
   if (!fs.existsSync(postsDirectory)) {
@@ -35,8 +34,7 @@ export function getAllPosts(): Array<{
         title: data.title || slug,
         date: data.date || new Date().toISOString().split('T')[0],
         description: data.description || "",
-        tags: Array.isArray(data.tags) ? data.tags : undefined,
-        image: typeof data.image === 'string' ? data.image : undefined,
+  tags: Array.isArray(data.tags) ? data.tags : undefined,
       };
     } catch (error) {
       console.error(`Error reading post ${fileName}:`, error);
@@ -55,7 +53,6 @@ export function getPostBySlug(slug: string): {
   date: string;
   description: string;
   tags?: string[];
-  image?: string;
 } {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   
@@ -74,8 +71,7 @@ export function getPostBySlug(slug: string): {
       title: data.title || slug,
       date: data.date || new Date().toISOString().split('T')[0],
       description: data.description || "",
-      tags: Array.isArray(data.tags) ? data.tags : undefined,
-      image: typeof data.image === 'string' ? data.image : undefined,
+  tags: Array.isArray(data.tags) ? data.tags : undefined,
     };
   } catch (error) {
     console.error(`Error reading post ${slug}:`, error);
