@@ -11,6 +11,27 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Miles Hollifield",
   description: "Developer | Writer | Creator",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Miles Hollifield",
+    description: "Developer | Writer | Creator",
+    url: "/",
+    siteName: "MileScript",
+    type: "website",
+    images: [
+      // Next.js will also auto-wire app/opengraph-image.tsx; this explicit path is for scrapers
+      { url: "/opengraph-image", width: 1200, height: 630, alt: "Miles Hollifield" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Miles Hollifield",
+    description: "Developer | Writer | Creator",
+    images: ["/opengraph-image"],
+  },
   icons: {
     icon: [
       { url: "/brand-m.svg", type: "image/svg+xml" },

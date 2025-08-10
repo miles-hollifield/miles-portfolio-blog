@@ -48,7 +48,7 @@ export default function ShareButton({ slug }: ShareButtonProps) {
     <div className="relative">
       <button
         onClick={handleCopy}
-        className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors"
+        className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
         aria-label="Copy link to clipboard"
         title="Copy link"
       >
