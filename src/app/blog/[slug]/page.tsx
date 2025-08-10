@@ -21,8 +21,7 @@ export async function generateMetadata({
   const url = `/blog/${post.slug}`;
   const title = post.title;
   const description = post.description || "Blog post on MileScript";
-  const imagePath = post.image || `/blog/${post.slug}/opengraph-image?t=${encodeURIComponent(title)}`;
-  const imageUrl = imagePath.startsWith("http") ? imagePath : `${base}${imagePath}`;
+  const imageUrl = `${base}/preview-image.png`;
 
   return {
     title,

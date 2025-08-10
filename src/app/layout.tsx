@@ -26,13 +26,13 @@ export async function generateMetadata(): Promise<Metadata> {
       url: "/",
       siteName: "MileScript",
       type: "website",
-      images: [{ url: `${base}/opengraph-image`, width: 1200, height: 630, alt: "Miles Hollifield" }],
+      images: [{ url: `${base}/preview-image.png`, width: 1200, height: 630, alt: "Miles Hollifield" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Miles Hollifield",
       description: "Developer | Writer | Creator",
-      images: [`${base}/opengraph-image`],
+      images: [`${base}/preview-image.png`],
     },
     icons: {
       icon: [
