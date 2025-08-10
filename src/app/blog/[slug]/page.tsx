@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ShareButton from "@/app/components/ShareButton";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 export async function generateMetadata({
   params,
@@ -13,10 +14,15 @@ export async function generateMetadata({
   const { slug } = await params;
   if (!postExists(slug)) return {};
   const post = getPostBySlug(slug);
+  const h = await headers();
+  const host = h.get("x-forwarded-host") || h.get("host") || "localhost:3000";
+  const proto = h.get("x-forwarded-proto") || (host.includes("localhost") ? "http" : "https");
+  const base = `${proto}://${host}`;
   const url = `/blog/${post.slug}`;
   const title = post.title;
   const description = post.description || "Blog post on MileScript";
-  const imageUrl = post.image || `/blog/${post.slug}/opengraph-image?t=${encodeURIComponent(title)}`;
+  const imagePath = post.image || `/blog/${post.slug}/opengraph-image?t=${encodeURIComponent(title)}`;
+  const imageUrl = imagePath.startsWith("http") ? imagePath : `${base}${imagePath}`;
 
   return {
     title,
@@ -25,7 +31,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url,
+  url: `${base}${url}`,
       type: "article",
   images: [{ url: imageUrl, width: 1200, height: 630, alt: title }],
     },

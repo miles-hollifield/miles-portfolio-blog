@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
 import "../styles/theme.css";
 import { Inter } from "next/font/google";
@@ -8,38 +9,40 @@ import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Miles Hollifield",
-  description: "Developer | Writer | Creator",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  const h = await headers();
+  const host = h.get("x-forwarded-host") || h.get("host") || "localhost:3000";
+  const proto = h.get("x-forwarded-proto") || (host.includes("localhost") ? "http" : "https");
+  const base = `${proto}://${host}`;
+
+  return {
     title: "Miles Hollifield",
     description: "Developer | Writer | Creator",
-    url: "/",
-    siteName: "MileScript",
-    type: "website",
-    images: [
-      // Use a static fallback image; replace with /og-default.png (PNG/JPG) for best compatibility
-      { url: "/brand-m.svg", width: 1200, height: 630, alt: "Miles Hollifield" },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Miles Hollifield",
-    description: "Developer | Writer | Creator",
-    images: ["/brand-m.svg"],
-  },
-  icons: {
-    icon: [
-      { url: "/brand-m.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", rel: "shortcut icon" },
-    ],
-    apple: "/brand-m.svg",
-  },
-};
+    metadataBase: new URL(base),
+    alternates: { canonical: "/" },
+    openGraph: {
+      title: "Miles Hollifield",
+      description: "Developer | Writer | Creator",
+      url: "/",
+      siteName: "MileScript",
+      type: "website",
+      images: [{ url: `${base}/opengraph-image`, width: 1200, height: 630, alt: "Miles Hollifield" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Miles Hollifield",
+      description: "Developer | Writer | Creator",
+      images: [`${base}/opengraph-image`],
+    },
+    icons: {
+      icon: [
+        { url: "/brand-m.svg", type: "image/svg+xml" },
+        { url: "/favicon.ico", rel: "shortcut icon" },
+      ],
+      apple: "/brand-m.svg",
+    },
+  };
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
