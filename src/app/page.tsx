@@ -76,22 +76,6 @@ export default function HomePage() {
             }}></div>
           </div>
           
-          {/* Floating Code Elements */}
-          {/* <div className="absolute top-10 left-4 sm:top-20 sm:left-10 text-cyan-400/30 text-xs sm:text-sm font-mono transform rotate-12 hidden sm:block pointer-events-none">
-            {'import torch'}
-          </div>
-          <div className="absolute top-16 right-4 sm:top-32 sm:right-20 text-purple-400/30 text-xs font-mono transform -rotate-6 hidden sm:block pointer-events-none">
-            model.train()
-          </div>
-          <div className="absolute bottom-20 left-4 sm:bottom-40 sm:left-20 text-yellow-400/30 text-sm sm:text-lg font-mono transform rotate-45 hidden sm:block pointer-events-none">
-            →
-          </div>
-          <div className="absolute bottom-10 right-4 sm:bottom-20 sm:right-32 text-green-400/30 text-xs sm:text-sm font-mono transform -rotate-12 hidden sm:block pointer-events-none">
-            tf.keras
-          </div>
-          <div className="absolute top-20 left-16 sm:top-40 sm:left-32 text-red-400/30 text-xs font-mono transform rotate-6 hidden lg:block pointer-events-none">
-            async/await
-          </div> */}
         </div>
 
         <div className="mx-auto max-w-6xl w-full">
@@ -99,11 +83,6 @@ export default function HomePage() {
             
             {/* Left Column - Main Content */}
             <div className="lg:col-span-8 text-left relative z-10 order-2 lg:order-1 animate-fade-in-up">
-              {/* Status Badge */}
-              {/* <div className="inline-flex items-center space-x-2 bg-green-400/10 border border-green-400/20 rounded-full px-4 py-2 mb-6">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-400 text-sm font-medium">Available for new projects</span>
-              </div> */}
 
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-4 sm:mb-6 animate-fade-in-up animation-delay-200">
