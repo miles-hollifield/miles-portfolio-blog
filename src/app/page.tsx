@@ -134,11 +134,11 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-30 animate-pulse group-hover:opacity-50 group-hover:blur-2xl transition-all duration-500"></div>
                   
                   {/* Offset White Border */}
-                  <div className="absolute top-5 left-5 w-full h-full rounded-xl border-4 border-white opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-3 left-3 w-full h-full rounded-xl border-4 border-white opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="relative w-full h-full rounded-xl overflow-hidden border-1 backdrop-blur-sm bg-gray-800/50 group-hover:shadow-2xl group-hover:shadow-purple-500/20 transition-all duration-500">
                     <Image 
-                      src="/timeline-images/miles-2021.jpg" 
+                      src="/miles-new-headshot.jpg" 
                       alt="Miles Hollifield" 
                       width={350} 
                       height={420} 
@@ -263,7 +263,7 @@ export default function HomePage() {
                   </div>
                   <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
                     <span className="text-gray-400 text-sm">Years of Experience</span>
-                    <p className="text-white group-hover:text-gray-100">2+</p>
+                    <p className="text-white group-hover:text-gray-100">2+ years SWE, 4+ years Web Dev</p>
                   </div>
                   <div className="hover:bg-gray-700/30 rounded-lg p-2 transition-colors duration-200">
                     <span className="text-gray-400 text-sm">Interests</span>

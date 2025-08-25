@@ -42,6 +42,28 @@ const projects: Project[] = [
     category: "Web App"
   },
   {
+    title: "GoodnightGPT",
+    description: "AI-powered RAG chatbot for personalized question answering with CSV data ingestion and vector search",
+    longDescription: "Intelligent chatbot system for the Goodnight Scholars program at NC State University. Combines retrieval-augmented generation (RAG) with a sleek chat interface. Features CSV data ingestion, Pinecone vector storage, and Anthropic Claude for contextual responses with source attribution.",
+    technologies: [
+      "Next.js", "FastAPI", "Pinecone", "Anthropic API",
+      "SentenceTransformers", "Material-UI", "TypeScript", "Python",
+      "Pandas", "Uvicorn", "Vector Embeddings", "RAG"
+    ],
+    status: "In Development",
+    links: {
+      github: "https://github.com/miles-hollifield/goodnight-gpt-app",
+    },
+    highlights: [
+      "RAG pipeline with Pinecone vector storage",
+      "CSV upload and automatic embedding ingestion",
+      "Anthropic Claude integration for contextual responses",
+      "Real-time chat interface with source attribution",
+      "Serverless vector database with automatic indexing"
+    ],
+    category: "Web App"
+  },
+  {
     title: "Virtual DJ Hand Controller",
     description: "Computer vision-based DJ interface controlled entirely through hand gestures and webcam tracking",
   longDescription: "Touchless DJ controller that maps hand gestures to real‑time audio control. MediaPipe detects landmarks; Pyo handles pitch, tempo, and volume for an immersive, webcam‑driven experience.",
