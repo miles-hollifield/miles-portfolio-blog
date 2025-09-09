@@ -23,9 +23,9 @@ const defaultExperiences: ExperienceItem[] = [
     location: "Wendell, North Carolina",
     description: "Built and scaled internal apps that modernized parts, knowledge, and 3D model workflows across engineering teams.",
     achievements: [
-      "Shipped SPIN DB and JT Catalog to replace legacy workflows",
-      "Cut 3D model search time by ~70% via indexed metadata",
-      "Implemented Azure Entra ID SSO with role‑based access"
+      "Architected 3D model management platform for 100+ engineers with React and Python FastAPI, reducing part search time by 70% via optimized SQL queries and async backend",
+      "Developed RAG pipeline with semantic search and real-time chat in TypeScript, reducing documentation discovery from hours to minutes ",
+      "Implemented automated audit trail system with 15+ SQL triggers tracking part modifications and vendor changes, ensuring 100% data integrity for 40,000+ component database"
     ]
   },
   {
